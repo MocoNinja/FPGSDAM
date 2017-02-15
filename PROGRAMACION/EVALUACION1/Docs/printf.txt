@@ -1,0 +1,7 @@
+/*
+* printf("String con %modificadores", modificador1, modificador2);
+* %d: numero en base 10
+* %h: hexadecimal
+* %f: decimal
+* %n o  \n Secuencia de escape: retorno de carro
+*/

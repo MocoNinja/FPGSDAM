@@ -1,0 +1,5 @@
+El archivo se carga en ram
+el archivo empezara por una linea de memoria
+un puntero hara referencia a esa linea
+ese puntero tiene que ser de una clase que tenga metodos para manipular el archivo, como readline
+ej: camara, acelerador... -> para manipularlos hay que hacerlos objetos de java 

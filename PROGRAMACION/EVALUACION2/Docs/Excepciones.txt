@@ -1,0 +1,33 @@
+Supongamos el siguiente codigo
+
+//...
+int x;
+x = 7/0;
+//...
+
+"En esta linea se crea la excepcion. Se crea un objeto de la clase excepcion y PETA (sonido de pedo)"
+
+Es como si hiciera un new AritmethicException;
+
+
+Tratamiento de excepciones:
+    Cuando hay codigo susceptible de peligrosidad,  las metemos en el try catch. Hay algunas instrucciones que exigen este tratamiento (no compilara si no van entre try catch)
+
+
+El codigo real seria:
+
+/*
+        int x;
+        try{
+            x = 7/0;
+        } catch(ArithmeticException excepcion){
+            System.out.println("Cuidadin con esa division por zero!!!!");
+        }catch(Exception exc){
+            System.out.println("Cuidadin con esa division por zero!!!!");
+        }; 
+        //el catch es una posible excepcion. Puede haber varios.
+        //es parecido al if: si hay excepcion, se ejecuta
+*/
+
+Creación de excepciones
+    No siempre esta la excepcion en Java (en plan, no hay NifException). Habrá que crerla.

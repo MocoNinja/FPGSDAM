@@ -1,0 +1,17 @@
+	LAS STRINGS SON INMUTABLES!!!
+
+* http://docs.oracle.com/javase/7/docs/api/java/lang/String.html
+
+
+
+
+String.charAt(int): caracter en la posicion i de un String;
+
+String.replace(String1, String2): en la String, replaza String1 por String2;
+
+String.toUpperCase(): convierte una String a mayúscula
+
+String.substring(int1, int2): devuelve un String que contiene el contenido de String entre 1 y 2
+
+String.replace(String1, String2): se sustituye1 por la la otra
+String.replace(char1, char2): ojo, que es polimorfa
