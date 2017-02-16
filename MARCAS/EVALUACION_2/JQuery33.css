@@ -1,0 +1,38 @@
+﻿ul
+{
+	font-family:"Comic Sans MS";
+	font-size:17px;
+	list-style-type: none;
+	text-align:center;
+}
+
+#menu
+{
+	width:200px;
+}
+/*
+<!-- Hasta hora poníamos #menu li : todos los li dentro del menu-->
+<!-- Ahora solo queremos los ppales, los de nivel inmediatamente inferior: > -->
+*/
+#menu>li
+{
+	background-color:#FBEF9B;
+	border: 1px, outset,yellow ;
+	padding:5px;
+	position: relative;
+}
+
+.submenu
+{
+	position: absolute;
+	top: 0;
+	left: 200px;
+}
+
+.submenu>li
+{
+	background-color: aqua;
+	border: 2px, outset, magenta;
+	width: 180px;
+	padding:2px;
+}
