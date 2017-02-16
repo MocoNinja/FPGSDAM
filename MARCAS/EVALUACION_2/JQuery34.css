@@ -1,0 +1,66 @@
+body
+{
+    color: yellowgreen;
+    background-image: url('img/mad-space.gif');
+}
+
+h1
+{
+	color:yellow;
+	font-family:"Comic Sans MS";
+	font-size:57px;
+	text-align:center;
+
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;  
+}
+
+li
+{
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    border: 2px,outset,yellow;
+    background-color: deepskyblue;
+    color:red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14pt;
+    width: 100px;
+    text-align: center;
+}
+
+#menuHorizontal
+{
+    text-align: center;
+}
+
+.submenu
+{
+	position: absolute;
+	top: 30px;
+    left: 1px;
+    display: none;
+}
+
+.submenu.li
+{
+    display: block;
+}
+
+#menuHorizontal li:hover /*Los li inmediatamente ligados a menu*/
+{
+	background-color:fuchsia;
+	color:lavenderblush;
+	cursor:pointer;
+}
+
+#menuHorizontal li:hover ul  /*Lo de antes pero cogemos los ul DE ESE*/
+{
+	display:block;
+	
+}
