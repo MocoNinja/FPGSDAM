@@ -9,7 +9,7 @@ public class Bola extends Block{
 	final static int TECHO = 10, SUELO = 600;
 	final static int PARED_I = 10, PARED_D = 600;
 	
-	int xSpeed = 10, ySpeed = 10;
+	int xSpeed = 5, ySpeed = 5;
 	int yAcc = -1, xAcc = 1;
 	
 	Random rand = new Random();

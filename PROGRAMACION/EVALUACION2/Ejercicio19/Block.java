@@ -11,6 +11,7 @@ public class Block extends Rectangle{
 	int tipo; // Porque vamos a usarla como superclase para hacer pelotas y ladrillos
 	Color color;
 	boolean visible = true;
+	boolean tangible = true;
 	
 	public Block(int posX, int posY, Color color, int tipo)	// Ladrillo de Color *definido"
 	{

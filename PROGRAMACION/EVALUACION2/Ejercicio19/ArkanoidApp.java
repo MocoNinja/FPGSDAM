@@ -35,6 +35,22 @@ public class ArkanoidApp extends Applet implements Runnable
 		while(true)
 		{
 			bola.mueve();
+			for (int fila = 0; fila < FILAS_LADRILLOS; fila++)
+			{
+				for (int columna = 0; columna < COLUMNAS_LADRILLOS; columna++)
+				{
+					if (ladrillos[fila][columna].contains(bola))
+					{
+					if (!ladrillos[fila][columna].tangible)
+					{
+						break;
+					}
+						bola.yAcc *= -1;
+						ladrillos[fila][columna].color = (Color.WHITE);
+						ladrillos[fila][columna].tangible = false;
+					}
+				}
+			}
 			try{
 				Thread.sleep(45);
 				repaint();
