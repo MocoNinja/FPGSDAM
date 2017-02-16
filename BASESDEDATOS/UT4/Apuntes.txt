@@ -1,0 +1,96 @@
+## FECHAS
+
+Existen las siguiente funciones integradas: 
+
+year(fecha)
+month(fecha)
+day(fecha)
+
+Las cuales devuelven los respectivos
+
+Por ejemplo, en las consultas del videoclub, pueden formularse estas alternativas incluyendo lo anterior:
+
+    !8
+    SELECT * FROM PELICULAS
+    WHERE YEAR(FECHADQUISICION) = 1998
+    !9
+    SELECT * FROM PELICULAS
+    WHERE MONTH(FECHADQUISICION=8) AND YEAR(FECHAADQUISICION=1998)
+
+## GRUPOS
+
+SELECT campo1, campo2 FROM tabla GROUP BY campo1
+
+Los grupos tienen sentido para tratamiento de datos, no para coger un campo cualquiera.
+
+Por ejemplo: SELECT nombre, edad FROM alumnos GROUP BY edad da error (select no tiene funcion de agregado)
+    + Va a haber varios individuos de 19 tacos
+    + Qué va a hacer con esos pavos, qué va a selccionar?
+
+    HAY QUE SACAR CAMPOS CON FUNCIONES DE AGREGADO -> pagina 10 mah o menos.
+
+    TOP DE FUNCIONES QUE USAREMOS
+        - AVG
+        - SUM
+        - COUNT
+        - MAX
+        - MIN
+
+    SELECT  GENERO FROM PELICULAS GROUP BY GENERO -> es IGUAL al distinct
+
+
+SUBCONSULTAS
+
+Consulta dentro de otra. La prioridad de operación va con paréntesis (es decir, primero la subconsulta, que es la que va entre ellos)
+
+
+## DELETE 
+
+borra REGISTROS, NO campos.
+
+Antes, en las 1-n, seleccionabamos lo de exigir integrad referencial (para ver el 1 a n) y marcabamos las 2 casillas tambien.
+
+AHora que vamos a borrar, tenemos que ver que puede haber dependencias.
+Si borro un alquiler, a la pelicula le da igual. Pero si borro un genero, todas las peliculas vinculadas perderan sentido si existe la integridad referencial. Porque no tiene sentido tener pelis de terror si no existe el terror. Al no haber estas pelis, tampoco tiene sentido el alquiler. Y asín. Se borra to en cascadaS. Afecta lo que lleva el n.
+
+## Subconsultas
+
+> 1 resultado
+
+> ALL, > ANY, NOT IN
+
+## Agrupacion
+
+Datos estadisticos mas potentes que los de agrupacion
+
+SELECT ci.ciudad, COUNT(cl.dni)
+FROM Ciduades AS ci, Clientes AS cl
+WHERE ci.idciudad = cl.idciudad
+GROUP BY ci.ciudad
+
+Por ejemplo, ahora queremos desglosar también por año de nacimiento
+    -> La estadistica de antes se va a perder, porque ya no vamos a ver que hay dos clientes, sino uno de 19XX y otro de 20XX
+    -> Esto es el PIVOT
+    -> El TRANSFORM es el campo que queremos sacar
+
+TRANSFORM COUNT(cl.dni)
+SELECT ci.ciudad
+FROM Ciudades AS ci, Clientes AS cl
+WHERE ci.idciudad = cl.idciudad
+GROUP BY ci.ciudad
+PIVOT YEAR(cl.fechaNacimiento)
+
+
+## Funciones de texto AQL
+
+LEFT()
+RIGHT()
+MID()
+LEN()
+
+
+Todas toman como argumento la cadena de texto.
+Left y right tambien toman como argumento un numero, que sera el numero de caracteres a extraer.
+MID(cadena, 2, 3): coge a partir de la posicion 2, 3 caracteres (posicion2 inclusive)
+Ojo que no empieza por 0, sino por1
+La cadena puede ser un campo de la tablas
