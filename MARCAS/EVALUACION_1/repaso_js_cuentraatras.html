@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Cuenta atrás</title>
+	<script type="text/javascript">
+		var tiempo = 10;
+
+		function cuentaAtras(){
+			CuentaAtras.value = tiempo;
+			if (tiempo > 0){
+				tiempo--;
+				setTimeout("cuentaAtras()", 1000);
+			}
+		}
+	</script>
+</head>
+<body onload="cuentaAtras()">
+<input name="CuentaAtras" id="CuentaAtras" align="center">
+</body>
+</html>

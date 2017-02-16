@@ -1,0 +1,42 @@
+<html>
+<head><title>Formularios</title>
+</head>
+<body>
+<h1 align=center>Trabajando con formulario</h1>
+<form action="septimo.html" method="post">
+<table align=center align=center border=1 cellspacing=5>
+<tr>
+	<td align=right>Introduce tu nombre : </td>
+	<td><input type="text" size=50 maxlength=2 id="nombre" name="nombre"></td>
+</tr>
+<tr>
+	<td align=right>Provincia : </td>
+	<td><select>
+		<option value=46>Teruel</option>
+		<option value=50 selected>Zaragoza</option>
+	</select></td>
+</tr>
+<tr>
+	<td align=right>Edad : </td>
+	<td>Mayor de 60<input name="edad" type="radio" value=1>
+	Entre 30 y 60<input name="edad" type="radio" value=2 checked>
+	Menor de 30<input name="edad" type="radio" value=3></td>
+</tr>
+<tr>
+	<td align=right>Deporte : </td>
+	<td>Fútbol<input type="checkbox" name="deportes" value=1>
+	Baloncesto<input type="checkbox" name="deportes" value=2>
+	Tenis<input type="checkbox" name="deportes" value=3></td>
+</tr>
+<tr>
+	<td align=right>Comentario : </td>
+	<td><textarea name="comentario" cols="40" rows="4">Escribe un comentario...</textarea></td>
+</tr>
+<tr>
+	<td><input type="submit" value="Enviar"></td>
+	<td><input type="reset" value="Limpiar"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

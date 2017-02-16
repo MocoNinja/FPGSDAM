@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script language="JavaScript">
+		/*
+		* 2 imagenes que cambian cada segundo
+		* un boton que para estos cambios
+		*/
+		var veces = 1;
+		function cambiaFoto(){
+			if (veces % 2 == 0){
+				FOTO.src="Pics/f2.jpg";
+			} else {
+				FOTO.src="Pics/pesioso.jpg";
+			}
+			++veces;		
+		}
+		function para(){
+			clearInterval(objeto);
+		}
+		function vuelve(){
+			objeto=setInterval('cambiaFoto()', 200);
+
+		}
+	</script>
+</head>
+<body background="Pics/Doge_4.gif" onload="objeto=setInterval('cambiaFoto()', 200)">
+<center>
+	<input type="button" value="STAHP!" name="WOW" onclick="para()">
+	<input type="button" value="GO!" name="SUCHFUN" onclick="vuelve()">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<img id=FOTO size="10%">
+</center>
+</body>
+</html>

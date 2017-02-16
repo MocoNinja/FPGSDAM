@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>Truth</title>
+	<style type="text/css">
+		#logo{
+			position: absolute;
+			top: 100;
+			left: 600;
+		}
+		#sym{
+			position: absolute;
+			top: 400;
+			left: 200;
+		}
+	</style>
+	<script type="text/javascript">
+
+		function chocar(){
+			document.body.style.backgroundImage = "url('img/potg.jpg')";
+			sym.style.visibility = "hidden";
+			logo.style.visibility = "hidden";
+		}
+
+		var vX = 5;
+		var vY = 3;
+		var pX = 0;
+		var pY = 0;
+		function desplaza(){
+			logo.style.left = pX;
+			logo.style.top = pY;
+			if (pX < 1000 || pX < 0){
+				pX += vX;
+			} else {
+				pX -= vX;
+			}
+			if (pY < 2500 || pY < 0){
+				pY += vY;
+			} else {
+				pY -= vY;
+			}
+		}
+
+	</script>
+</head>
+<body bgcolor="black" onload="setInterval('desplaza()', 10)">
+<div label="Pics">
+	<img id="sym" src="img/symmetra.png" onclick="chocar()">
+	<img id="logo" src="img/logo.png" width="250">
+</div>
+</body>
+</html>

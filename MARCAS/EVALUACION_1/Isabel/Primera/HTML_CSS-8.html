@@ -1,0 +1,45 @@
+<html>
+	<head><title>Elementos del objeto DOCUMENT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		#circulo{position: absolute;left: 100;top: 200; }
+		#cruz{position: absolute;left: 50;top: 100; }
+	</style>
+	<script languaje="JavaScript">
+	//Onclick->hacer click y soltar, onmousedown-> hacer click y soltar, y onmouseup-> es soltar al hacer click
+	//event.x es la posicion en el eje de las x y evento.y en el eje de las y
+	//mover el circulo
+		seleccionado=0;
+		function cargar() {
+			//alert(event.x);
+			if (event.srcElement.tagName == "IMG") {
+				seleccionado = 1;
+				//alert(name);
+				//alert(event.srcElement.src);
+			}
+			
+		}
+		function soltar() {
+			//alert(event.y);
+			if(seleccionado == 1){
+				seleccionado = 0;
+				//alert(name);
+				//alert(event.srcElement.src);
+			}
+		}
+		function mover(){
+			if(seleccionado==1){
+				circulo.style.left = event.x - 50;
+				circulo.style.top = event.y - 50;
+			}
+			
+		}
+
+	</script>
+	</head>
+	
+	<body onmousedown="cargar()" onmouseup="soltar()" onmousemove="mover(); event.returnValue=false" >
+		<img id="circulo" src="imagenes/circulo.png" width: "100px" height="100px">
+		<img id="cruz" src="imagenes/cruz.png" width: "100px" height="100px">
+	</body>
+</html>

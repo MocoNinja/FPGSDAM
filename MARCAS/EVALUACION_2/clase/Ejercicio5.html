@@ -1,0 +1,27 @@
+<html>
+<head><title>Animación del fondo</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+
+$(document).ready(function(){
+	$("#mover1").click(function(){
+		$("body").animate({backgroundPositionX:"5000px"}, 10000);
+	});
+	$("#mover2").click(function(){
+		$("body").animate({backgroundPositionX:"0px"});
+	});
+	$("#mover3").click(function(){
+		$("body").animate({backgroundPositionX:"5000px"}, 10000, "swing", function(){
+			alert("Se acabó la animación");
+		});
+	});
+});
+
+</script>
+</head>
+<body background="imagenes/fondo.jpg">
+<input type="button" id="mover1" value="Desplazar a la derecha"><br>
+<input type="button" id="mover2" value="Desplazar a posición inicial"><br>
+<input type="button" id="mover3" value="Desplazar con mensaje al finalizar"><br>
+</body>
+</html>

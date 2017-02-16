@@ -1,0 +1,24 @@
+<html>
+<head>
+	<title>Tamaño ++</title>
+	<script type="text/javascript">
+		var aumento = 1;
+		var objeto;
+		function creceMucho(){
+			foto.width += aumento;
+			if (foto.width > 1000){
+				alert("Pero chicoo, dale al botón o qué?");
+				foto.width = 250;
+				aumento += 5;
+			}
+		}
+	</script>
+</head>
+<body onload="objeto = setInterval('creceMucho()', 10)">
+	<center>
+		<input type="button" name="stahp" value="PARAAAAAAAAAAAAAAAAAAA!" onclick="clearInterval(objeto)">
+		<br><br>
+		<img id="foto" src="img/symmetra1.jpg" width="250">
+	</center>
+</body>
+</html>

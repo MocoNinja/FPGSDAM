@@ -1,0 +1,37 @@
+﻿<html>
+
+<head>
+    <title>Animaciones: Función Animate</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+         /*Esto es un objeto con el tag button -> Es un vector. En este caso sólo hay uno, pero si hubiera varios, se referiría a todos*/
+         $("button").click(function(){
+             //alert("WOLAS");
+             var div = $("div");
+             /*El mismo juego de antes: creamos una variable que se refiere al vector que contiene a todos los párrafos div que hemos declarado*/
+             // Función animate: es la más general de todas -> Actua sobre el estilo que se le especifique
+             // Anima desde el valor actual hasta el que le damos
+             // El slow puede cambiarse por los ms específicos
+             div.animate({height: '300px', opacity: '0.4'}, "slow");
+             div.animate({width: '600px'}, "slow");
+             div.animate({width: '100px', height: 100, opacity: '1.0'}, "fast");
+             
+         });
+     });
+     </script>
+     <style>
+        #parrafoMovidolongo{
+            position: absolute;
+            width: 100;
+            height: 100;
+            background-color: palegreen; 
+        }
+     </style>
+</head>
+<body bgcolor="black">
+    <button>Muévete!</button> <br><br>
+    <button>Prueba!</button> <br><br> <!--Esto no es parte del ejercicio, lo he metido para ver lo del vector-->
+    <div id="parrafoMovidolongo"></div>
+</body>
+</html>

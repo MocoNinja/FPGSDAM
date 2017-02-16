@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Encendiendo Bombillas</title>
+        <style>
+        body{
+            background-color: black;
+        }
+        p{
+            position: absolute;
+            top: 250;
+            left: 90;
+            color: springgreen;
+        }
+            #tracer{
+                position: absolute;
+                height: 120;
+                top: 300;
+                left: 125;
+            }
+             #on{
+                position: absolute;
+                height: 100;
+                width: 80;
+                top: 100;
+                left: 10;
+            }
+            #off{
+                position: absolute;
+                height: 100;
+                width: 80;
+                top: 100;
+                left: 10;
+            }
+            .sub {
+                visibility: hidden;
+             }
+            #master .has-sub:hover > .sub { 
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="off" src="img/bombilla_off.jpg"> <!-- SIEMPRE VISIBLE, SERÁ TAPADA -->
+        <p>Cheers Luv! The light is here!</p>
+        <ul id="master"> <!-- LISTA MASTER -->
+            <ul class="has-sub"> <!-- LISTA ANIDADA -->
+                <img id="tracer" src="img/Tracer1.png"> <!-- INTERRUPTOR -->
+                <ul class="sub"> <!-- LISTA SUBANIDADA -->
+                    <li>
+                    <img id="on" src="img/bombilla_on.jpg"> <!-- INVISIBLE HASTA :HOVER -->
+                    </li>
+                </ul>
+             </li>
+            </ul>
+        </ul> 
+    </body>
+</html>

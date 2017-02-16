@@ -1,0 +1,44 @@
+﻿<html>
+<head>
+	<title>Primer Ejemplo</title>
+	<style type="text/css">
+			body{background-color:#ff0099}
+			p1{font-size:105pt;font-family:Consolas;text-align:center;color:yellow;}
+			h1{margin-left: 0.25in; color:white;font-size:60pt}
+			h2{margin-left:0.5in;color:black}
+			p{background-color:red}
+
+	</style>
+	<script language="JavaScript">
+		function aparecerp1(){
+			//alert(parrafoninja.style.display)
+			if (parrafoninja.style.display=="none")
+				parrafoninja.style.display="";
+			else
+				parrafoninja.style.display="none";
+			/*
+			* A las propiedades del estilo no se accede cosa.propiedad
+			* Sino cosa.style.propiedad
+			*/
+		}	
+		function aparecerp(){
+			//alert(parrafoninja.style.display)
+			if (parrafoninja2.style.display=="none")
+				parrafoninja2.style.display="";
+			else
+				parrafoninja2.style.display="none";
+		}
+	</script>
+</head>
+<body>
+<h1 onclick="aparecerp()">Reemplazando HTML dinámicamente</h1>
+<h2 onclick="aparecerp1()">Cabecera II: With a vengeance</h2>
+<p1 id=parrafoninja style="display:none">
+		Сука Блять
+</p1>
+<p id=parrafoninja3 style="display:none">
+Y esta es la wall text de toda la vida. Display: Quita el espacio que ocupa el texto; visibility no quita el espacio que ocuparia el texto, aunque este no se vea.
+</p>
+<img src="Doge_4.gif" style="display:none"id=parrafoninja2>
+</body>
+</html>

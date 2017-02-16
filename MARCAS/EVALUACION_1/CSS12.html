@@ -1,0 +1,99 @@
+﻿<!--
+<!DOCTYPE html>         
+<ESTO JODE TODO TODO TODO
+-->
+
+<html>
+<head>
+	<title>Página de movimiento</title>
+</head>
+<style type="text/css">
+		#imagen1{
+			position: absolute;
+			top:  200px;
+			left: 150px;
+		}
+		#imagen2{
+			position: absolute;
+			top:  50px;
+			left: 300px;
+		}
+		#imagen3{
+			position: absolute;
+			top:  200px;
+			left: 450px;
+		}
+		#imagen4{
+			position: absolute;
+			top:  350px;
+			left: 300px;
+		}
+</style>
+
+<script language="JavaScript">
+		
+		var EjeX = new Array(4);
+		var EjeY = new Array(4);
+
+		/*
+		 Valores más bajos de top implica más arriba
+		 Valores más grandes de left implica más a la derecha
+		*/
+
+		EjeX[0] = new Array	(150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300); //Posiciones en el eje de las X de la imagen 1
+		EjeX[1] = new Array	(300, 315, 330, 345, 360, 375, 390, 405, 420, 435, 450); //Posiciones en el eje de las X de la imagen 2
+		EjeX[2] = new Array	(450, 435, 420, 405, 390, 375, 360, 345, 330, 315, 300); //Posiciones en el eje de las X de la imagen 3
+		EjeX[3] = new Array	(300, 285, 270, 255, 240, 225, 210, 195, 180, 165, 150); //Posiciones en el eje de las X de la imagen 4
+
+		EjeY[0] = new Array	(200, 185, 170, 155, 140, 125, 110, 95, 80, 65, 50); //Posiciones en el eje de las Y de la imagen 1
+		EjeY[1] = new Array	(50, 65, 80, 95, 110, 125, 140, 155, 170, 185, 200); //Posiciones en el eje de las Y de la imagen 2
+		EjeY[2] = new Array	(200, 215, 230, 245, 260, 275, 290, 305, 320, 335, 350); //Posiciones en el eje de las Y de la imagen 3
+		EjeY[3] = new Array	(350, 335, 320, 305, 290, 275, 260, 245, 230, 215, 200); //Posiciones en el eje de las Y de la imagen 4
+
+		var objeto;
+		var i = 0;
+		var j = 0;
+		var k = 1;
+		var l = 2;
+		var z = 3;
+		function rotar(){
+
+			imagen1.style.left = EjeX[j][i];
+			imagen1.style.top  = EjeY[j][i];
+			imagen2.style.left = EjeX[k][i];
+			imagen2.style.top  = EjeY[k][i];
+			imagen3.style.left = EjeX[l][i];
+			imagen3.style.top  = EjeY[l][i];
+			imagen4.style.left = EjeX[z][i];
+			imagen4.style.top  = EjeY[z][i];
+			i++;
+			if (i == EjeX[0].length){
+				i = 0;
+				j++;
+				k++;
+				z++;
+				l++;
+			}
+			if (j == 4)
+				j = 0;
+			if (k == 4)
+				k = 0;
+			if (l == 4)
+				l = 0;
+			if (z == 4)
+				z = 0;
+			//alert("hola")
+		}
+
+</script>
+
+<body bgcolor = black background="img/flames.gif">
+	<img id="imagen1" src="img/imagen1.jpg" height="120">
+	<img id="imagen2" src="img/imagen2.jpg" height="120">
+	<img id="imagen3" src="img/imagen3.jpg" height="120">
+	<img id="imagen4" src="img/imagen4.jpg" height="120">
+	<input onclick="objeto = setInterval('rotar()', 50)" type="button" name="laclicka" value="Salseo!">
+	<input onclick="clearInterval(objeto)" type="button" name="ladesclicka" value="DesSalseo!">
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Pendiente de titulo</title>
+	<script language="JavaScript">
+	/*
+	* Poner una imagen pequeña
+	* Que el tamaño aumente progresivamente
+	* Un boton que la pare
+	*/
+	var grande = 100;
+	function crece(){
+		grande += 10;
+		FOTO.width = grande;
+		if (grande >= 2000){
+			grande = 100;
+		}
+	}
+	function para(){
+			clearInterval(objeto);
+		}
+	</script>
+</head>
+<body onload="objeto=setInterval('crece()', 200)">
+<center>
+	<input type="button" value="STAHP!" name="WOW" onclick="para()">
+	<img id=FOTO src="Pics/pesioso.jpg" width=100>
+</center>
+</body>
+</html>

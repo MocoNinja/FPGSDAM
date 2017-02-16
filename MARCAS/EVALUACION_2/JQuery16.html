@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>3 RAYA mediante JQuery</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+
+    var cruz = $("<img>", {src:"img/cage1.png",
+        id:"cruz",
+        css:{"padding":"2px",
+            "cursor":"pointer"
+        }
+     });
+
+     var circulo = $("<img>", {
+        src:"img/Cara1.png",
+        id:"circulo",
+        css:{"padding":"2px",
+            "cursor":"pointer"
+        }
+     });
+
+     $(document).ready(function(){
+         $("td").click(function(){
+             var objeto = $(this);
+             // console.log(objeto);
+             // alert("Has ganado un iPad");
+             $(objeto).html(circulo);
+
+         });
+     });
+     </script>
+</head>
+<body>
+    <table border="1" cellspacing="10">
+        <tr>
+             <td id="celda"></td> <td id="mierda"></td> <td></td>
+        </tr>
+        <tr>
+             <td></td> <td></td> <td></td>
+        </tr>
+        <tr>
+             <td></td> <td></td> <td></td>
+        </tr>
+    </table>
+</body>

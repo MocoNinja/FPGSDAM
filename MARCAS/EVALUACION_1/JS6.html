@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moviendo foticos mediante estilos y javascript</title>
+	<script language="JavaScript">
+		var ancho = 1350;
+			var posicion = 0;
+			var velocidad = 50;
+		function mueve(){
+			//alert(posicion);
+			posicion += velocidad;
+			afoto1.style.left = posicion;
+		}
+	</script>
+	<style type="text/css">
+		#afoto1{position: absolute; top: 150px;}	
+	</style>	
+</head>
+<body onload="setInterval('mueve()', 10)">
+<img id=afoto1 src="Pics/Doge_4.gif" width="250">
+</body>
+</html>

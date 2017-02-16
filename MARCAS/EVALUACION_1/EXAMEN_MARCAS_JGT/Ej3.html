@@ -1,0 +1,60 @@
+<html>
+<head>
+	<title>Ejercicio 3</title>
+
+	<style type="text/css">
+		IMG{
+			width: 600;
+			height: 600;
+			position: absolute;
+		    top: 30%;
+		    left: 30%;
+		}
+	</style>
+
+	<script type="text/javascript">
+
+		var nombre = "";
+		var ejecutando = true;
+		var guardado = "";
+		var relieve = 0;
+
+		function lanzador(){
+			
+			if (selector.value != "0"){
+				seleccionar	();
+			}
+		}
+
+		function seleccionar(){
+
+				nombre = selector.value;
+				document.getElementById("imagen" + nombre).style.visibility = "visible";
+				relieve++;
+				document.getElementById("imagen" + nombre).style.zIndex = relieve;
+				
+		}
+		
+	</script>
+
+
+</head>
+<body bgcolor="black" onload="setInterval('lanzador()', 10)">
+<div>
+	<center>
+	<select id="selector">
+		<option value="0">Selecciona una imagen...</option>
+		<option value="1">Imagen 1</option>
+		<option value="2">Imagen 2</option>
+		<option value="3">Imagen 3</option>
+		<option value="4">Imagen 4</option>
+	</select>
+</div>
+<div>
+<img id="imagen1" src="img/imagen1.jpg" style="visibility: hidden;">
+<img id="imagen2" src="img/imagen2.jpg" style="visibility: hidden;">
+<img id="imagen3" src="img/imagen3.jpg" style="visibility: hidden;">
+<img id="imagen4" src="img/imagen4.jpg" style="visibility: hidden;">
+</div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Introducing Javascript...</title>
+	<script language="javascript">
+		function enColor(colorTexto, texto){
+			//alert("Ola k ase?");
+			//alert(colorTexto);
+			document.write("<font color=" + colorTexto + ">" + texto + "</font><br>");
+			//document.write("<font color=colorTexto>Hola</font>");
+			//document.write("<font color={0}>Hola</font>".format(colorTexto)); //ALGO ASI
+			for(i=1; i<texto.length; i++)
+				document.write("<font color=" + colorTexto + ">" + ". " + "</font>");
+		}
+	</script>
+</head>
+<body>
+<h1 align="center">Pasar parametros mediante JavaScript...</h1>
+<script language="javascript">
+	enColor("red","Hola mundo!");
+</script>
+</body>
+</html>

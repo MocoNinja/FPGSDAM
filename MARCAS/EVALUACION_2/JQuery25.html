@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Visible y oculto</title>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#mostrar").click(function(){
+                    var img = $(".imagen");
+                    var id = $("#boton");
+                    img.show(1000);
+                    id.show(1000);
+                });
+                $("#ocultar").click(function(){
+                    var img = $(".imagen");
+                    var id = $("#boton");
+                    img.hide(1000);
+                    id.hide(1000);
+                    /*
+                    $("#objeto1, #objeto2, .clase1").whatever()
+                    */
+                })
+            });
+        </script>
+        <style>
+            #tracer{
+                width: 450;
+            }
+            .inmutable{
+                position: absolute;
+                left: 10;
+                top: 500;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="button" id="boton"value="Cambiar visibilidad">
+        <br><br>
+        <img id="tracer" class="imagen" src="img/tracer1.png">
+        <br><br>
+        <div class="inmutable">
+        <input type="button" id="mostrar" value="Cambiar visibilidad: Mostrar">
+        <input type="button" id="ocultar" value="Cambiar visibilidad: Ocultar">
+        </div>
+    </body>
+</html>

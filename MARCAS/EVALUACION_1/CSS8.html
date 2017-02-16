@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+	<title>Moviendo objetos</title>
+</head>
+<style type="text/css">
+	#foto{position: absolute; left:500; top:200} /*Estas declaraciones suelen darme problemas. Estudiarlo*/
+</style>
+<script language="JavaScript">
+	var seleccionado = 0;
+	function pulsar(){
+		//alert("Acabo de pulsar");
+		//alert("Las coordenadas son: " + event.x + ", " + event.y); 
+		/*
+		* Provocamos un evento -> se genera un objeto. Este alert lo reconoce (objeto evento de raton).
+		* Estos eventos tienen ciertas propiedades
+		* Por ejemplo event.x -> devuelve coordenada
+		* event.y -> devuelve ordenada
+		*/
+		if (event.srcElement.tagName == "IMG")
+				seleccionado = 1;
+	}
+	function soltar(){
+			//alert("Acabo de soltar")
+			//alert(event);
+			if (event.srcElement.tagName == "IMG")
+				seleccionado = 0;
+	}
+	function mover(){
+		//window.status(event.x + ", " + event.y); /*El status es la barra de estado del objeto window*/
+		//alert("Las coordenadas son: " + event.x + ", " + event.y); 
+		//alert("deberia moverse");
+		if (seleccionado == 1){
+			foto.style.left = event.x - 50;
+			foto.style.top = event.y - 50;
+			event.returnValue=false;
+			/*Esta ultima orden limpia el objeto para evitar ese bug visual en el que arrastra*/
+		}
+		
+	}
+</script>
+<!--Diferencia: hacer click tiene dos partes: pulsar y soltar; el onmousedown es solo hacer click, y con cualquier boton; tambien existe onmouseup (soltarlo)-->
+<body onmousedown="pulsar()" onmouseup="soltar()" onmousemove="mover()"> 
+		<img id="foto" src="Pics/2.jpg">
+</body>
+</html>

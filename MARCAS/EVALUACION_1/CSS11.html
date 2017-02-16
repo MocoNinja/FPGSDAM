@@ -1,0 +1,169 @@
+
+<html>
+<head>
+	<title>Ejercicio largo e interesante</title>
+	<style type="text/css">
+
+		DIV{position:absolute;}
+
+		A{
+			font-family:sans-serif;
+			font-weight:bold;
+			font-size:62pt;
+			text-decoration:none;
+		}
+
+		#cero{color:black}
+		#uno{color:red;}
+		#dos{color:lime;}
+		#tres{color:blue;}
+		#cuatro{color:cyan;}
+		#cinco{color:magenta;}
+		#seis{color:pink;}
+		#siete{color:yellow;}
+		#ocho{color:green;}
+		#nueve{color:brown;}
+		
+		.pregunta{
+			position:absolute;
+			width:300px;
+			height:200px;
+			left:150px; /*SI NO PONGO PIXEL; NO ME RULA*/
+			top:100px;
+			border-width:6;
+			border-color:lime;
+			border-style:groove;
+		}
+
+		h3{color:red; font-family:sans-serif; text-align:center; margin-top:10;}
+
+		p{margin-left:10px; margin-right:10px; font-size:12pt; font-style:arial; font-weight:bold; text-align:justify;}
+
+	</style>
+	<script language="JavaScript">
+
+		var paginaActual = 1;
+		var respuestas = [7, 8, 2, 0];
+		var aciertos = [0, 0, 0, 0];
+		var introducido;
+
+		function chequear(){
+			//alert("entra");
+			var checks = 0;
+
+			for (i = 0; i < aciertos.length; i++){
+				if (aciertos[i] == 1){
+					checks++;
+				}
+			}
+			if (checks == 4){
+				alert("You are super gud!");
+			}
+			//alert(checks);
+		}
+
+		function cotejar(valor){
+		
+			if (respuestas[paginaActual - 3] == valor){
+				//alert("xacto");
+				//alert(aciertos[paginaActual - 3]);
+				aciertos[paginaActual - 3] = 1;
+				//alert(aciertos[paginaActual - 3]);
+				chequear();
+			}
+			
+			else{
+				//alert("git gud, torpe");
+			}
+
+			
+			//chequear();
+		}
+
+		function pasarPagina(){
+			//alert(event.key);
+			//alert(document.all.("pagina" + actual);
+			//alert(document.getElementById("pagina" + paginaActual));
+			//HAY una propiedad llamada event.keyCode que devuelve un ENTERO (el del carácter que se ha pulsado)
+			/* PROFE
+				objeto = document.getElementById("pagina" + paginaActual); //Esto es mejor para acortar
+			*/
+			//Otra posibilidad es meter el anidado en las condiciones (if paginaActual < 6 && even...) //ESTO ES MEJOR
+
+			
+
+			if ((paginaActual < 6) && (event.key == 's' || event.key == 'S')){
+				document.getElementById("pagina" + paginaActual).style.visibility = 'hidden';
+				paginaActual++;
+				//if (paginaActual < 6)
+				//	paginaActual++;
+				document.getElementById("pagina" + paginaActual).style.visibility = ''; /*tambien vale 'inherit 	*/
+			}
+
+			if ((paginaActual > 1) && (event.key == 'a' || event.key == 'A')){
+				document.getElementById("pagina" + paginaActual).style.visibility = 'hidden';
+				paginaActual--;
+				//if (paginaActual > 1)
+				//	paginaActual--;
+				document.getElementById("pagina" + paginaActual).style.visibility = '';
+			}
+		}
+	</script>
+</head>
+
+<body onkeypress="pasarPagina()">
+
+	<div style="left:200px; top:0px">
+		<a href="" id="cero"  onclick="cotejar(0); return false">0</a>
+	</div>
+	<div style="left:20px; top:75px">
+		<a href="" id="uno" onclick="cotejar(1); return false">1</a>
+	</div>
+	<div style="left:480px; top:100px">
+		<a href="" id="dos" onclick="cotejar(2); return false">2</a>
+	</div>
+	<div style="left:100px; top:125px">
+		<a id="tres" href="" onclick="cotejar(3); return false">3</a>
+	</div>
+	<div style="left:550px; top:150px">
+		<a id="cuatro" href="" onclick="cotejar(4); return false">4</a>
+	</div>
+	<div style="left:10px; top:175px">
+		<a id="cinco" href="" onclick="cotejar(5); return false">5</a>
+	</div>
+	<div style="left:475px; top:200px">
+		<a id="seis" href="" onclick="cotejar(6); return false">6</a>
+	</div>
+	<div style="left:100px; top:225px">
+		<a id="siete" href="" onclick="cotejar(7); return false">7</a>
+	</div>
+	<div style="left:25px; top:250px">
+		<a id="ocho" href="" onclick="cotejar(8); return false">8</a>
+	</div>
+	<div style="left:500px; top:300px">
+		<a id="nueve"  href="" onclick="cotejar(9); return false">9</a>
+	</div>
+
+	<div id="pagina1" class="pregunta">
+		<h3>Bienvenido a la página de los números!</h3>
+		<p>Para cambiar de página, pulsa la teclas  "s/S", para pasar a la siguiente página; la tecla "a/A" para retroceder a la anterior.</p>
+	</div>
+
+	<div id="pagina2" class="pregunta" style="visibility:hidden">
+		<p>Par entrar a la página de los números, tendrás que averiguar la combinación de acceso.</p>
+		<p>Se te formularán cuatro preguntas. Para hallar la combinación de acceso, haz click sobre el número adecuado. Cuando tengas los cuatro números, habrás encontrado la <strong>clave!</strong></p>
+	</div>
+	<div id="pagina3" class="pregunta" style="visibility:hidden">
+		<p>Tengo 18 años, réstale 3, después suma 6 y finalmente divide entre 3. ¿Qué cifra sale? <!--7--></p>
+	</div>
+	<div id="pagina4" class="pregunta" style="visibility:hidden">
+		<p>Cortas una manzana por la mitad y estas mitades en sus mitades. Estas mitades las cortas por la mitad. ¿Cuántos trozos tengo? <!--8--></p>
+	</div>
+	<div id="pagina5" class="pregunta" style="visibility:hidden">
+		<p>Igual que 16 es a hexadecimal y 8 a octal, este número es a binario.<!--2--></p>
+	</div>
+	<div id="pagina6" class="pregunta" style="visibility:hidden">
+		<p>Multiplícame o divídime, pero siempre seré yo. ¿Quién soy?<!--0--></p>
+	</div>
+</body>
+</html>

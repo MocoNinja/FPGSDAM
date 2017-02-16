@@ -1,0 +1,41 @@
+<html>
+<head>
+	<title>Repaso 1</title>
+	<style type="text/css">
+		img{
+			position: absolute;
+			left: 500;
+			top: 200;
+			width: 850;
+			height: 550;
+		}
+	</style>
+	<script type="text/javascript">
+		var fotoID = 1;
+		var nombrePrincipio = "ariel";
+		var nombreFinal = ".jpg";
+		var nombreCompleto;
+
+		function cambiar(){
+			if (fotoID < 4){
+				fotoID++;
+			} else {
+				fotoID = 2;
+			}
+			nombreCompleto = nombrePrincipio + fotoID + nombreFinal;
+			//alert(nombreCompleto);
+			FOTO.src = nombreCompleto;
+		}
+
+		function revertir(){
+			FOTO.src='ariel1.jpg';
+		}
+	</script>
+</head>
+<body>
+	<h1 align="center">Imágenes cambiantes</h1>
+	<div label="Imagenes">
+		<img id="FOTO"; src="ariel1.jpg" onmouseover="cambiar()" onmouseleave="revertir()">
+	</div>
+</body>
+</html>

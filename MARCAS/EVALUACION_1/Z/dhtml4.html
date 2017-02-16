@@ -1,0 +1,34 @@
+<html>
+<head><title>Tres en raya (fase 2)</title>
+<style type="text/css">
+.val{background-color:yellow; width:30; height:35; text-align:center}
+.noval{background-color:lime; width:30; height:35; text-align:center}
+</style>
+<script language="JavaScript">
+var n = 0;
+function cambiar(){
+	objeto = event.srcElement;
+	if(objeto.className == "val")
+		if(n == 0)
+			objeto.innerHTML = "<IMG src=imagenes/cruz.png width=30 height=35>";
+		else
+			objeto.innerHTML = "<IMG src=imagenes/circulo.png width=30 height=35>";
+	n = (n+1) % 2;
+}
+</script>
+</head>
+<body onclick="cambiar()">
+<h1 align=center>Juego de las tres en raya</h1>
+<table border=5 cellpadding=0 cellspacing=5 align=center>
+	<tr>
+		<td class="val"></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>
+		<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>
+		<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+</table>
+</body>
+</html>

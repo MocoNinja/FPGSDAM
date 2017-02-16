@@ -1,0 +1,19 @@
+<html>
+<head><title>Movimiento</title>
+<style type="text/css">
+#cruz{position:absolute; top:200px}
+</style>
+<script language="JavaScript">
+var n = 100;
+function mover(){
+	n++;
+	cruz.style.left = n;
+}
+</script>
+</head>
+<body onload="setInterval('mover()', 100)">
+<div id="cruz" style="left:100"><img src="imagenes/cruz.png" height=100></div>
+
+
+</body>
+</html>

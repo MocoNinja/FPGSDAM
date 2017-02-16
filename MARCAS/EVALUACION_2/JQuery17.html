@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <tittle>Añadiendo Botones</html>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#asistente1").append($("<input>").
+                    attr("class", "boton").
+                    attr("value", "Hola").
+                    attr("type", "button")
+                );
+                $("#asistente2").append($("<button>").
+                    attr("class", "boton").
+                    text("Probando")
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <div id="asistente1"></div>
+        <div id="asistente2"></div>
+    </body>
+</html>

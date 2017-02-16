@@ -1,0 +1,34 @@
+<html>
+<head><title>Cambiar de clase</title>
+<style type="text/css">
+.bloque1{position:absolute; top:50px; left:20px; width:300px; background-color:lemonchiffon}
+.bloque2{position:absolute; top:50px; left:400px; width:300px; background-color:lightcoral}
+</style>
+<script language="JavaScript">
+function cambiar(){
+	if(b1.className == "bloque1"){
+		b1.className = "bloque2";
+		b2.className = "bloque1";
+	}else{
+		b1.className = "bloque1";
+		b2.className = "bloque2";
+	}
+}
+</script>
+</head>
+<body >
+<div class="bloque1" id="b1">
+<img src="imagenes/circulo.png" height=150>
+Los imigrantes de 'La Jungla' de Calais, el inmenso 
+campamento en el norte de Francia, han comenzado a 
+llegar al lugar fijado por las autoridades francesas para su evacuación.Un centenar de eritreos y sudaneses, en su mayoría hombres, se han presentado con las maletas y mochilas frente al hangar que sirve como sede para la operación de desmantelamietno presentada como "humanitaria" por el Gobierno francés.A la cabeza de este grupo, Bashir, un sudanés de 25 años, asegura sonriendo: "Cualquier lugar de Francia" será mejor que las tiendas del campamento.Mohammed, etíope, por el contrario no está tan convencido. "Soy menor de edad, quiero ir a Gran Bretaña, los autobuses no me interesan".
+</div>
+<div class="bloque2" id="b2">
+<img src="imagenes/cruz.png" height=150>
+Las unidades de atención temprana infantil, uno de los 
+programas estrella del Gobierno de Susana Díaz en materia 
+de sanidad, arranca con problemas y bajo la sospecha de enchufismo y trato de favor. La convocatoria por la cual el Servicio Andaluz de Salud (SAS) pretende cubrir las plantillas de estas unidades -creadas en virtud de un acuerdo con los sindicatos y la Junta de Andalucía- ha terminado en los tribunales después de que el Sindicato Médico Andaluz haya presentado una demanda en el juzgado en la que cuestiona la legalidad del procedimiento.Según informó el Sindicato Médico de Málaga (SMM), los elegidos para cubrir las 22 plazas eventuales que ha creado el SAS para estas unidades se habrían beneficiado de un supuesto trato de favor, aunque no sería ésta la única ilegalidad que advierten y que han puesto en manos de un juez.
+</div>
+<input type="button" value="Intercambio" onclick="cambiar()">
+</body>
+</html>

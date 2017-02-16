@@ -1,0 +1,50 @@
+<html>
+	<head><title>Tres en raya(fase 1)</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		.val{
+			background-color:yellow;
+			width:30;
+			height:35;
+			text-align:center;
+		}
+		.noval{
+			background-color:lime;
+			width:30;
+			height:35;
+			text-align:center;
+		}
+	</style>
+	<script languaje="JavaScript">
+		function cambiar(){
+			
+			if(event.srcElement.className == "val")
+				event.srcElement.className = "noval";
+			//Esto no se ha hecho en clase	
+			else if(event.srcElement.className == "noval")
+				event.srcElement.className = "val";
+		}
+		
+	</script>
+	</head>
+	<body onclick="cambiar()">
+	<h1 align=center>Tres en raya</h1>
+		<table border=5 cellpadding=0 cellspacing=5 align=center>
+			<tr>
+				<td class="val"></td>
+				<td class="val"> </td>
+				<td class="val"></td>
+			</tr>
+			<tr>
+				<td class="val"></td>
+				<td class="val"> </td>
+				<td class="val"></td>
+			</tr>
+			<tr>
+				<td class="val"></td>
+				<td class="val"> </td>
+				<td class="val"></td>
+			</tr>
+		</table>
+	</body>
+</html>

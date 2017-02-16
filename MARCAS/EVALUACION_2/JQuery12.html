@@ -1,0 +1,49 @@
+<html>
+<head>
+    <title>Animaciones2</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+         $("#flip").click(function(){
+             var div = $("#parrafoMovidolongo");
+             div.slideDown(5000); 
+         });
+         $("#para").click(function(){
+             $("#parrafoMovidolongo").stop();
+         })
+     });
+     </script>
+     <style>
+        #flip{
+            background-color: royalblue;
+            color: lemonchiffon;
+            padding: 5px;
+            font-size: 18;
+            font-family: Inconsolata;
+        }
+        #parrafoMovidolongo{
+            width: 500;
+            height: 100;
+            padding: 50px;
+            background-color: #666; 
+            color: magenta;
+            text-align: center;
+            font-size: 48;
+            font-family: Ubuntu;
+            border: solid, 13px, palegreen;
+            border-radius: 3px;
+            display: none;
+            
+        }
+     </style>
+</head>
+<body bgcolor="black">
+    <button id="para">Paraaaaaa!</button> <br><br>
+    <div id="flip">Click if (havingBalls = true);</div> 
+    <br>
+    <center>
+        <div id="parrafoMovidolongo" background-image="/img/ralph1.jpg">Feliz ano</div>
+    </center>
+    
+</body>
+</html>>

@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Ejercicio 4</title>
+
+	<style type="text/css">
+		#avion{
+			position: absolute;
+			top: 300;
+			left: 10;
+			width: 120;
+		}
+	</style>
+
+	<script type="text/javascript">
+		
+		var posicionX = 10;
+		const velocidadX = 10;
+		var posicionY = 300;
+		const velocidadY = 10;
+		var teclaPulsada = null;
+
+		function moverX(){
+			posicionX += velocidadX;
+			avion.style.left = posicionX;
+		}
+
+		function moverY(teclaPulsada){
+			//alert(teclaPulsada);
+			switch (teclaPulsada){
+				case "q":
+				posicionY-=velocidadY;
+				avion.style.top = posicionY;
+				posicionX += velocidadX;
+				avion.style.left = posicionX;
+				break;
+
+				case "a":
+					posicionY+=velocidadY;
+					avion.style.top = posicionY;
+					posicionX += velocidadX;
+					avion.style.left = posicionX;
+					break;
+			}
+			/*
+			posicionX += velocidadX;
+			avion.style.left = posicionX;
+				Lo quito de aqui para impedir que acelere si pulsas otra tecla
+			*/
+		}
+
+	</script>
+
+</head>
+<body background="img/cielo.jpg" onload="setInterval('moverX()', 100)" onkeypress="moverY(event.key)">
+	<img id="avion" src="img/avion.png">
+</body>
+</html>

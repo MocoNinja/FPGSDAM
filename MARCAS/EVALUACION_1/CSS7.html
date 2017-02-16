@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Elementos del objeto DOCUMENT</title>
+	<script language="JavaScript">
+		/*
+		* El documento es el objeto DOCUMENT
+		* La información la guarda en un objeto, ALL
+		*/
+		function mostrar(){
+			//Comandos ilustrativos para entender como se organiza
+			//alert(document);
+			//alert(document.all3434);
+			//alert(document.all);
+			//alert(document.all[0]);
+			//alert(document.all[0].tagName);
+			/*
+			for (i = 0; i < document.all.length; ++i)
+				//alert(document.all[i]);
+				alert(document.all[i].tagName);
+			*/
+			/*
+			* Esto es en general. Un objeto suele guardarse dentro de objetos, organizandose en vectores
+			* Ejemplo meter objeto movil y cartera en objeto bolsillo.
+			* La info se guarda en un vector
+			*/
+			/*
+			for (i = 0; i < document.images.length; ++i)
+				//alert(document.images[i].className);
+				//alert(document.images[i].tagName);
+			*/
+			alert("Acceso al vector de otra forma: " + document.images["segundo"].tagName)
+		}
+	</script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body onload="mostrar()">
+<img class="im1" src="Pics/fondoguay.gif">
+<img id="segundo" class="im2" src="Pics/praise.gif">
+</body>
+</html>

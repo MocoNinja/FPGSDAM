@@ -1,0 +1,57 @@
+<html>
+<head>
+	<title>Ejercicio 1</title>
+
+	<style type="text/css">
+
+		.foto{
+		    position: absolute;
+		    top: 40%;
+		    left: 40%;
+		}​
+		
+		#foto{
+			width: 350;
+			height: 350;
+		}
+
+	</style>
+
+	<script language="JavaScript">
+		const disminucion = 35;
+		var widthActual = 350;
+		var heightActual = 350;
+		const opacidadInicial = 1;
+		var opacidadActual = opacidadInicial;
+		var veces = 0;
+		function disminuye(){
+			//alert("entra");
+			opacidadActual -= 0.1;
+			heightActual -= disminucion;
+			widthActual -= disminucion;
+			//alert(heightActual);
+			foto.style.width = widthActual;
+			foto.style.height = heightActual;
+			foto.style.opacity = opacidadActual;
+			if (veces < 9){
+				veces++;
+				setTimeout('disminuye()', 1000);
+			} else{
+				alert("Adios!");
+			}
+		}
+	</script>
+</head>
+<body bgcolor="black">
+
+<div class="foto">
+	<img id="foto" src="img/ariel.jpg">
+</div>
+<br>
+<div>
+	<center>
+	<input type=button value="Disminuir" onclick="disminuye()">
+</div>
+	
+</body>
+</html>

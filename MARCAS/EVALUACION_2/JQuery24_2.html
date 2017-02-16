@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Encendiendo Bombillas</title>
+        <style>
+        body{
+            background-color: black;
+        }
+        p{
+            position: absolute;
+            top: 250;
+            left: 90;
+            color: springgreen;
+        }
+            #tracer{
+                position: absolute;
+                height: 120;
+                top: 300;
+                left: 125;
+            }
+             #on{
+                position: absolute;
+                height: 100;
+                width: 80;
+                top: 100;
+                left: 10;
+            }
+            #off{
+                position: absolute;
+                height: 100;
+                width: 80;
+                top: 100;
+                left: 10;
+            }
+            .sub {
+                visibility: hidden;
+             }
+            .tracer2:hover + #bombilla{ 
+                visibility: visible;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="primero">
+            <img class="tracer2" id="tracer" src="img/Tracer1.png"> <!-- INTERRUPTOR -->
+            <div id="bombilla">
+                <img src="img/bombilla_off.jpg"> <!-- SIEMPRE VISIBLE, SERÁ TAPADA -->
+            </div>
+        </div>
+        
+        
+        
+    </body>
+</html>

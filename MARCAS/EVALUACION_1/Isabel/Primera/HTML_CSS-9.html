@@ -1,0 +1,58 @@
+﻿<html>
+	<head><title>Elementos del objeto DOCUMENT</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+	/*
+	z-index (valor entero): cuanto menos, mas adelante sale la imagen (es decir, delante o detras de las otras)
+	en javascript no es z-index, sino zIndex
+	*/
+		#circulo{
+			position: absolute;left: 100;top: 500;
+		}
+		#cruz{
+			position: absolute;left: 50;top: 300;
+		}
+		#symmetra{
+			position: absolute;left: 25;top: 100;
+		}
+
+	</style>
+	<script languaje="JavaScript">
+	//Onclick->hacer click y soltar, onmousedown-> hacer click y soltar, y onmouseup-> es soltar al hacer click
+	//event.x es la posicion en el eje de las x y evento.y en el eje de las y
+	//mover el circulo
+		puntero = null; //luego le ha cambiado el nombre a objeto
+		relieve = 2;
+		function cargar() {
+			//alert(event.x);
+			if (event.srcElement.tagName == "IMG") {
+				//puntero = event.srcElement.id; //id es un String, no un objeto (objeto = puntero)
+				puntero = event.srcElement; //objeto event que tiene la dirección del objeto que seleccionamos (la imagen)
+				//Haciendo esto, estamos haciendo que el puntero tenga la direccion de memoria del objeto clickado
+				//alert(puntero);
+				puntero.style.zIndex = relieve;
+				relieve++;
+			}
+			
+		}
+		function soltar() {
+			//alert(event.y);
+			if(puntero != null)
+				puntero = null;
+		}
+		function mover(){
+			if(puntero != null){
+				puntero.style.left = event.x - 50;
+				puntero.style.top = event.y - 50;
+			}
+		}
+
+	</script>
+	</head>
+	
+	<body onmousedown="cargar()" onmouseup="soltar()" onmousemove="mover(); event.returnValue=false;" >
+		<img id="circulo" src="imagenes/circulo.png" width: "100px" height="100px">
+		<img id="cruz" src="imagenes/cruz.png" width: "100px" height="100px">
+		<img id="symmetra" src="imagenes/symmetra.jpg" width: "100px" height="100px">
+	</body>
+</html>

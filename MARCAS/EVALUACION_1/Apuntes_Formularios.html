@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Formularios</title>
+</head>
+<body bgcolor="black" text="yellow">
+	<h1 align="center">Formularios</h1>
+	<p>Los formularios permiten seleccionar o introducir información de forma controlada. Hay varios tipos y con diversas opciones. Por ejemplo:<br></p>
+	<p>
+		<h2>Entrada de texto</h4>
+		<form align = "center" >
+			<input type="text" size="10" maxlength="5" id="Nombre" name="Nombre">
+		</form>
+	<br><br>
+	</p>
+	<p>
+		<h2>Desplegable</h2>
+		<select>
+			<option value="2">Alternativo</option>
+			<option selected value="1">Predeterminado</option>
+		</select>
+	<br><br>
+	</p>
+	<p>
+		<h2>Lista Seleccionable</h2>
+			<input name="edad" type="radio" value=a> Menor de 20<br>
+			Mayor de 20 <input name="edad" type="radio" value=b><br>
+			<input name="edad" type="radio" value=a> Menor de 10<br>
+			A tí que te importa<input checked name="edad" type="radio" value=c> <br>
+	<br>
+	</p>
+	<p>
+		<h2>Checkboxes</h2>
+		Ilustramos además la posibilidad de introducir y combinar estos elementos en una tabla:<br>
+			<table align="center" border="1">
+				<tr>
+					<td>Deporte:</td>
+					<td>Futbol<input type="checkbox" name="box" value=1></td>
+					<td>Baloncesto<input type="checkbox" name="box" value=2></td>
+					<td>Tenis <input type="checkbox" name="box" value=3></td>
+				</tr>
+				<tr>
+					<td align="right">Comentario: </td>
+					<td><textarea name="comentario" cols="40" rows="4">Este comentario está preescrito...</textarea>
+				</tr>
+				<tr>
+					<td><input type="submit" name="No me pulses!"></td>
+					<td><input type="reset" name="No me pulses!"></td>
+				</tr>
+			</table>
+	<br><br>
+	</p>
+	<p align="center"><a href="Apuntes_Home.html">Volver a Home</a></p>
+</body>
+</html>

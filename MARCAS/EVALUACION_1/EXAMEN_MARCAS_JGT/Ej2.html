@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Ej2</title>
+	<script type="text/javascript">
+
+		var ymin = 55;
+		var ymax = 90;
+
+		function cargar(){
+			document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 1 + ".jpg width=30 height=35>";
+			for (var i = 1; i <= 4; i++){
+				document.getElementById(i).innerHTML = "<IMG src=img/imagen" + i + ".jpg width=30 height=35>";
+			}
+		}
+		
+		function clickar(){
+
+
+			/*
+					IBA a hacerlo cogiendo ids del elemento clickado y cambiandolas como dios manda, pero se me acaba el tiempo y me esta dando errores de que no detecta las ids correctas, así que lo hago según la posición del ratón
+					Por eso solo sale si tienes mi misma pantalla con el navegador maximizado
+			*/
+
+			/*
+			*/
+
+			//alert(event.srcElement.tagName);
+			if((event.srcElement.tagName) == "IMG"){
+
+				//alert(event.x);
+				//alert(event.y);
+				/*
+				y's van de 56 a 90
+				img1: 93 -122
+				img2: 128 -157
+				img3: 163 - 192
+				img4: 198 - 226
+				*/
+				if (event.y >= ymin && event.y <= ymax){
+					if (event.x >= 93 && event.x <= 122){
+						document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 1 + ".jpg width=30 height=35>";
+					}
+					if (event.x >= 128 && event.x <= 157){
+						document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 2 + ".jpg width=30 height=35>";
+					}
+					if (event.x >= 163 && event.x <= 192){
+						document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 3 + ".jpg width=30 height=35>";
+					}
+					if (event.x >= 198 && event.x <= 226){
+						document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 4 + ".jpg width=30 height=35>";
+					}
+				}
+				//document.getElementById(0).innerHTML = "<IMG src=img/imagen" + 3 + ".jpg width=30 height=35>";
+				}
+		}
+
+	</script>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body onload="cargar()" onclick="clickar()">
+<table border=5 cellpadding=1 cellspacing=1 align=center>
+	<tr>
+		<td colspan=4 id="0"></td>
+	</tr>
+	<tr>
+		<td id="1"> </td> 
+		<td id="2"> </td> 
+		<td id="3"> </td> 
+		<td id="4"> </td>
+	</tr>
+</table>
+</body>
+</html>

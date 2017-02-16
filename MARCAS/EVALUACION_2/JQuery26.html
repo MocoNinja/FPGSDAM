@@ -1,0 +1,76 @@
+<html>
+    <!-- Slide continuo up and down, con un Solo click-->
+    <head>
+        <title>Visible y oculto</title>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#boton").click(function(){
+                    $("#elDiv").slideUp(500, function(){
+                        $("#elDiv").slideDown(500);
+                    });
+                    // setInterval("animacion()", 100);
+                });
+            });
+            function animacion(){ // No es lo que pedía
+                // $("#elDiv").slideUp(1000);
+                // $("#elDiv").slideDown(1000);
+                $("#elDiv").slideToggle(500);
+            }
+            /*
+            $("#caja").cc({
+                width:"200px",
+                height:"15px",
+                ...
+
+            })
+            */
+
+        </script>
+        <style>
+        #elDiv{
+            background-color: hotpink;
+            height: 500;
+            border-style: solid;
+            border-color: green;
+        }
+        #elDivs{
+            background-color: yellow;
+            height: 500;
+            border-style: solid;
+            border-color: red;
+        }
+        #elDiv2s{
+            background-color: cyan;
+            height: 500;
+            border-style: solid;
+            border-color: red;
+        }
+        #elDiv3s{
+            background-color: deeppink;
+            height: 500;
+            border-style: solid;
+            border-color: red;
+        }
+        #info{
+            text-align: center;
+            color: darkcyan: ;
+            font-family: Consolas;
+        }
+        </style>
+    </head>
+    <body>
+        <input type="button" id="boton" value="rave">
+        <br><br>
+        <div id="elDiv">
+        </div>
+        
+        <div id="elDivs">
+        </div>
+        <div id="elDiv2s">
+        </div>
+        <div id="elDiv3s">
+        </div>
+        
+    </body>
+</html>

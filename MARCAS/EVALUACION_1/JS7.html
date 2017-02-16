@@ -1,0 +1,53 @@
+<html>
+<head>
+	<title>Reloj Digital con JavaScript</title>
+</head>
+<script language="JavaScript">
+	/*No todos los eventos pueden ir en todas las marcas*/
+	/*onload solo tiene sentido en el body*/
+		/* 
+		* Si inmediato: iif. Es un if en una sola linea
+		* Sintaxis JS: ("Condicion a checkear")?"se ejecuta si es cierto":"se ejecuta si es falso";
+		*/
+		/*
+		* Funciones nuevas: Las que empiezan por set, son de configuración
+		* setTimeout(string, entero);
+		* El string (va entre comillas) son instrucciones en JavScript
+		* Se suele usar una llamada a una funcion, pero deja ponerlas seguidas
+		* El entero es el numero de milisegundos entre ejecuciones de la string
+		* Esto lo hace una sola vez
+		* * * *
+		* Existe la funcion setInterval(string, entero);
+		* Aqui el entero indica los milisegundos entre llamadas a la funcion
+		* LA FUNCIÓN SE EJECUTARÁ INFINITAS VECES
+		*/
+	function reloj(){
+		var fecha = new Date();
+		var hora = fecha.getHours();
+		var minuto = fecha.getMinutes();
+		var segundo = fecha.getSeconds();
+		var horaStr = "";
+			horaStr += ((hora < 10)?"0":"") + hora;
+			horaStr += " : ";
+			horaStr += ((minuto < 10)?"0":"") + minuto;
+			/*horaStr += ((minuto < 10)?":0":":") + minuto;*/ /*ahorra lineas*/
+			horaStr += " : ";
+			horaStr += ((segundo < 10)?"0":"") + segundo;
+			caja.value = horaStr;
+			setTimeout("reloj()", 1000); //esto hace que no tarde un segundo
+		}
+		function refrescar(){
+			setInterval("reloj()", 1000);
+		}
+</script>
+<!--background="Pics/Doge_4.gif"-->  
+<!--<body bgcolor="pink" background="Pics/Doge_4.gif" onload="refrescar()">-->
+<body bgcolor="pink" background="Pics/Doge_4.gif" onload="reloj()">
+
+<center> <!--Marca Desfasada!!!!-->
+	<h1>Reloj en JavaScript!!1!!</h1>
+	<input name="caja" id="caja" size="8" align="center"> 
+	<!--name:dentro del formulario; id: fuera-->
+</center>
+</body>
+</html>

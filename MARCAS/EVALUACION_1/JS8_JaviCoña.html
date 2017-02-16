@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuenta atrás</title>
+</head>
+	<script language="JavaScript">
+	/*
+	* Cuenta atras desde 100 hasta 0
+	* Pero en plan cronometro
+	*/
+	var contador = 5;
+	function iterar(){
+		caja.value = contador - 2;
+		--contador;
+		if (contador >= 0){
+			arielmejorperroever(contador);
+			setTimeout("iterar()", 1000);
+		}	
+	}
+	function arielmejorperroever(contador){
+		if(contador == 0){
+			alert("PERRO DIABÓLICO DESPERTÓ!!!!");
+			document.write("<p align=center background=black>");
+			document.write("<font color=red size = 160> YOU DIED </font>");
+			document.write("<br>")
+			document.write("<br>")
+			document.write("<br>")
+			document.write("<br>")
+			document.write("<img src=Pics/pesioso.jpg>");
+			document.write("</p>");
+		}
+	}
+	</script>
+<body bgcolor="black" background="Pics/dormido.jpg" onload='iterar()'>
+	<center>
+		<font color="red">
+		<h1>OJO CON EL BICHICO!</h1>
+		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+		<input id="caja" size = 3>
+		</font>
+	</center>
+</body>
+</html>

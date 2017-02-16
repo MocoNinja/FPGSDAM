@@ -1,0 +1,55 @@
+<html>
+<head>
+	<title>Repasando los movimientos mediante CSS</title>
+	<script type="text/javascript">
+		var objeto = null;
+
+		function coger(){
+			//alert(event.srcElement.tagName);
+			if (event.srcElement.tagName == "IMG"){
+				//alert("Es una foto");
+				objeto = event.srcElement;
+			//alert(event.srcElement.id);
+			//alert(objeto);
+			}
+		}
+
+		function soltar(){
+			if (objeto != null){
+				//alert(objeto);
+				objeto = null;
+				//alert(objeto);
+			}
+		}
+
+		function mover(){
+			if (objeto != null){
+				objeto.style.left = event.x;
+				objeto.style.top = event.y;
+			}
+		}
+	</script>
+	<style type="text/css">
+		#cara{
+			position: absolute;
+			top: 200;
+			left: 600;
+		}
+		#sloth{
+			position: absolute;
+			top: 600;
+			left: 300;
+		}
+		#guapo{
+			position: absolute;
+			top: 100;
+			left: 100;
+		}
+	</style>
+</head>
+<body onmousedown="coger()" onmouseup="soltar()" onmousemove="mover(); event.returnValue = false">
+	<img src="img/face.png" id="cara" width="250"> 
+	<img src="img/sloth1.jpg" id="sloth" width="250">
+	<img src="img/ariel2.jpg" id="guapo" width="250">
+</body>
+</html>
