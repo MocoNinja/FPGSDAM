@@ -9,13 +9,17 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.awt.*;
 
 
 public class ArkanoidApp extends Applet implements Runnable 
 {
 	public static final int FILAS = 5, COLUMNAS = 10;
 	public static final int ANCHO = 58,  ALTO = 20;
+	public static final int ANCHO_BARRA = ANCHO * 2;
 	public static final int ESPACIO = 2;
+	
+	public static final int DCHA = 0, IZQ = 1;
 	
 	Color[] colores = {Color.RED, Color.CYAN, Color.GREEN, Color.ORANGE, Color.MAGENTA};
 	List<Block> pared = new ArrayList<Block>(FILAS*COLUMNAS);
@@ -24,12 +28,12 @@ public class ArkanoidApp extends Applet implements Runnable
 	Image image;
 	Graphics ninja;
 	Pelota bola;
-	Block barra;
+	Barra barra;
 	
 	public void init()
 	{
 		setupLadrillos();
-		barra = new Block(300, 550, 600, 20, Color.WHITE);
+		barra = new Barra(ANCHO_BARRA, ALTO);
 		bola = new Pelota();
 	}
 	public void start()
@@ -59,7 +63,7 @@ public class ArkanoidApp extends Applet implements Runnable
 		setBackground(Color.BLACK);
 		bola.pinta(fake);
 		barra.pinta(fake);
-		for (int i = 0; i < FILAS*COLUMNAS; i++)
+		for (int i = 0; i < pared.size(); i++)
 		{
 				pared.get(i).pinta(fake);
 		}
@@ -75,21 +79,29 @@ public class ArkanoidApp extends Applet implements Runnable
 			}
 		}
 	}
+	/*
 	public boolean mouseMove(Event e, int x, int y)
 	{
-		barra.x = x;
-		barra.y = y;
+		if (x < 600 - ANCHO_BARRA)
+			barra.x = x;
+		//barra.y = y;
 	return true;
 	}
-	public void keyPress(KeyEvent e) {
-        switch(e.getKeyCode()) {
-        case KeyEvent.VK_LEFT:
-            barra.x -= 10;
-            break;
-        case KeyEvent.VK_RIGHT:
-        	barra.x += 10;
-            break;
-        }
-    }
+	*/
+	
+	public boolean keyDown( Event e, int key )
+	   {
+	      System.out.println(key);
+	      switch (key) {
+				case 49 :
+					barra.mueve(IZQ);
+					break;
+		
+				case 51 :
+					barra.mueve(DCHA);
+					break;
+				}
+	      return true;  
+	   }
 }
 
