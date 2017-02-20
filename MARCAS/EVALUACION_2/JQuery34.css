@@ -13,54 +13,139 @@ h1
 
 }
 
-ul
-{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;  
+ul {
+	list-style-type: none;
+	padding: 0;
+	margin:0;
+	text-align: center;
+}
+li{
+	display:inline-block;
+	padding:5px;
+	border:1px outset #375F85;
+	background-color:#375F85;
+	color:white;
+	width:100px;
+	position:relative;
 }
 
-li
-{
-    position: relative;
-    display: inline-block;
-    padding: 5px;
-    border: 2px,outset,yellow;
-    background-color: deepskyblue;
-    color:red;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 14pt;
-    width: 100px;
-    text-align: center;
+#menuHorizontal{
+	text-align:center;
+/*width: 200px;*/
 }
-
-#menuHorizontal
-{
-    text-align: center;
-}
-
-.submenu
-{
+.submenu {
 	position: absolute;
 	top: 30px;
-    left: 1px;
-    display: none;
+	left: 1px;
+	display: none;
+	box-shadow:0px 5px 5px #000;
+	border-radius:0px 0px 10px 10px;
+	-moz-animation-duration:0.8s;
+    -webkit-animation-duration:0.8s;
 }
-
-.submenu.li
+.submenu li:last-child{
+	border-radius:0px 0px 10px 10px;
+}
+.submenu>li
 {
     display: block;
-}
+    -moz-transform: scale(1.1);
 
-#menuHorizontal li:hover /*Los li inmediatamente ligados a menu*/
-{
-	background-color:fuchsia;
-	color:lavenderblush;
-	cursor:pointer;
 }
-
-#menuHorizontal li:hover ul  /*Lo de antes pero cogemos los ul DE ESE*/
-{
+/*El signo mayor son todos los que esten inmediatamente despues*/
+.submenu>li {
 	display:block;
-	
+}
+
+.submenu>li:hover
+{
+	background: lime !important; /*Isa's Wisdom*/
+	border: 1px outset #2B4A68;
+	padding: 2px;
+    padding-top:10px;
+	box-shadow:0px 0px 4px pink;
+	border:1px outset #D0DBE6;
+    z-index: 2;
+    -moz-animation-name: botonsubmenu;
+}
+
+@-moz-keyframes botonsubmenu
+{
+    0%
+    {
+        text-shadow: 200px 2px 20px #375F85;
+    }
+    50%
+    {
+        -moz-transform: scale(1.3);
+        border-radius: 5px;
+    }
+    100%
+    {
+        -moz-transform: scale(1.1);
+        text-shadow: 2px 2px 1px #375F85;
+    }
+}
+
+#menuHorizontal>li:hover 
+{
+    background-color:#abc;
+	padding-top:10px;
+	box-shadow:0px 0px 4px #375F85;
+	border-radius:10px;
+	border:1px outset #D0DBE6;
+}
+
+#menuHorizontal li:hover {
+	background-color: #2B4A68;
+	color: white;
+	cursor: pointer;
+}
+#menuHorizontal li:hover ul {
+	display: block;
+	-moz-animation-name:submenu;
+    -webkit-animation-name:submenu;
+} 
+
+@-moz-keyframes submenu{ /*Estos - hacen referencia a navegadores*/
+	0%{
+		opacity:0;
+		left:-150px;
+	}
+    50%
+    {
+        -moz-transform: skew(10deg);
+        box-shadow: -10px,4px,8px,5px,springgreen;
+    }
+	100%{
+		opacity:1;
+		left:1px;
+	}
+
+}
+
+@-webkit-keyframes submenu{ /*Estos - hacen referencia a navegadores*/
+	0%{
+		opacity:0;
+		left:-150px;
+	}
+     50%
+    {
+        -webkit-transform:skew(10deg);
+        box-shadow: -10px,4px,8px,5px,springgreen;
+    }
+	100%{
+		opacity:1;
+		left:1px;
+	}
+
+}
+
+
+#menuHorizontal>li:first-child{
+	background-color:#D0DBE6;
+	padding-top:10px;
+	box-shadow:0px 0px 4px #375F85;
+	border-radius:10px;
+	border:1px outset #D0DBE6;
 }
