@@ -133,3 +133,20 @@ Pasamos a 2); 192.168.1.32  broadcast 192.168.1.63  - .....33 -> .....62
 4) 192.168.1.96    broadcast 192.168.1.127
 
 
+Ejercicios subnetting:
+
+1)
+192.168.154.0 -> clase C
+subredes 1->6 ,2->10,3->60,4->45 mascara2552552550
+
+1º Subred con más host para que entren todos: red 3
+2**6 - 2 = 62 -> caben los 60
+
+1) 0 0 | 0 0 0  0 0 0        Subred: 1 1 | 0 0 0  0 0 0    Mascara: 255.255.255.128 Broadcast: 192.168.154.63; rango: 192.168.154.1->192.168.154.60
+2) 0 1 | 0 0 0  0 0 0        Subred: 1 1 | 0 0 0  0 0 0 
+3) 1 0 | 0 0 0  0 0 0        Subred: 1 1 | 0 0 0  0 0 0 
+4) 1 1 | 0 0 0  0 0 0        Subred: 1 1 | 0 0 0  0 0 0 
+
+2)
+128.77.0.0 255.255.0.0 Clase B
+1 -> 230 2->1000 3->60 4->300
