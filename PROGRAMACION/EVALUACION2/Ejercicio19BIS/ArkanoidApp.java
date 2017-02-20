@@ -1,14 +1,13 @@
 package Ejercicio19BIS;
 
 import java.applet.Applet;
-import java.awt.Color;
-import java.awt.Event;
-import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import Ejercicio17REMADE.Pelota;
+
 import java.awt.*;
 
 
@@ -24,9 +23,10 @@ public class ArkanoidApp extends Applet implements Runnable
 	Color[] colores = {Color.RED, Color.CYAN, Color.GREEN, Color.ORANGE, Color.MAGENTA};
 	List<Block> pared = new ArrayList<Block>(FILAS*COLUMNAS);
 	
-	Thread juego;
-	Image image;
 	Graphics ninja;
+	Image imagen;
+	
+	Thread juego;
 	Pelota bola;
 	Barra barra;
 	
@@ -54,19 +54,37 @@ public class ArkanoidApp extends Applet implements Runnable
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+			if (bola.derrota || pared.size() == 0)
+			{
+				System.exit(0);
+			}
 		}
 	}
 	
 	
-	public void paint(Graphics fake)
-	{
+	
+	public void paint (Graphics gg){
+		imagen = this.createImage(HEIGHT, WIDTH);
+		ninja = imagen.getGraphics();
 		setBackground(Color.BLACK);
-		bola.pinta(fake);
-		barra.pinta(fake);
-		for (int i = 0; i < pared.size(); i++)
+		
+		if (bola.derrota)
 		{
-				pared.get(i).pinta(fake);
+			ninja.setColor(Color.RED);
+			ninja.setFont(new Font("Comic Sans MS",Font.PLAIN, 48));
+			ninja.drawString("Congraturation", 200, 400); 
+			ninja.drawString("Eres el master de las pelotas", 100, 600);
+		} 
+		else
+		{
+			bola.pinta(ninja);
+			barra.pinta(ninja);
+			for (int i = 0; i < pared.size(); i++)
+			{
+				pared.get(i).pinta(ninja);
+			}
 		}
+		gg.drawImage(imagen, 0, 0, this);
 	}
 	
 	public void setupLadrillos()

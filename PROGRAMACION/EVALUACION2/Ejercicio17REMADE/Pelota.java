@@ -3,7 +3,11 @@ package Ejercicio17REMADE;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.List;
 import java.util.Random;
+
+import Ejercicio19BIS.Barra;
+import Ejercicio19BIS.Block;
 
 public class Pelota extends Rectangle{
 	
@@ -18,6 +22,7 @@ public class Pelota extends Rectangle{
 	
 	int xSpeed, ySpeed;
 	int yAcc = -1, xAcc = 1;
+	public boolean derrota;
 	
 	
 	public Pelota()
@@ -55,7 +60,7 @@ public class Pelota extends Rectangle{
 			height = width;
 		}
 	}
-	public void mueve(){
+	public void mueve(List<Block> pared, Barra barra){
 		
 		if (x >= PARED_D){
 			color = colores[rand.nextInt(colores.length)];

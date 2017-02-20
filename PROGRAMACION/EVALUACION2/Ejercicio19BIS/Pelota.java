@@ -12,13 +12,16 @@ public class Pelota extends Block{
 	final static int TECHO = 10, SUELO = 600;
 	final static int PARED_I = 10, PARED_D = 600;
 	
-	int xSpeed = 1, ySpeed = 1;
+	int xSpeed = 2, ySpeed = 2;
 	int yAcc = -1, xAcc = 1;
 	Rectangle objetivo;
+	
+	boolean derrota;
 	
 	public Pelota()
 	{
 		super(posX, posY, RADIO, RADIO, Color.RED);
+		derrota = false;
 	}
 	
 	public void mueve(List<Block> pared, Rectangle raqueta)
@@ -51,7 +54,7 @@ public class Pelota extends Block{
 			xAcc *= -1;
 		}
 		if (y >= SUELO){
-			yAcc = -1;
+			derrota = true;
 		}
 		
 		x += (xSpeed * xAcc);
