@@ -1,0 +1,3 @@
+Entre Access y MySql hay 7 diferencias ppales:
+
+* En vez de delete * from -> delete from

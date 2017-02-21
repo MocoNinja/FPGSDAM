@@ -1,0 +1,4 @@
+* Directorio de archivos: XAMPP/HTDOCS
+    - Porque estamos trabajando en un servidor local y hay que dejarlo ahí.
+
+* Codificación: unicode internacional (utf8_unicode_ci)
