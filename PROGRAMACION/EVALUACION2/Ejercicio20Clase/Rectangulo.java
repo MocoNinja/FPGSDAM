@@ -7,7 +7,8 @@ public class Rectangulo extends Figura
 {
 	public Rectangulo()
 	{
-		super(Color.RED);
+		super();
+		color = Color.RED;
 	}
 
 	public void dibujar(Graphics g) {
