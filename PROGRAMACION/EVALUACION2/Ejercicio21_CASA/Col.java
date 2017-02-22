@@ -1,4 +1,4 @@
-package FlappyBird;
+package Ejercicio21_CASA;
 
 import java.awt.Color;
 import java.awt.Graphics;

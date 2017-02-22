@@ -1,4 +1,4 @@
-package Ejercicio19BIS;
+package Ejercicio19;
 
 import java.awt.Color;
 import java.awt.Graphics;

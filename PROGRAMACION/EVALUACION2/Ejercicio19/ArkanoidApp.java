@@ -4,106 +4,121 @@ import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Event;
 import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+import java.awt.Font;
 
-import Ejercicio17REMADE.Pelota;
 
 public class ArkanoidApp extends Applet implements Runnable 
 {
-	final int FILAS_LADRILLOS = 5, COLUMNAS_LADRILLOS = 10;
+	public static final int FILAS = 5, COLUMNAS = 10;
+	public static final int ANCHO = 58,  ALTO = 20;
+	public static final int ANCHO_BARRA = ANCHO * 2;
+	public static final int ESPACIO = 2;
 	
-	Block[][] ladrillos = new Block[FILAS_LADRILLOS][COLUMNAS_LADRILLOS];
+	public static final int DCHA = 0, IZQ = 1;
+	
 	Color[] colores = {Color.RED, Color.CYAN, Color.GREEN, Color.ORANGE, Color.MAGENTA};
+	List<Block> pared = new ArrayList<Block>();
 	
-	Bola bola;
+	Graphics ninja;
+	Image imagen;
 	
 	Thread juego;
+	Pelota bola;
+	Barra barra;
 	
 	public void init()
 	{
 		setupLadrillos();
-		setupBola();
+		barra = new Barra(ANCHO_BARRA, ALTO);
+		bola = new Pelota();
 	}
 	public void start()
 	{
 		juego = new Thread(this);
 		juego.start();
-		
 	}
 	
 	public void run() 
 	{
 		while(true)
 		{
-			bola.mueve();
-			for (int fila = 0; fila < FILAS_LADRILLOS; fila++)
-			{
-				for (int columna = 0; columna < COLUMNAS_LADRILLOS; columna++)
-				{
-					if (ladrillos[fila][columna].contains(bola))
-					{
-					if (!ladrillos[fila][columna].tangible)
-					{
-						break;
-					}
-						bola.yAcc *= -1;
-						ladrillos[fila][columna].color = (Color.WHITE);
-						ladrillos[fila][columna].tangible = false;
-					}
-				}
-			}
-			try{
-				Thread.sleep(45);
-				repaint();
-			}
-			catch (InterruptedException e){
+			bola.mueve(pared, barra);
+			repaint();
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
 				e.printStackTrace();
-			};
+			}
+			if (bola.derrota || pared.size() == 0)
+			{
+				System.exit(0);
+			}
 		}
 	}
 	
 	
-	public void paint(Graphics fake)
-	{
-		for (int fila = 0; fila < FILAS_LADRILLOS; fila++)
+	
+	public void paint (Graphics gg){
+		imagen = this.createImage(HEIGHT, WIDTH);
+		ninja = imagen.getGraphics();
+		setBackground(Color.BLACK);
+		
+		if (bola.derrota)
 		{
-			for (int columna = 0; columna < COLUMNAS_LADRILLOS; columna++)
+			ninja.setColor(Color.RED);
+			ninja.setFont(new Font("Comic Sans MS",Font.PLAIN, 48));
+			ninja.drawString("Congraturation", 200, 400); 
+			ninja.drawString("Eres el master de las pelotas", 100, 600);
+		} 
+		else
+		{
+			bola.pinta(ninja);
+			barra.pinta(ninja);
+			for (int i = 0; i < pared.size(); i++)
 			{
-				ladrillos[fila][columna].pinta(fake);
+				pared.get(i).pinta(ninja);
 			}
 		}
-		bola.pinta(fake);
+		gg.drawImage(imagen, 0, 0, this);
 	}
 	
 	public void setupLadrillos()
 	{
-		int posXLadrillo;
-		int posYLadrillo = 0;
-		Color colorFilaLadrillos;
-		for (int fila = 0; fila < FILAS_LADRILLOS; fila++)
+		for (int fila = 0; fila < FILAS; fila++)
 		{
-			colorFilaLadrillos = colores[fila];
-			posXLadrillo = 0;
-			for (int columna = 0; columna < COLUMNAS_LADRILLOS; columna++)
+			for (int columna = 0; columna < COLUMNAS; columna++)
 			{
-				ladrillos[fila][columna] = new Block(
-						posXLadrillo + (columna*60), 
-						posYLadrillo + (fila*20), 
-						colorFilaLadrillos, Block.
-						LADRILLO);
-				posXLadrillo++;
+				pared.add(new Block(columna*(ANCHO + ESPACIO) + ESPACIO, fila*(ALTO + ESPACIO) + ESPACIO, ANCHO, ALTO, colores[fila]));
 			}
-			posYLadrillo++;
 		}
 	}
-	
-	public void setupBola()
+	/*
+	public boolean mouseMove(Event e, int x, int y)
 	{
-		bola = new Bola();
+		if (x < 600 - ANCHO_BARRA)
+			barra.x = x;
+		//barra.y = y;
+	return true;
 	}
+	*/
 	
-	public boolean mouseDown(Event ev, int x, int y)
-	{
-	return false;
-	}
+	public boolean keyDown(Event e, int key )
+	   {
+	      System.out.println(key);
+	      switch (key) {
+				case 49 :
+					barra.mueve(IZQ);
+					break;
+		
+				case 51 :
+					barra.mueve(DCHA);
+					break;
+				}
+	      return true;  
+	   }
 }
-
