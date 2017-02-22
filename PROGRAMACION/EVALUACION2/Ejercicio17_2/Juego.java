@@ -1,4 +1,4 @@
-package Ejercicio17REMADE;
+package Ejercicio17_2;
 
 import java.applet.Applet;
 import java.awt.Color;
@@ -57,7 +57,7 @@ public class Juego extends Applet implements Runnable
 				break;
 			}
 			for (int i = 0; i < listica.size(); i++){
-				listica.get(i).mueve();
+				listica.get(i).mueve(listica);
 			}
 			try{
 				Thread.sleep(45);
