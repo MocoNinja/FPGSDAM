@@ -13,7 +13,7 @@ public class Pj extends Rectangle{
 	final int TECHO = 0, SUELO = App.HEIGHT - alto;
 	final int PARED_I = 0, PARED_D = App.WIDTH - ancho;
 	
-	int vY = 1;
+	int vY = 3;
 	boolean vivo = true;
 	
 	public Pj()

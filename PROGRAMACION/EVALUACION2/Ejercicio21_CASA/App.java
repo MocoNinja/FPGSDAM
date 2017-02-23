@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class App extends Applet implements Runnable{
 	
 	Thread ui;
@@ -17,14 +18,21 @@ public class App extends Applet implements Runnable{
 	List<Col> paredes;
 	
 	final static int WIDTH = 600, HEIGHT = 600;
-	final int PAREDES_MAX = 2;
+	final int PAREDES_MAX = 3;
+	int puntuacion = 0;
+	String puntos;
+	boolean suma = true;
+	String nivel = "";
 	
 	public void init()
 	{
 		setBackground(Color.BLACK);
 		pajaro = new Pj();
 		paredes = new ArrayList<Col>();
-		paredes.add(new Col());
+		for (int i = 0; i < PAREDES_MAX; i++)
+		{
+			paredes.add(new Col(i));
+		}
 	}
 	
 	public void start()
@@ -68,26 +76,42 @@ public class App extends Applet implements Runnable{
 		{
 			paredes.get(i).dibujar(g);
 		}
+		puntos = "";
+		puntos += nivel + " "+ puntuacion;
+		g.drawString(puntos, WIDTH-20, HEIGHT - 20);
 	}
 	
 	public void paredes()
 	{
-		if (paredes.size() < PAREDES_MAX && paredes.get(0).getX() <= WIDTH/2)
+		if (paredes.get(0).getX() < pajaro.x && suma)
 		{
-			paredes.add(new Col());
+			puntuacion++;
+			suma = false;
 		}
 		
-		if (paredes.get(0).getX() <= -10)
+		if (paredes.get(0).getX() <= 5)
 		{
 			paredes.remove(paredes.get(0));
-			paredes.add(new Col());
+			suma = true;
+			paredes.add(new Col(paredes.size()));
+		}
+		
+		if (paredes.size() <= PAREDES_MAX)
+		{
+			paredes.add(new Col(paredes.size()));
+		}
+		if (puntuacion > PAREDES_MAX)
+		{
+			Col.vX++;
+			nivel += "·";
+			puntuacion = 0;
 		}
 	}
 	
 	public boolean mouseDown(Event ev, int x, int y)
 	{
 		// System.out.println("Pulsado");
-		pajaro.y -= 30;
+		pajaro.y -= 45;
 		return true;
 	}
 }

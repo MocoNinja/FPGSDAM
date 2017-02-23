@@ -9,18 +9,18 @@ public class Col{
 
 	Rectangle r1, r2;
 	Color color;
-	final int ANCHO = 10, HUECO = 10;
-	final int ESPACIO_FIGURA = 75;
+	final int ANCHO = 10, HUECO = 120;
+	final int ESPACIO_FIGURA = 200;
 	Random rand = new Random();
 	int alto; 
-	int vX = 1;
+	static int vX = 1;
 	
-	public Col()
+	public Col(int n)
 	{
 		color = Color.WHITE;
 		alto = rand.nextInt(App.HEIGHT/2);
-		r1 = new Rectangle(App.WIDTH, 0, ANCHO, alto);
-		r2 = new Rectangle(App.WIDTH, alto + ESPACIO_FIGURA, ANCHO, App.HEIGHT - alto);
+		r1 = new Rectangle(App.WIDTH + n*ESPACIO_FIGURA, 0, ANCHO, alto);
+		r2 = new Rectangle(App.WIDTH + n*ESPACIO_FIGURA, alto + HUECO, ANCHO, App.HEIGHT - alto);
 	}
 	
 	public void dibujar(Graphics gg)
