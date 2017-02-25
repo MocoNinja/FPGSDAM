@@ -1,0 +1,47 @@
+<html>
+<head><title>Menú Ajax Pestañas</title>
+<link rel="stylesheet" href="Ejercicio24.css" type="text/css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(){
+	$(".contenedor div").hide();
+	$("ul.tabs li:first").addClass("activa");
+	$(".contenedor div:first").show();
+	$("ul.tabs li").click(function(){
+		$("ul.tabs li").removeClass("activa");
+		$(this).addClass("activa");
+		$(".contenedor div").hide();
+		var parrafoAActivar = $(this).find("a").attr("href");
+		$(parrafoAActivar).fadeIn();
+	});
+});
+</script>
+</head>
+<body>
+<table align=center>
+	<tr><td>
+		<ul class="tabs">
+			<li><a href="#tab1">Menu1</a></li>
+			<li><a href="#tab2">Menu2</a></li>
+			<li><a href="#tab3">Menu3</a></li>
+			<li><a href="#tab4">Menu4</a></li>
+		</ul>
+		<div class="contenedor">
+			<div id="tab1">
+				CONTENIDO 1
+			</div>	
+			<div id="tab2">
+				CONTENIDO 2
+			</div>
+			<div id="tab3">
+				CONTENIDO 3
+			</div>	
+			<div id="tab4">
+				CONTENIDO 4
+			</div>		
+		</div>
+	</td></tr>
+</table>
+
+</body>
+</html>

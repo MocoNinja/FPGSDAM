@@ -1,0 +1,29 @@
+﻿<html>
+    <head>
+        <title>Añadir HTML</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+        var imagen = $"<img>",
+        {src:"img/naruto1.jpg"}
+        $(function(){
+            $("#boton").html("<input type=button value=Hola>");
+            $(function(){
+                $("#boton1").click(function(event){
+                    alert("Magia de la buena eh?");
+                });
+                $("#boton").click(function(event){
+                    $("#imagen").append();
+                });
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <p>Aquí abajo hay un div vacío en el código...</p>
+        <div id="boton1"></div>
+        <p>Este botón sí que lo he puesto. Pero su acción te sorprenderá! O.o</p>
+        <input type="button" id="boton" value="Púlsame">
+        <div id="imagen"></div>
+    </body>
+</html>

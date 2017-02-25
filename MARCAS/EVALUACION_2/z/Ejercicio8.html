@@ -1,0 +1,70 @@
+<html>
+<head><title>Evento de ratón 2 (Eventos en general)</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	$(document).on("mousemove", function(e){
+		$("#divCoordenadas").html("<strong>" + e.pageX + "</strong> - <strong>" + e.pageY + "</strong>");
+	});
+	$(document).on("contextmenu", function(e){
+		e.preventDefault();
+		$("#divEstado").html("<strong>Click Derecho</strong>");
+	});
+	$(document).on("click", function(e){
+		$("#divEstado").html("<strong>Click Izquierdo</strong>");
+	});
+	$("#divScroll").on("scroll", function(e){
+		$("#divEstado").html("<strong>Scroll detectado</strong>");
+	});
+
+});
+</script>
+<style type="text/css">
+#divScroll{margin:20px 0; padding:10px; height:100px; overflow-y:scroll; border-radius:5px; box-shadow:1px 1px 10px #c0c0c0; float:right}
+#divCoordenadas{border:solid 1px #ccc; padding:10px; width:200px; text-align:center; border-radius:5px; box-shadow:1px 1px 10px #c0c0c0}
+#divEstado{padding:10px; width:200px; text-align:center; border-radius:5px; box-shadow:1px 1px 10px #c0c0c0; float:right}
+</style>
+</head>
+<body>
+<div id="divCoordenadas"></div>
+<div id="divEstado"></div>
+<div id="divScroll">
+<p>
+En un lugar de La Mancha, de cuyo nombre no quiero 
+acordarme, no ha mucho tiempo que vivía un hidalgo de 
+los de ...
+asd asdf as fas asdf asf as asdf sadasdf asd fasd sda sd
+as asd sadf ssdf lasdf sdfj asdf asdf askdfñklasdfjwei  dask
+aieweof wrijwem vweifm weir werjsd sdfsi smsis siwe w skse 
+aie aisde akdas aie alaie aie ti dnaioe a eiameia aeiwn a
+a sie d aie gief asie gla</p>
+<p>
+En un lugar de La Mancha, de cuyo nombre no quiero 
+acordarme, no ha mucho tiempo que vivía un hidalgo de 
+los de ...
+asd asdf as fas asdf asf as asdf sadasdf asd fasd sda sd
+as asd sadf ssdf lasdf sdfj asdf asdf askdfñklasdfjwei  dask
+aieweof wrijwem vweifm weir werjsd sdfsi smsis siwe w skse 
+aie aisde akdas aie alaie aie ti dnaioe a eiameia aeiwn a
+a sie d aie gief asie gla</p><p>
+En un lugar de La Mancha, de cuyo nombre no quiero 
+acordarme, no ha mucho tiempo que vivía un hidalgo de 
+los de ...
+asd asdf as fas asdf asf as asdf sadasdf asd fasd sda sd
+as asd sadf ssdf lasdf sdfj asdf asdf askdfñklasdfjwei  dask
+aieweof wrijwem vweifm weir werjsd sdfsi smsis siwe w skse 
+aie aisde akdas aie alaie aie ti dnaioe a eiameia aeiwn a
+a sie d aie gief asie gla</p><p>
+En un lugar de La Mancha, de cuyo nombre no quiero 
+acordarme, no ha mucho tiempo que vivía un hidalgo de 
+los de ...
+asd asdf as fas asdf asf as asdf sadasdf asd fasd sda sd
+as asd sadf ssdf lasdf sdfj asdf asdf askdfñklasdfjwei  dask
+aieweof wrijwem vweifm weir werjsd sdfsi smsis siwe w skse 
+aie aisde akdas aie alaie aie ti dnaioe a eiameia aeiwn a
+a sie d aie gief asie gla</p>
+</div>
+
+</body>
+</html>
+

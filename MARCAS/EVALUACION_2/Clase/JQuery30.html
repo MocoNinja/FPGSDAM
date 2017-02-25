@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Galería 3</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                // :gt(n) -> selecciona todos los elemenos, salvo el n.
+                $("#galeria div:gt(0)").hide();
+                setInterval(function(){
+                    $("#galeria div:first-child").fadeOut() // desparece el primero
+                    .next("div").fadeIn(2100) // aparece el siguiente
+                    .end().appendTo("#galeria") // y lo metemos al final de la galeria
+                }, 3500);
+            });
+        </script>
+        <style type="text/css">
+            #galeria{
+                position: relative;
+                width: 250;
+                height: 300;
+                border: 4px solid red;
+                margin: 0, auto;
+                padding: 0;
+                overflow: hidden;
+                border-radius: 45px;
+            }
+            #galeria p{
+                opacity: .5;
+                position: absolute;
+                left: 62.5;
+                bottom: 30px;
+                background: mediumpurple;
+                color: greenyellow;
+                font-family: "Comic Sans MS";
+                font-size: 14px;
+                text-align: center;
+                display: block;
+                width: 125;
+                height: 30px;
+                line-height: 30px;
+            }
+            body{
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="galeria">
+            <div><img id="2" src="img/gatito3.png" width="250" height="300"><p>Imagen 1</p></div>
+            <div><img id="7" src="img/gatito6.png" width="250" height="300"><p>Imagen 2</p></div>
+            <div><img id="1" src="img/gatito8.png" width="250" height="300"><p>Imagen 3</p></div>
+        </div>
+    </body>
+</html>

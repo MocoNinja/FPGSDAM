@@ -1,0 +1,21 @@
+<html>
+<head><title>Animación</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	$("button").click(function(){
+		var div = $("div");
+		div.animate({height:'300px', opacity:'0.4'}, "slow");
+		div.animate({width:'300px', opacity:'0.8'}, "slow");
+		div.animate({height:'100px', opacity:'0.4'}, "slow");
+		div.animate({width:'100px', opacity:'0.8'}, "slow");
+	});
+});
+</script>
+</head>
+<body>
+<button>Iniciar Animacion</button>
+<div style="background:#98bf21; height:100px; width:100px; position:absolute"></div>
+
+</body>
+</html>

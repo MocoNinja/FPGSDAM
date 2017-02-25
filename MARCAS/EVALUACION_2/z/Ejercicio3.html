@@ -1,0 +1,21 @@
+<html>
+<head><title>Añadir una imagen</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+var imagen = $("<img>", {src:"imagenes/fuego.jpg", id:"imagen", 
+			width:"150", css:{"padding":"2px", "cursor":"pointer"}
+			, click: function(ev){document.location = "Ejercicio1.html";}
+		});
+
+$(document).ready(function(){
+	$("#boton").click(function(){
+		$("body").append(imagen);
+	});
+});
+
+</script>
+</head>
+<body>
+<input type="button" id="boton" value="Añadir">
+</body>
+</html>

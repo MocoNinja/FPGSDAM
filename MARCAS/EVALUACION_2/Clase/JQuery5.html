@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Mover objetos con un boton</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $("#mover1").click(function(){
+            //animate: mueve un objeto, de una posicion inicial en un tiempo) ->
+            //objeto.animate(valor final de la propiedad (de estilos), ms que dura la animacion)
+           $("body").animate({backgroundPositionX: "5000"}, 10000);
+        });
+         $("#mover2").click(function(){
+           $("body").animate({backgroundPositionX: "0px"}); //omitir el tiempo equivale a 0
+        });
+        $("#mover3").click(function(){
+            //hay mas parametros
+           //el tercero es el modo de producir la animacion
+           //el cuarto es otra funcion
+           $("body").animate({backgroundPositionX: "10000px"}, 10000, "swing", function(){
+               alert("ADIOS");
+           });  
+        });
+    });
+    </script>
+</head>
+
+<body background="img/fondo5.png">
+    <input type="button" id="mover1" value="Desplazar a la dcha">
+    <input type="button" id="mover2" value="Desplazar al inicio">
+    <input type="button" id="mover3" value="Desplazar con mensaje al final">
+</body>
+
+</html>

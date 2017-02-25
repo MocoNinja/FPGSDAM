@@ -1,0 +1,10 @@
+ul.tabs{float:left; margin:0; padding:0; list-style:none; height:32px; width:600px; margin-top:-7}
+ul.tabs li{float:left; margin:0; padding:0; height:31px; line-height:31px; border:1px solid #333; margin-bottom:-1;
+	background:#333; overflow:hidden; position:relative; border-radius:7px 7px 0 0}
+ul.tabs li a{text-decoration:none; color:#FFF; display:block; font-size:13px; padding:0 20px}
+ul.tabs li a:hover{background:#666}
+
+ul.tabs li.activa, ul.tabs li.activa a, ul.tabs li.activa a:hover{color:#333; font-weight:bold; background:#CCC; border-bottom:1px solid #CCC}
+
+.contenedor{float:left; clear:both; width:600px; height:500px; display:block;
+	border:1px solid #333; border-radius:0 7px 7px 7px; background:linear-gradient(#FFFFFF, #CCCCCC)}

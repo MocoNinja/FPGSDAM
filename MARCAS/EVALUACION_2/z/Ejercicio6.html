@@ -1,0 +1,24 @@
+<html>
+<head><title>Animación del fondo</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+
+$(document).ready(function(){
+	$("#mover1").click(function(){
+		$("#capa0").animate({outlineWidth:"15px"});
+	});
+	$("#mover2").click(function(){
+		$("#capa0").animate({outlineWidth:"15px"}, 5000);
+	});
+});
+
+</script>
+</head>
+<body>
+<span style="outline:1px solid black" id="capa0">Capa donde cambiaremos la propiedad outlineWidth</span>
+<br><br><br><br><br>
+<input type="button" id="mover1" value="Ampliar marco"><br>
+<input type="button" id="mover2" value="Ampliar marco ralentizado"><br>
+</body>
+</html>
+

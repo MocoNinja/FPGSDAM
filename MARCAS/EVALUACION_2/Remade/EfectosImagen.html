@@ -1,0 +1,86 @@
+﻿<html>
+    <head>
+        <title>Chorradas con imágenes</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#desaparecer").click(function(event){
+                    $("#img1").fadeOut(1000);
+                });
+                 $("#aparecer").click(function(event){
+                    $("#img1").fadeIn(1000);
+                });
+                $("#toggle").click(function(event){
+                    $("#img1").slideToggle(1000);
+                });
+                $("#slideaparecer").click(function(event){
+                    $("#img1").slideDown(1000);
+                    //$("#img1").slideDown("slow");
+                });
+                $("#slidedesaparecer").click(function(event){
+                    $("#img1").slideUp(1000);
+                    //$("#img1").slideDown("fast");
+                });
+                $("#fades").click(function(event){
+                    $("#img1").fadeOut(1000, function(event){
+                        $(this).fadeIn(1000); // Ojito a este this, que es útil saberlo
+                    });
+                });
+                $("#slides").click(function(event){
+                    $("#img1").slideUp(1000, function(event){
+                        $("#img1").slideDown(1000);
+                    });
+                });
+                 $("#alert").click(function(event){
+                    $("#img1").slideUp(1000, function(event){
+                        alert("Magia potagia");
+                    });
+                });
+            });
+        </script>
+        <style>
+            body
+            {
+                color: lemonchiffon;
+                background-color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            div
+            {
+                background-color: yellow;
+                margin-left: 200px;
+                margin-top: 170 px;
+                padding: 100px 250px;
+                height: 500;
+                width: 500px;
+            }
+            img
+            {
+                position: absolute;
+                width: 500px;
+                left: 450px;
+            }
+        </style>
+    </head>
+    <body>
+        Visibilidad con FadeIn/FadeOut:
+        <input type="button" id="desaparecer" value="desaparecer"></input>
+        <input type="button" id="aparecer" value="aparecer"></input>
+        <br>
+        Efectos Slide:
+        <input type="button" id="slidedesaparecer" value="desaparecer"></input>
+        <input type="button" id="slideaparecer" value="aparecer"></input>
+        <input type="button" id="toggle" value="toggle"></input>
+        <br>
+        Concatenar funciones:
+        <input type="button" id="fades" value="Fades"></input>
+        <input type="button" id="slides" value="Slides"></input>
+        <input type="button" id="alert" value="Alert"></input>
+    
+        <div id="contenedor">
+            <img id="img1" src="img/naruto1.jpg">
+            <br>
+            
+        </div>
+    </body>
+</html>
