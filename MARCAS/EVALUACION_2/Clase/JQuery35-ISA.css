@@ -1,0 +1,92 @@
+﻿body{
+	margin:0px;
+}
+#barraHorizontal{
+	width:960px;
+	margin:auto;
+	background-color:#4ba;
+	height:30px;
+	border-radius:0px 0px 20px 20px;
+	box-shadow:0px 0px 5px #000 inset;
+}
+ul{
+	list-style:none;
+	margin:0px;
+	padding:0px;
+	text-align:center;
+}
+#menu>li{
+	display: inline-block;
+	padding:5px;
+	margin: 0px 10px 0px 10px;
+}
+.panel{
+	background-color:rgb(7%, 42%, 38%);
+	color:#fff;
+	width:150px;
+	height:200px;
+	border-radius:20px;
+	box-shadow: 0px 0px 5px #000 inset, 0px 0px 5px #000;
+	top:-250px;
+	padding-top:100px;
+	position:relative;
+	transition: transform 2s;
+	transform-style: preserve-3d;
+}
+
+img{
+	width:100%;
+	margin-bottom:5%;
+}
+.front{
+	/*padding-top:50px;*/
+	backface-visibility: hidden;
+}
+.panel:hover
+{
+	/*transform:rotateY(180deg);*/
+	animation: animacion ease 2s forwards;
+}
+@keyframes animacion
+{
+	0%{
+		top: -250px;
+	}50%{
+		top: -20px;
+		transform:rotateY(0deg);
+	}
+	100%{
+		top: -20px;
+		transform: rotateY(180deg);
+	}
+}
+.front>img
+{
+	margin-bottom: 50px;
+}
+.back{
+	position:absolute;
+	top:20px;
+	/*Pone los elementos al reves*/
+	transform:rotateY(180deg) translateZ(100px);
+}
+.back>ul>li{
+	background-color:#90DDD2;
+	width:140px;
+	margin-top:30px;
+	padding:5px;
+	box-shadow: 0px 0px 3px #126C60 inset;
+	transition: all ease 0.5;
+}
+.back>ul>li:hover
+{
+	transform: scale(1.2);
+	cursor: pointer;
+	box-shadow: 0px 5px 0px hsl(171, 53%, 42%), 0px 10px 10px #000, 0px 0px 3px #136C60 inset;
+	border-radius: 3px;
+}
+.back>ul>li:active /*Hacer click*/
+{
+	transform: scale(1.2) translateY(3px);
+	box-shadow: 0px 5px 0px hsl(171, 53%, 42%), 0px 10px 10px red, 0px 0px 3px #136C60 inset;
+}

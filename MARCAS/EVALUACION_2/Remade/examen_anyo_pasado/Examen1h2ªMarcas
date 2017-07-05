@@ -1,0 +1,28 @@
+﻿
+1.- En la página colocaréis 3 imágenes.  Cuando hagáis 
+click en cualquiera de ellas, está irá desapareciendo. 
+ Tardará en desaparecer
+4 segundos.  (3 puntos)
+
+
+
+
+
+2.- En la página habrá un párrafo DIV que contendrá una imagen,
+ sobre el párrafo habrá un botón.  Cuando pulséis el botón, 
+el párrafo (utilizando el efecto persiana) irá desapareciendo,
+ para volver a aparecer con otra imagen en su interior. 
+ Podéis usar 3 imágenes distintas.
+(3,5 puntos)
+
+
+
+
+
+3.- En la página habrá un input en el que se podrá introducir 
+únicamente un carácter (cuando se introduce otro, el anterior 
+desaparece). Debajo del input crearéis un párrafo DIV que
+inicialmente estará vacío.Cuando se pulse una tecla sobre el input,
+en el DIV aparecerá dicho caracter, que irá aumentando su tamaño 
+hasta 10 veces en 3 segundos, para luego disminuir al tamaño original
+ en otros 3.

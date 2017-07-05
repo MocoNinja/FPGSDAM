@@ -1,0 +1,23 @@
+<html>
+<head><title>Elementos del objeto DOCUMENT</title>
+
+<script language="JavaScript">
+function mostrar(){
+	for(i=0; i<document.all.length; i++)
+		alert(document.all[i].tagName);
+
+	for(i=0; i<document.images.length; i++)
+		alert(document.images[i].tagName);
+
+	alert("Otro modo de acceso al vector " + document.images["segundo"].tagName);	
+}
+</script>
+</head>
+<body onload="mostrar()">
+<img src="imagenes/cruz.png" width=100>
+<img id="segundo" src="imagenes/circulo.png" width=100>
+
+
+
+</body>
+</html>

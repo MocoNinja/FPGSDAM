@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+        <title>Animaciones Borde</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#pon").click(function(){
+                    $("#borde").animate({
+                    outlineWidth: "10px"
+                }/*, 1000*/);
+                });
+                 $("#quita").click(function(){
+                    $("#borde").animate({
+                    outlineWidth: "1px"
+                }, 1000);
+                });
+                 $("#otros").click(function(){
+                    $("#borde").animate({
+                    opacity: 0.5,
+                    fontSize: 150
+                }, 1000);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="pon" value="gordo">
+        <input type="button" id="quita" value="default">
+        <input type="button" id="otros" value="Y más...">
+        <p>Vamos a ver una nueva marca, la span, que permite resaltar una porción del texto con un estilo, <span style="outline:1px solid black" id="borde">Asín</span></p>
+    </body>
+</html>

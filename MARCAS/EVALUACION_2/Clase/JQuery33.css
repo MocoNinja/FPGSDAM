@@ -1,0 +1,63 @@
+﻿body
+{
+	background-image: url('img/mad-space.gif');
+}
+
+h1
+{
+	color:yellow;
+	font-family:"Comic Sans MS";
+	font-size:57px;
+	text-align:center;
+
+}
+
+ul
+{
+	font-family:"Comic Sans MS";
+	font-size:17px;
+	list-style-type: none;
+	text-align:center;
+}
+
+#menu
+{
+	width:200px;
+}
+
+#menu>li /*> es todos*/
+{
+	background-color:#FBEF9B;
+	border: 1px, outset,yellow ;
+	padding:5px;
+	position: relative;
+}
+
+.submenu
+{
+	position: absolute;
+	top: 0;
+	left: 200px;
+	display: none;
+}
+
+.submenu>li
+{
+	background-color: aqua;
+	border: 2px, outset, magenta;
+	width: 180px;
+	padding:2px;
+}
+
+#menu li:hover /*Los li inmediatamente ligados a menu*/
+{
+	background-color:fuchsia;
+	color:lime;
+	cursor:pointer;
+}
+
+#menu li:hover ul  /*Lo de antes pero cogemos los ul DE ESE*/
+{
+	display:block;
+	
+}

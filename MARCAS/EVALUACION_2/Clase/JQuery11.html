@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Animaciones2</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+         $("button").click(function(){
+             var div = $("div");
+             div.animate({left: '1000px', fontSize: '48'}, "slow");  
+             // div.animate({fontSize: '48'}, "slow");
+             div.animate({left: '0px', fontSize: '24'}, "slow");  
+         });
+     });
+     </script>
+     <style>
+        #parrafoMovidolongo{
+            position: absolute;
+            width: 200;
+            height: 100;
+            background-color: palegreen; 
+            color: magenta;
+            font-size: 24;
+            font-family: Ubuntu;
+        }
+     </style>
+</head>
+<body bgcolor="black">
+    <button>Muévete!</button> <br><br>
+    <div id="parrafoMovidolongo">Feliz ano</div>
+</body>

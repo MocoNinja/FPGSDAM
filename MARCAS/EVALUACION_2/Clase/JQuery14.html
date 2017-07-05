@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Latidos</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+        var objeto;
+        var muerete=false;
+        if (!muerete)
+            objeto = setInterval('late()', 1000);
+
+        $("#muere").click(function(){
+            $("#ponpon").stop();
+            muerete = true;
+            clearInterval(objeto);
+        });
+        $("#vive").click(function(){
+            muerete = false;
+            objeto = setInterval('late()', 1000);
+        });
+     });
+     function late(){
+          $("#ponpon").animate({width:"500px"})
+            .animate({width:"300"}, "fast");
+     }
+     </script>
+     <style>
+     body{
+         background-color: #666;
+     }
+    </style>
+</head>
+<body>
+    <div>
+        <center>
+            <button id="muere">MUERE!</button> <button id="vive">MUERE!</button>
+            <br><br><br><br><br>
+            <img id="ponpon" src="img/superblood1.jpg" width="300px">
+        </center>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript">
+		var centros = ["formacion.jpg", "educacion.gif", "pdb.gif", "qeDocentes.jpg", "qeFamilias.jpg"];
+		var empresas = ["caf.jpg", "aje.jpg", "camara.jpg", "bsh.jpg", "ayto.jpg"];
+		var aleatorio1, aleatorio2;
+		var objeto = setInterval("mostrar()", 1000);
+		function mostrar()
+		{
+			aleatorio1 = Math.floor(Math.random() * centros.length);
+			aleatorio2 = Math.floor(Math.random() * empresas.length);
+			document.getElementById("imagen1").src = "./imagenes/" + centros[aleatorio1];
+			document.getElementById("imagen2").src = "./imagenes/" + empresas[aleatorio2];
+		}
+	</script>
+</head>
+
+
+<body onload="objeto">
+<div class="contenedor" >
+
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+	<table id="registro">
+	<tr><td> Usuario: </td><td><input type="text" name="usuario" id="usuario" size="10"></td></tr>
+	<tr><td> Clave: </td><td><input type="text" name="clave" id="clave" size="10"></td></tr>
+	</table>
+</div>
+
+<div class="menu">
+	<ul>
+	<li><a href="index.html"> INICIO</li></a>
+	<li><a href="noticias.html"> NOTICIAS</li></a>
+	<li><a href="candidatos.html"> ALTA DE CANDIDATOS</li></a>
+	<li><a href="ofertas.html"> OFERTAS</li></a>
+	<li><a href="fundacion.html"> FUNDACION</li></a>
+	<li><a href="encuesta.html"> VALORACION</li></a>
+	</ul>
+	<a href="http://www.saleszar.net/Formacion/" id="link1"><img id='imagen1' src="./imagenes/formacion.jpg" border="0"></a>
+	<a href="http://www.caf.es/es" id="link2"><img id='imagen2' src="./imagenes/caf.jpg" border="0"></a>
+</div>
+<div class="cuerpo">
+<p class="resaltado">Fundaci�n</P>
+	<TABLE>
+	<TR>
+		<TD><img src="./imagenes/fundacion1.jpg"></TD>
+		<TD><img src="./imagenes/fundacion2.jpg"></TD>
+	</tr>
+	</table>
+	<TABLE>
+	<TR>
+		<TD>La fundaci�n Esparza Monforte, se enmarca en el �mbito de la Comunidad Salesiana y es de car�cter no lucrativo e independiente. 
+		Ha sido creada con la finalidad prioritaria de promoci�n e inserci�n social de las personas menos favorecidas econ�mica y socialmente. 
+		Poniendo �nfasis en los colectivos de adolescencia y juventud.</TD>
+	</TR>
+	<TR>
+		<TD>Principalmente se busca el desarrollo de colectivos discriminados y del Tercer Mundo, a trav�s de educaci�n, formaci�n, innovaci�n y empleo.</TD>
+	</TR>
+	<TR>
+		<TD>Contacto</TD>
+	</TR>
+	<TR>
+		<TD>Direcci�n: C/ Mar�a Auxiliadora 57; 50009 - Zaragoza Tel�fono: 976 30 68 83 E-mail: secreataria@esparzamonforte.org</TD>
+	</TR>
+	</TABLE>
+
+	
+</div>
+
+<div class="pie">
+
+</div>
+
+</div>
+ 
+</body>
+</html>
+

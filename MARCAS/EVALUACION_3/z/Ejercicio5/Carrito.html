@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Carrito de la compra</title>
+<link rel="stylesheet" href="EstilosC.css" type="text/css">
+<script type="application/javascript">
+	window.onload = ver;
+	
+	function ver(){
+		document.getElementById("cesta").innerHTML = "";
+		if(sessionStorage.length<1)
+			document.getElementById("cesta").innerHTML = "<h5>No tienes productos en el carrito</h5>";	
+		else
+			document.getElementById("cesta").innerHTML = "<table class='pro'><tr><td>PRO</td><td>PRECIO</td><td>UNDS</td><td>TOTAL</td><td></td></tr></table>";
+
+		for(i=1; i<=5; i++)
+			if(sessionStorage.getItem("d"+i) != null){
+				var descripcion = sessionStorage.getItem("d"+i);
+				var precio = sessionStorage.getItem("p"+i);
+				var cantidad = sessionStorage.getItem("c"+i);
+				var precioTotalProducto = parseInt(precio) * parseInt(cantidad);
+				document.getElementById("cesta").innerHTML += "<table class='pro'><tr><td>" + descripcion + "</td><td>" + precio + "</td><td>" + cantidad + "</td><td>" + precioTotalProducto + "</td><td><img src='iconos2/eliminar.jpg' id='eli' onclick='borrarElemento(" + i + ")'><td></tr></table>";
+
+				if(sessionStorage.getItem("precioTotal") != null){
+					document.getElementById("total").innerHTML = "<h5>PRECIO TOTAL DE LA COMPRA</H5><TABLE><TR><TD>" + sessionStorage.getItem("precioTotal") + " €</td></tr></table>";
+				}else{
+					document.getElementById("total").innerHTML = "";
+				}							
+			}
+
+	}
+	
+	function borrarElemento(indice){
+		var precio = sessionStorage.getItem("p"+indice);
+		var cantidad = sessionStorage.getItem("c"+indice);
+		var precioTotalProducto = parseInt(precio) * parseInt(cantidad);
+		
+		var precioAnterior = sessionStorage.getItem("precioTotal");
+		var precioActual = parseInt(precioAnterior) - precioTotalProducto;
+		
+		sessionStorage.setItem("precioTotal", precioActual);
+	
+		if(precioActual == 0)
+			sessionStorage.removeItem("precioTotal");
+		
+		sessionStorage.removeItem("d" + indice);
+		sessionStorage.removeItem("p" + indice);
+		sessionStorage.removeItem("c" + indice);
+		ver();
+	}
+	
+	function almacenar(indice){
+		var descripcion =document.getElementById("d" + indice).innerHTML;
+		var precio = document.getElementById("p" + indice).innerHTML;		
+		var cantidad = document.getElementById("c" + indice).value;
+		var precioTotalProducto = parseInt(precio) * parseInt(cantidad);
+		
+		if(sessionStorage.getItem("precioTotal") != null){
+			var precioAnterior = sessionStorage.getItem("precioTotal");
+			var precioActual = precioTotalProducto + parseInt(precioAnterior);
+			sessionStorage.setItem("precioTotal", precioActual);
+		}else{
+			sessionStorage.setItem("precioTotal", precioTotalProducto);	
+		}
+		
+		if(sessionStorage.getItem("d" + indice) == null){
+			sessionStorage.setItem("d" + indice, descripcion);
+			sessionStorage.setItem("p" + indice, precio);
+			sessionStorage.setItem("c" + indice, cantidad);
+		}else{
+			var cantidadActual = sessionStorage.getItem("c" + indice);
+			var cantidadTotal = parseInt(cantidadActual) + parseInt(cantidad);
+			sessionStorage.setItem("c" + indice, cantidadTotal);
+		}
+		ver();
+	}
+
+</script>
+
+</head>
+<body>
+<div id="principal">
+	<h1>TIENDA ONLINE</h1>
+	<div id="productos">
+		<table>
+			<tr><th>IMAGEN</th><th>DESCRIPCIÓN</th><th>PRECIO</th><th>CANTIDAD</th><th>COMPRAR</th></tr>
+			<tr>
+				<td><img src="iconos2/dell.jpg"</td>
+				<td><span id="d1">Ordenador Dell</span></td>
+				<td><span id="p1">999</span></td>
+				<td><input type="number" id="c1" min="1" maxlength="10" value="1"></td>
+				<td><input type="button" value="Comprar" onclick="almacenar(1)"></td>
+			</tr>	
+			<tr>
+				<td><img src="iconos2/Sony.jpg"</td>
+				<td><span id="d2">Ordenador Sony</span></td>
+				<td><span id="p2">777</span></td>
+				<td><input type="number" id="c2" min="1" maxlength="10" value="1"></td>
+				<td><input type="button" value="Comprar" onclick="almacenar(2)"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/Apple.jpg"</td>
+				<td><span id="d3">Ordenador Apple</span></td>
+				<td><span id="p3">1111</span></td>
+				<td><input type="number" id="c3" min="1" maxlength="10" value="1"></td>
+				<td><input type="button" value="Comprar" onclick="almacenar(3)"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/pb.jpg"</td>
+				<td><span id="d4">Ordenador PBell</span></td>
+				<td><span id="p4">600</span></td>
+				<td><input type="number" id="c4" min="1" maxlength="10" value="1"></td>
+				<td><input type="button" value="Comprar" onclick="almacenar(4)"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/acer.jpg"</td>
+				<td><span id="d5">Ordenador Acer</span></td>
+				<td><span id="p5">650</span></td>
+				<td><input type="number" id="c5" min="1" maxlength="10" value="1"></td>
+				<td><input type="button" value="Comprar" onclick="almacenar(5)"></td>
+			</tr>
+		</table>	
+	</div>
+	<div id="carrito">
+		<h4>Este es el estado del carrito</h4>
+		<div id="cesta">AFAFSAFSSDFASDFSDFA</div>
+		<div id="total"></div>
+	</div>
+	<div id="pie"></div>
+</div>
+</body>
+
+</html>

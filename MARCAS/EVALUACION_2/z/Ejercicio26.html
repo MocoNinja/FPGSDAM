@@ -1,0 +1,27 @@
+<html>
+<head><title>Galería de imágenes 2</title>
+<link rel="stylesheet" href="Ejercicio24.css" type="text/css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#galeria div:gt(0)").hide();
+	setInterval(function(){
+		$("#galeria div:first-child").fadeOut()
+		.next("div").fadeIn(1000)
+		.end().appendTo("#galeria");
+	}, 4000);
+});
+</script>
+<style>
+#galeria {position:relative; overflow:hidden; width:600; height:400; border:10px solid #333; margin:0 auto; padding:0; border-radius:40px}
+#galeria p{opacity:0.7; position:absolute; left:100; bottom:30px; display:block; width:400px; height:24px; padding:5px; background:#990000; font-size:22px; color:#eee; text-align:center; line-height:22px}
+</style>
+</head>
+<body>
+<div id="galeria">
+	<div><img width=600 height=400 src="imagenes/1.jpg"><p>Imagen 1</p></div>
+	<div><img width=600 height=400 src="imagenes/2.jpg"><p>Imagen 2</p></div>
+	<div><img width=600 height=400 src="imagenes/3.jpg"><p>Imagen 3</p></div>
+</div>
+</body>
+</html>

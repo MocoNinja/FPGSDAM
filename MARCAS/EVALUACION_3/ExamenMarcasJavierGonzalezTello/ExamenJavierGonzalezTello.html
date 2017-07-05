@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Exámen</title>
+	<meta charset="UTF-8">
+</head>
+<style>
+	#carritoDisplay {
+		position: absolute;
+		left: 300px;
+		top: 5px;
+	}
+
+	#getCompradorDiv {
+		position: absolute;
+		left: 600px;
+		top: 5px;
+	}
+</style>
+<script>
+	var comprador;
+	function leerBaseDatosInicial() {
+		var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024);
+		db.transaction(function (tx) {
+			tx.executeSql("SELECT * FROM PRODUCTOS", [], function (tx, resultados) {
+				for (i = 0; i < resultados.rows.length; i++) {
+					var codigo = resultados.rows.item(i).codigo;
+					var precio = resultados.rows.item(i).precio;
+					// console.log("Codigo: " + codigo + ", Precio: " + precio);
+					insertarATablaCarrito(codigo, precio);
+				}
+			}, null);
+		});
+	}
+
+	function gestionarCarrito(elemento) {
+		//console.log(elemento);
+		//console.log(sessionStorage.getItem(elemento));	
+		if (sessionStorage.getItem(elemento) == null) {
+			sessionStorage.setItem(elemento, 1);
+			console.log("No esta, meto una");
+		} else {
+			console.log("Si esta");
+			var cantidad = sessionStorage.getItem(elemento);
+			console.log("Habia " + cantidad);
+			cantidad++;
+			sessionStorage.setItem(elemento, cantidad);
+			console.log("ahora hay " + cantidad);
+		}
+		gestionarCarritoDisplay();
+	}
+
+	function gestionarCarritoDisplay() {
+		if (sessionStorage.length == 0) return;
+		var destino = document.getElementById('carritoDisplay');
+		destino.innerHTML = null;
+		destino.innerHTML += "<th>ARTICULOS CARRITO</th>";
+		for (var i = 0; i < sessionStorage.length; i++) {
+			//console.log(sessionStorage.key(i));
+			var claveMirando = sessionStorage.key(i);
+			var cantidad = sessionStorage.getItem(claveMirando);
+			//	console.log(claveMirando + " -> " + cantidad);
+
+			var imagen = "<img src='./img/" + claveMirando + ".jpg'>";
+			var opcion = "<td id='" + claveMirando + "'>" + imagen + "</td>";
+			var opcion2 = "<td>" + cantidad + "</td>";
+			destino.innerHTML += opcion;
+			destino.innerHTML += opcion2;
+		}
+	}
+	function insertarATablaCarrito(codigo, precio) {
+		var destino = document.getElementById('productos');
+		var imagen = "<img src='./img/" + codigo + ".jpg'>";
+		//	var link = "<a onclick='console.log(\"hola\")'>" + imagen + "</a>";
+		var link = "<a onclick='gestionarCarrito(\"" + codigo + "\")'>" + imagen + "</a>";
+		var opcion = "<td id='" + codigo + "'>" + link + "</td>";
+		var opcion2 = "<td>" + precio + "</td>";
+		destino.innerHTML += opcion;
+		destino.innerHTML += opcion2;
+	}
+
+	function getComprador() {
+		var inputbox = document.getElementById("getComprador");
+		comprador = inputbox.value;
+		console.log(comprador);
+		inputbox.value = null;
+	}
+	/*
+	function comprar(){
+		if(sessionStorage.length == 0){
+			alert("HAY QUE COMPRAR ALGO");
+		} 
+		if (comprador == null){
+			alert("NECESITO UN NOMBRE");
+		}
+		var consultaSQL = "INSERT INTO Compras (producto, unidades, comprador) VALUES (";
+		var productos = "";
+		var unidades = "";
+		for (var i = 0; i < sessionStorage.length; i++){
+			var claveMirando = sessionStorage.key(i);
+			var cantidad = sessionStorage.getItem(claveMirando);
+			productos += claveMirando;
+			if (i != sessionStorage.length - 1){
+				productos += ", ";
+			}
+			unidades += cantidad;
+			if (i != sessionStorage.length - 1){
+				unidades += ", ";
+			}
+		}
+			consultaSQL += productos;
+			consultaSQL += ", ";
+			consultaSQL += unidades;
+			consultaSQL += ", ";
+			consultaSQL += comprador;
+			consultaSQL += ")";
+			console.log(consultaSQL);
+	}
+	*/
+
+	/* ESTA MIERDA REPITE REGISTROS
+		function comprar(){
+			if(sessionStorage.length == 0){
+				alert("HAY QUE COMPRAR ALGO");
+			} 
+			else if (comprador == null){
+				alert("NECESITO UN NOMBRE");
+			} else {
+					for (var i = 0; i < sessionStorage.length; i++){
+						var claveMirando = sessionStorage.key(i);
+						var cantidad = sessionStorage.getItem(claveMirando);
+						console.log("Insertar " + claveMirando);
+						console.log("Cantidad" + cantidad);
+						var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024);
+						db.transaction(function(tx){
+							tx.executeSql("CREATE TABLE IF NOT EXISTS COMPRAS (producto, unidades, comprador)");
+							tx.executeSql("INSERT INTO COMPRAS (producto, unidades, comprador) VALUES (?, ?, ?)", [claveMirando, cantidad, comprador]);
+						});	
+				}
+			}
+		}
+		*/
+	function comprar() {
+		if (sessionStorage.length == 0) {
+			alert("HAY QUE COMPRAR ALGO");
+		}
+		else if (comprador == null) {
+			alert("NECESITO UN NOMBRE");
+		} else {
+			var claveMirando = "";
+			var cantidad = "";
+			for (var i = 0; i < sessionStorage.length; i++) {
+				claveMirando = sessionStorage.key(i);
+				cantidad = sessionStorage.getItem(claveMirando);
+				console.log("Insertar " + claveMirando);
+				console.log("Cantidad" + cantidad);
+				realizarConsulta(claveMirando, cantidad, comprador);
+
+			}
+		}
+	}
+
+	function realizarConsulta(claveMirando, cantidad, comprador) {
+		var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024);
+		db.transaction(function (tx) {
+			tx.executeSql("CREATE TABLE IF NOT EXISTS COMPRAS (producto, unidades, comprador)");
+			tx.executeSql("INSERT INTO COMPRAS (producto, unidades, comprador) VALUES (?, ?, ?)", [claveMirando, cantidad, comprador]);
+		});
+	}
+
+</script>
+
+
+<body onload="leerBaseDatosInicial(); gestionarCarritoDisplay()">
+	<table id="productos">
+		<th>ARTICULOS DISPONIBLES</th>
+	</table>
+	<table id="carritoDisplay">
+		<th>ARTICULOS EN CARRITO</th>
+	</table>
+	<div id="getCompradorDiv">COmprador: <input type="text" id="getComprador" onchange="getComprador()">
+		<input type="button" value="comprar" onclick="comprar()">
+	</div>
+
+</body>
+
+</html>

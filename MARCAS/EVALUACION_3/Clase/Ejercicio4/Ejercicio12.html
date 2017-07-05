@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 tiene objetos de la clase canvas</title>
+	<!-- No son ventanas dentro de una ventana, es un lugar para dibujar -->
+	<style>
+    #canvas
+    {
+      border: 2px solid black;
+    }
+  </style>
+  <script language="javascript">
+		window.onload = function()
+    {
+      var canvas = document.getElementById("canvas");
+      if(canvas.getContext)
+      {
+        var ctx = canvas.getContext("2d");
+        var gradiente = ctx.createLinearGradient(0, 0, 0, canvas.height); // Define una línea solo con altura, que es la del canvas y que empieza en 0, 0
+        gradiente.addColorStop(0, '#fff'); // Empieza en blanco
+        gradiente.addColorStop(1, '#000'); // Acaba en negro
+        ctx.fillStyle = gradiente;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+    }
+  </script>
+</head>
+<body>
+	<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>

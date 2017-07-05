@@ -1,0 +1,39 @@
+<html> 
+<head>
+<title>Ejercicio 3</title>
+<style type="text/css">
+#parrafo{
+	font-size: 30px;
+	text-align: center;
+
+	
+}
+</style>
+<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+<script script languaje="JavaScript">
+var letra;
+	$(document).ready(function(){
+	    $("#escribe").keydown(function(){
+	    	//alert($("#Escribe").val(""));
+	     	//letra = $("#escribe").val("");
+
+	     	$("#escribe").val("");
+	    	$("#parrafo").text($("#escribe").val());
+	    	//$("#parrafo:first").animate({'font-size':15}, 10);
+	     });
+	    $("#escribe").keyup(function(){
+	    	$("#parrafo").text($("#escribe").val());
+			$("#parrafo:first").animate({'font-size':300}, 3000);
+			$("#parrafo:first").animate({'font-size':30}, 3000);
+		});
+
+	});
+</script>
+			
+</head>
+<body>
+<p><input id="escribe"></p>
+<div id="parrafo"  style="background-color: red; width: 600; height: 600"></div>
+
+	</body>
+</html>

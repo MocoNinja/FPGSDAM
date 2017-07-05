@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<script language="JavaScript">
+imagenes = new Array();
+texto = new Array();
+var a = 0;
+imagenes[0]="./imagenes/captcha/1.gif";
+imagenes[1]="./imagenes/captcha/2.gif";
+texto[0]="W68HP";
+texto[1]="YPDVK";
+function generar()
+{
+a = Math.floor(Math.random()*2);
+document.getElementById("captcha").src=imagenes[a];
+}
+function comprobar()
+{
+if (document.getElementById("respuesta").value != texto[a])
+	{
+window.alert("Error");
+	}
+else
+	{
+window.open('encuesta1.html','_parent'); 
+	}
+}
+</script>
+</head>
+
+
+<body onload="generar()">
+<div class="contenedor" >
+
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+
+	<hr>
+</div>
+
+<div class="cuerpo">
+<table align="center" border="0" width="40%">
+<tr>
+	<td><img src="" id="captcha"></td>
+</tr>
+<tr>
+	<td><input type="text" id="respuesta"></td>
+</tr>
+<tr>
+	<td><input type="button" onclick="comprobar()" value="Comprobar">
+	</td>
+</tr>
+</table>
+</div>
+
+<div class="pie">
+</div>
+
+</div>
+ 
+</body>
+</html>
+

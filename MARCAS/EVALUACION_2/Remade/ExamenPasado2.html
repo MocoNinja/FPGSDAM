@@ -1,0 +1,33 @@
+﻿<html>
+    <head>
+        <title>Plantilla</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+        <script type="text/javascript">
+        var prefijo = "img/gatito";
+        var sufijo = ".png"
+        var numero = 1;
+        var nombre;
+        var objeto;
+            $(function(){
+                $("img").click(function(){
+                    objeto = $(this);
+                    if (numero <= 5){
+                        numero++;
+                    }
+                    else
+                    {
+                        numero = 1;
+                    }
+                    nombre = prefijo + numero + sufijo;
+                    objeto.slideUp(2000, function(){
+                    objeto.attr("src", nombre).slideDown(2000);
+            });
+            });});
+        </script>
+    </head>
+    <body>
+        <img src="img/gatito1.png" width="250" height="300">
+    </body>
+</html>

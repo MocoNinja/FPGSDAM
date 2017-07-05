@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<!-- Ejercicio del carrito de la compra -->
+<!--
+* El carrito de la compra es una lugar de almacenamiento temporal: no será como un archivo que es permanente.
+* Deben poder meterse y sacar del carrito y no implica que lo hayas comprado.
+* Cuando se paga es cuando el almacenamiento pasa a ser almacenado (o no).
+* Cuando inicias una página inicia una sesión; cuando cierras esa página o relacionadas, se acaba la sesión.
+* Por eso existen las variables de sesión, que se comparten entre todas las páginas de la sesión.
+
+* En javascript estas variables se llaman sessionStorage.
+* Este ejercicio tiene varias (en el examen se pidió hacerlo con una variable).
+ -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carrito de la compra</title>
+    <script type="text/javascript">
+      window.onload = ver;
+      var tituloTabla = "<tr><th>Producto</th><th>Precio por unidad</th><th>Unidades</th><th>PrecioTotal</th></tr>";
+
+      function ver()
+      {
+        var mensaje = "";
+        if(sessionStorage.length == 0)
+        {
+          mensaje = "<h5>No tiene ningún elemento en el carrito</h5>";
+        }
+        else
+        {
+          mensaje += "<table>";
+          mensaje += tituloTabla;
+          var totalPagar = 0;
+          for (var i = 0; i < sessionStorage.length; i++)
+          {
+            // console.log(sessionStorage.getItem("d" + (1 + i)));
+            // console.log(sessionStorage.getItem("p" + (1 + i)));
+            // console.log(sessionStorage.getItem("c" + (1 + i)));
+            if (sessionStorage.getItem("d" + (1 + i)) != null)
+            {
+              var precio = sessionStorage.getItem("p" + (i+1));
+              var cantidad = sessionStorage.getItem("c" + (i+1));
+              var precioTotalProducto = parseInt(precio) * parseInt(cantidad);
+              totalPagar += precioTotalProducto;
+              mensaje += "<tr><th>" + sessionStorage.getItem("d" + (i + 1)) + "</th><th>" + sessionStorage.getItem("p" + (i + 1)) + "</th><th>" + sessionStorage.getItem("c" + (i + 1)) + "</th><th>" + precioTotalProducto + "</th><td><input type='button' value='Borrar' onclick='borrarElemento(" + (i + 1) + ")'/></td></tr>";
+              }
+          }
+          mensaje += "<tr><th>Total a pagar: </th><td>" + totalPagar + "</td> </tr>";
+          
+        }
+        document.getElementById("cesta").innerHTML = mensaje;
+      }
+
+      function borrarElemento(numero)
+      {
+        sessionStorage.setItem("d" + numero, null);
+        sessionStorage.setItem("p" + numero, null);
+        sessionStorage.setItem("c" + numero, null);
+        sessionStorage.removeItem("d" + numero);
+        ver();
+        location.reload();
+      }
+
+      function borrarTODO()
+      {
+        sessionStorage.clear();
+        localStorage.clear();
+        location.reload();
+      }
+
+      function almacenar(indice)
+      {
+        var descripcion = document.getElementById("d" + indice).innerHTML;
+        var precio = document.getElementById("p" + indice).innerHTML;
+        var cantidad = document.getElementById("c" + indice).value;
+        // console.log("descripcion: " + descripcion + "; precio: " + precio + "; cantidad: " + cantidad);
+        var precioTotalProducto = parseInt(precio) * parseInt(cantidad);
+        console.log(precioTotalProducto);
+        // console.log("El precio total de las compras de ese producto asciende a " + precioTotalProducto);
+
+        // Las variables de sesión tienen varias funciones, siendo las más importantes:
+        // getItem(); -> Accede a un elemento (lo lee)
+        // setItem(); -> Carga un item (lo mete o lo modifica)
+        if (sessionStorage.getItem("d" + indice) == null)
+        {
+          sessionStorage.setItem("d" + indice, descripcion);
+          sessionStorage.setItem("p" + indice, precio);
+          sessionStorage.setItem("c" + indice, cantidad);
+        }
+        else
+        {
+          var cantidadActual = sessionStorage.getItem("c" + indice);
+          var cantidadTotal = parseInt(cantidadActual) + parseInt(cantidad);
+          sessionStorage.setItem("c" + indice, cantidadTotal);
+        }
+        location.reload();
+      }
+    </script>
+    <link rel="stylesheet" href="./style.css" type="text/css">
+  </head>
+  <body>
+    <div id="principal">
+      <h1>TIENDA ONLINE</h1>
+      <div id="productos">
+        <table>
+          <tr><th>IMAGEN</th><th>DESCRIPCIÓN</th><th>PRECIO</th><th>CANTIDAD</th><th>COMPRAR</th></tr>
+          <tr>
+            <td><img src="img/dell.jpg"></td>
+            <td><span id="d1">Ordenador DELL</span></td>
+            <td><span id="p1">999 €</span></td>
+            <td><input type="number" id="c1" min="1" max="10" value="1"></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar(1)"></td>
+          </tr>
+          <tr>
+            <td><img src="img/sony.jpg"></td>
+            <td><span id="d2">Ordenador Sony</span></td>
+            <td><span id="p2">749 €</span></td>
+            <td><input type="number" id="c2" min="1" max="10" value="1"></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar(2)"></td>
+          </tr>
+          <tr>
+            <td><img src="img/apple.jpg"></td>
+            <td><span id="d3">Ordenador Apple</span></td>
+            <td><span id="p3">3500 €</span></td>
+            <td><input type="number" id="c3" min="1" max="10" value="1"></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar(3)"></td>
+          </tr>
+          <tr>
+            <td><img src="img/pb.jpg"></td>
+            <td><span id="d4">Ordenador PBell</span></td>
+            <td><span id="p4">600 €</span></td>
+            <td><input type="number" id="c4" min="1" max="10" value="1"></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar(4)"></td>
+          </tr>
+          <tr>
+            <td><img src="img/acer.jpg"></td>
+            <td><span id="d5">Ordenador ACER</span></td>
+            <td><span id="p5">650 €</span></td>
+            <td><input type="number" id="c5" min="1" max="10" value="1"></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar(5)"></td>
+          </tr>
+        </table>
+      </div>
+      <div id="carrito">
+        <h4>Estado de su carrito</h4>
+        <div id="cesta"></div>
+        <div id="total"></div>
+      </div>
+      <div id="pie"></div>
+      <div id="borrarTodo"><input type="button" value="Borrar todos los elementos" onclick="borrarTODO()"/></div>
+    </div>
+  </body>
+</html>

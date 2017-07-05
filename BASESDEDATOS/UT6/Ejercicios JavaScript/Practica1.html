@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>Ejercicio 1 - Arrays</title>
+        <style type="text/css">
+            body
+            {
+                background-color: black;
+            }
+            img
+            {
+                align-self: center;
+            }
+        </style>
+        <script type="text/javascript">
+            var objeto = setInterval('cambiarImagen()', 1500);
+            var a = 0;
+            var imagenes = new Array();
+            var numero1;
+            imagenes[0] = "./img/aje.jpg"
+            imagenes[1] = "./img/ayto.jpg"
+            imagenes[2] = "./img/bsh.jpg"
+            imagenes[3] = "./img/caf.jpg"
+
+            function cambiarImagen()
+            {
+                a++;
+                document.getElementById("foto").src = imagenes[a];
+                if (a == 3) a = 0;
+            }
+
+            function autoCambia()
+            {
+                a++;
+                document.getElementById("foto").src = imagenes[a];
+                if (a == 3) a = -1;
+            }
+
+            function autoCambiaAleatorio()
+            {
+               // numero1 = Math.round(Math.random() * (imagenes.length - 1)); // este método de redondeo va a hacer que el 3 sea menos probable
+                numero1 = Math.floor(Math.random() * imagenes.length); // este devuelve el entero más próximo
+                document.getElementById("foto").src = imagenes[numero1];
+            }
+        </script>
+    </head>
+    <body onload="objeto">
+        <center>
+            <input type="button" value="Incrementar imagen" onclick="cambiarImagen()">
+            <input type="button" value="Iniciar cambio" onclick="objeto">
+            <input type="button" value="Parar" onclick="clearInterval(objeto)">
+            <input type="button" value="Aleatorio" onclick="objeto = setInterval('autoCambiaAleatorio()', 1500)">
+        </center>
+        <div id="imagen">
+            <img id="foto" src="./img/aje.jpg">
+        </div>
+    </body>
+</html>

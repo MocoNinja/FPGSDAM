@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+<script language="JavaScript">
+function comprobar()
+{
+  if(document.getElementById("fecha").value > 1999)
+	{
+		window.alert("Es menor de Edad. No se admiten solicitudes");
+		document.getElementById("datospersonales").style.display="none";
+	}
+}
+
+</script>
+
+</head>
+
+
+<body>
+<div class="contenedor" >
+
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+	<table id="registro2">
+	<tr><td> Usuario: </td><td><input type="text" name="usuario" id="usuario" size="10"></td></tr>
+	<tr><td> Clave: </td><td><input type="text" name="clave" id="clave" size="10"></td></tr>
+	</table>
+</div>
+
+<div class="menu">
+	<ul>
+	<li><a href="index.html"> INICIO</li></a>
+	<li><a href="noticias.html"> NOTICIAS</li></a>
+	<li><a href="candidatos.html"> ALTA DE CANDIDATOS</li></a>
+	<li><a href="ofertas.html"> OFERTAS</li></a>
+	<li><a href="fundacion.html"> FUNDACION</li></a>
+	<li><a href="encuesta.html"> VALORACION</li></a>
+	</ul>
+	<a href="http://www.saleszar.net/Formacion/" id="link1"><img id='imagen1' src="./imagenes/formacion.jpg" border="0"></a>
+	<a href="http://www.caf.es/es" id="link2"><img id='imagen2' src="./imagenes/caf.jpg" border="0"></a>
+</div>
+<div class="cuerpo" id="datospersonales">
+	<form>
+
+	<p class="resaltado">Datos para Acceder a la Web</p>
+
+	<TABLE>
+	<TR>
+		<TD>Email*</TD>
+		<TD><input type="email" name="email" id="email"required> </TD>
+	</TR>
+	<TR>
+		<TD>Contraseña*</TD>
+		<TD><input type="password" name="clave" id="clave"required></TD>
+	</TR>
+	</TABLE>
+
+	<p class="resaltado">Datos personales</p>
+	<TABLE>
+	<TR>
+		<TD>Nombre</TD>
+		<TD><INPUT TYPE="TEXT"required name="nombre" id="nombre"></TD>
+	</TR>
+	<TR>
+		<TD>Apellidos</TD>
+		<TD><INPUT TYPE="TEXT"required name="Apellidos1" id="Apellidos1"><INPUT TYPE="TEXT"required name="Apellidos2" id="Apellidos2"></TD>
+	</TR>
+	<TR>
+		<TD>Año Nacimiento</TD>
+		<TD><INPUT TYPE="number" required name="fecha" id="fecha" pattern="[0-9]{4}" onblur="comprobar()"></TD>
+	</TR>
+	<TR>
+		<TD>Telefóno</TD>
+		<TD><input type="text" pattern="[0-9]{9}" name="tlf" id="tlf"></TD>
+	</TR>
+	<TR>
+		<TD>Movil</TD>
+		<TD><input type="text" pattern="[0-9]{9}" name="tlfm" id="tlfm"></TD>
+	</TR>
+	<TR>
+		<TD>¿Eres alumno de salesianos?</TD>
+		<TD><select name="alumno"id="alumno">
+		<option value=Si>Si
+		<option value="No">No
+		</select></TD>
+	</TR>
+	<TR>
+		<TD>¿Eres alumno de cursillos?</TD>
+		<TD><select name="cursillos"id="cursillos">
+		<option value=Si>Si
+		<option value="No">No
+		</select></TD>
+	</TR>
+	<tr>
+		<td></td>
+		<td>¿Sufre alguna discapacidad?</td>
+	</tr>
+		<tr>
+		<td>
+			<input type="radio" name="discapacidad" id="discapacidad" value="Si">Si</input>
+		<input type="radio" name="discapacidad" id="discapacidad" value="No" checked>No</input></td>
+		<td>Marque la casilla si usted tiene un porcentaje de discapacidad igual o superior al 33%</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="radio" name="inscrito" id="inscrito" value="Si" onclick="servicio.style.display=''">Si</input>
+		<input type="radio" name="inscrito" id="inscrito" value="No" checked onclick="servicio.style.display='none'">No</input>
+		</td>
+		<td>Esta ud. inscrito en el servicio publico de empleo como demandante?</td>
+	</tr>
+	<tr id="servicio" style="display:none">
+		<td></td>
+		<td>
+		Indicar fecha <input type="date" id="fec_empleo" name="fec_empleo">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		<input type="radio" name="cobrando" id="cobrando" value="Si" onclick="tiempo.style.display=''">Si</input>
+		<input type="radio" name="cobrando" id="cobrando" value="No" checked onclick="tiempo.style.display='none'">No</input>
+		</td>
+		<td>¿Está cobrando actualmente alguna prestación? <br>Prestación por Desempleo,Subsidio o R.A.I? </td>
+	</tr>
+	<tr id="tiempo" style="display:none">
+		<td></td>
+		<td>
+		¿Hasta cuando?<input type="date" id="dia_cobrando" name="dia_cobrando">
+		</td>
+	</tr>
+	<tr>
+		<td><input type="radio" name="sufre" id="sufre" value="Si">Si</input>
+		<input type="radio" name="sufre" id="sufre" value="No" checked>No</input></td>
+		<td>¿Sufre exclusión social?</td>
+	</tr>
+	<tr>
+		<td>Comentarios</td> <td> <textarea name="comentario" id="comentario" cols="35" rows="5"> </textarea></td>
+	</tr>
+	<tr>
+		<td colspan="2"align="center"><input type="reset" value="borrar"><input type="submit" value="enviar"></td>
+	</tr>
+	</TABLE>
+	</form>
+</div>
+
+<div class="pie">
+
+</div>
+
+</div>
+ 
+</body>
+</html>
+

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript">
+		var centros = ["formacion.jpg", "educacion.gif", "pdb.gif", "qeDocentes.jpg", "qeFamilias.jpg"];
+		var empresas = ["caf.jpg", "aje.jpg", "camara.jpg", "bsh.jpg", "ayto.jpg"];
+		var aleatorio1, aleatorio2;
+		var objeto = setInterval("mostrar()", 1000);
+		function mostrar()
+		{
+			aleatorio1 = Math.floor(Math.random() * centros.length);
+			aleatorio2 = Math.floor(Math.random() * empresas.length);
+			document.getElementById("imagen1").src = "./imagenes/" + centros[aleatorio1];
+			document.getElementById("imagen2").src = "./imagenes/" + empresas[aleatorio2];
+		}
+	</script>
+</head>
+
+
+<body onload="objeto">
+<div class="contenedor" >
+
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+	<table id="registro">
+	<tr><td> Usuario: </td><td><input type="text" name="usuario" id="usuario" size="10"></td></tr>
+	<tr><td> Clave: </td><td><input type="text" name="clave" id="clave" size="10"></td></tr>
+	</table>
+</div>
+
+<div class="menu">
+	<ul>
+	<li><a href="index.html"> INICIO</li></a>
+	<li><a href="noticias.html"> NOTICIAS</li></a>
+	<li><a href="candidatos.html"> ALTA DE CANDIDATOS</li></a>
+	<li><a href="ofertas.html"> OFERTAS</li></a>
+	</ul>
+	<a href="http://www.saleszar.net/Formacion/" id="link1"><img id='imagen1' src="./imagenes/formacion.jpg" border="0"></a>
+	<a href="http://www.caf.es/es" id="link2"><img id='imagen2' src="./imagenes/caf.jpg" border="0"></a>
+	
+</div>
+<div class="cuerpo">
+	<p class="resaltado">Inicio</p>
+	<p>Agencia de colocaci�n autorizada con n�mero de autorizaci�n 9900000164, cuya principal actividad ser�, en continuidad a la desarrollada por su actual Bolsa de Trabajo, elaborar y ejecutar planes espec�ficos para la colocaci�n de personas desempleadas dentro del marco de la planificaci�n general establecido por el Sistema Nacional de Empleo.<BR><BR>
+	Atenci�n a demandantes: aquellas personas que quieran acceder a las ofertas de trabajo tendr�n que estar inscritos en la Agencia de Colocaci�n.<BR><BR>
+	Atenci�n a empresas: Les atenderemos a trav�s de email.<BR><BR>
+	Salesianos Zaragoza
+	c/ Mar�a Auxiliadora, 57. 50009 - ZARAGOZA
+	Tlfno: 976 30 68 78 Fax:976 55 46 28
+	email: agenciacolocacion.zaragoza@salesianos.edu
+	</p>
+</div>
+
+<div class="pie">
+
+</div>
+
+</div>
+ 
+</body>
+</html>
+

@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <title>Eventos de Raton</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+     $(document).ready(function(){
+       $(document).on("mousemove", function(objetoEvento){
+           //.html = innerHTML
+           $("#coordenadas").html("<strong>" + objetoEvento.pageX + ", " + objetoEvento.pageY + "</strong>")
+       });
+       //esto es click derecho
+       $(document).on("contextmenu", function(e){
+           e.preventDefault(); //ya no sale el menu predeterminado
+           $("#estado").html("<strong>Click dcha</strong>");
+       });
+       //si el texto no cabe, te crea una barra de scroll. Eso es un overflow.
+        $(document).on("click", function(e){
+        e.preventDefault(); //ya no sale el menu predeterminado
+        $("#estado").html("<strong>Click izq</strong>");
+       });
+        $("#divScroll").on("scroll", function(e){
+        e.preventDefault(); //ya no sale el menu predeterminado
+        $("#estado").html("<strong>Scroll</strong>");
+       });
+    });
+    </script>
+    <style>
+        div{
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: cyan;
+            font-size: 89pt;
+        }
+        #divScroll{
+            margin:20px; 
+            padding:10px;
+            height:400px;
+            overflow-y:scroll;
+            overflow-x:scroll;
+            border-radius:5px;
+            box-shadow: 1px 1px 10px #c0c0c0;
+            float:right;
+        }
+        #coordenadas{
+            border: solid 1pc #ccc;
+            padding: 10px;
+            width: 1000px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px #c0c0c0;
+        }
+        #estado{
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 1px 1px 10px #cf8f7f;
+            float: right;
+            font-size: 15pt;
+        }
+    </style>
+</head>
+
+<body background="img/gatito8.png">
+    <div id="coordenadas"></div>
+    <div id="estado"></div>
+    <div id="divScroll">
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATOPATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  PATO  
+        PATO  PATO  PATO  PATO  PATO  PATO
+    </div>
+</body>
+</html>

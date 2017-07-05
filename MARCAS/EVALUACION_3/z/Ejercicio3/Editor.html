@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Editor con HTML5 y JavaScript</title>
+<link type="text/css" rel="stylesheet" href="estilos.css">
+<script language="javascript" src="editor.js"></script>
+</head>
+<body>
+<div id="principal">
+	<h2>Mensajes publicados</h2>
+	<div id="mensajes"></div>
+
+	<div id="editor">
+		<h3>Publica aquí tu mensaje</h3>
+		<div id="botones">
+			<img src="iconos/negrita.jpg" class="boton" onclick="negrita()">
+			<img src="iconos/cursiva.jpg" class="boton" onclick="cursiva()">
+			<img src="iconos/subrayado.jpg" class="boton" onclick="subrayado()">
+			<img src="iconos/alini.jpg" class="boton" onclick="alineai()">
+			<img src="iconos/alinc.jpg" class="boton" onclick="alineac()">
+			<img src="iconos/alind.jpg" class="boton" onclick="alinead()">
+			<img src="iconos/alinf.jpg" class="boton" onclick="alineaf()">
+			<img src="iconos/lno.jpg" class="boton" onclick="listano()">
+			<img src="iconos/lor.jpg" class="boton" onclick="listao()">
+			<img src="iconos/subi.jpg" class="boton" onclick="subi()">
+			<img src="iconos/supi.jpg" class="boton" onclick="supi()">
+			<img src="iconos/fco.jpg" class="boton" onclick="fontcolor()">
+			<img src="iconos/bco.jpg" class="boton" onclick="backcolor()">
+			<img src="iconos/imagen.jpg" class="boton" onclick="insertarimg()">
+			<img src="iconos/hipervinculo.jpg" class="boton" onclick="hipervinculo()">
+		</div>
+		<div id="contenido" contenteditable="true"></div>
+		
+		<input type="button" value="PUBLICAR" onclick="publicar()" >
+	</div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript">
+		var centros = ["formacion.jpg", "educacion.gif", "pdb.gif", "qeDocentes.jpg", "qeFamilias.jpg"];
+		var empresas = ["caf.jpg", "aje.jpg", "camara.jpg", "bsh.jpg", "ayto.jpg"];
+		var aleatorio1, aleatorio2;
+		var objeto = setInterval("mostrar()", 1000);
+		var tablaSeleccionada = 1;
+
+		function mostrar()
+		{
+			aleatorio1 = Math.floor(Math.random() * centros.length);
+			aleatorio2 = Math.floor(Math.random() * empresas.length);
+			document.getElementById("imagen1").src = "./imagenes/" + centros[aleatorio1];
+			document.getElementById("imagen2").src = "./imagenes/" + empresas[aleatorio2];
+		}
+		function seleccionator()
+		{
+			alert(tablaSeleccionada);
+			document.getElementById(tablaSeleccionada).style(display) = "none";
+			tablaSeleccionada = document.getElementById("desplegable").value;
+			alert(tablaSeleccionada);
+			document.getElementById(valor).style(display) = "block";
+		}
+
+	</script>
+</head>
+
+
+<body onload="objeto">
+<div class="contenedor" >
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+	<table id="registro">
+	<tr><td> Usuario: </td><td><input type="text" name="usuario" id="usuario" size="10"></td></tr>
+	<tr><td> Clave: </td><td><input type="text" name="clave" id="clave" size="10"></td></tr>
+	</table>
+</div>
+<div class="menu">
+	<ul>
+	<li><a href="index.html"> INICIO</li></a>
+	<li><a href="noticias.html"> NOTICIAS</li></a>
+	<li><a href="candidatos.html"> ALTA DE CANDIDATOS</li></a>
+	<li><a href="ofertas.html"> OFERTAS</li></a>
+	<li><a href="fundacion.html"> FUNDACION</li></a>
+	<li><a href="encuesta.html"> VALORACION</li></a>
+	</ul>
+	<a href="http://www.saleszar.net/Formacion/" id="link1"><img id='imagen1' src="./imagenes/formacion.jpg" border="0"></a>
+	<a href="http://www.caf.es/es" id="link2"><img id='imagen2' src="./imagenes/caf.jpg" border="0"></a>
+</div>
+<div class="cuerpo">
+	<p class="resaltado">NOTICIAS
+	<select id="seleccionador" onselect="seleccionator()">
+		<option value="1">octubre 2016</option>
+		<option value="2">noviembre 2016</option>
+		<option value="3">diciembre 2016</option>
+	</select>
+	</p>
+<table id="1" name="octubre">	
+	<tr>
+		<td class="noticias">UNIVERSEM 2014 </td>
+	</tr>
+	<tr>
+		<td>Programa cofinanciado por el instituto aragones de la mujer y el fondo social Europeo destinado a mejorar las condicionesde empleabilidad de las tituladas universitarias, dirigido preferentemente a carreras t�cnicas y experimentales</td>
+	</tr>
+	<tr>
+		<td class="noticias">TALLER "C�MO ACCEDER AL EMPLEO EN LA UNI�N EUROPEA". DIPUTACI�N DE ALMER�A  </td>
+	</tr>
+	<tr>
+		<td>Actividad enmarcada dentro de las jornadas de puertas abiertas y foro de empleo 2014. Plazas limitadas. Se entregar� diploma de asistencia.</td>
+	</tr>
+	<tr>
+		<td class="noticias">TALLER:MODELOS DE NEGOCIO: LEAN STARTUP  </td>
+	</tr>
+	<tr>
+		<td>Este taller va dirigido a personas con inquietudes emprendedoras y con una o varias ideas de negocio en mente. El objetivo de la actividad es que los asistentes conozcan la herramientas necesarias para testar su idea de negocio, principalmente el LEAN CANVAS, y que las pongan en pr�cticas a trav�s de ejercicios o experiencias reales.</td>
+	</tr>
+</table>
+<table id="2" name="noviembre" style="display: none">	
+	<tr>
+		<td class="noticias">ERASMUS</td>
+	</tr>
+	<tr>
+		<td>Abierto el nuevo plazo de solicitud para becas Europeas dentro de las subvenciones del programa Erasmus+ para estudiantes de Educacion superior destinado a  mejorar las condicionesde empleabilidad de las titulados superiores, dirigido preferentemente a carreras técnicas y experimentales</td>
+	</tr>
+	<tr>
+		<td class="noticias">TALLER INTELIGENCIA EMOCIONAL</td>
+	</tr>
+	<tr>
+		<td>Actividad enmarcada dentro de las jornadas de sensibilización emocional en el foro de psicología de la Universidad de Sevilla. Plazas limitadas. Se entregará diploma de asistencia.</td>
+	</tr>
+	<tr>
+		<td class="noticias">TALLER:E-LEARNING</td>
+	</tr>
+	<tr>
+		<td>Este taller va dirigido a personas con inquietudes emprendedoras y con una o varias ideas de negocio en mente. El objetivo de la actividad es que los asistentes conozcan la herramientas necesarias para testar su idea de negocio, principalmente el LEAN CANVAS, y que las pongan en prácticas a través de ejercicios o experiencias reales.</td>
+	</tr>
+</table>
+<table id="3" name="diciembre" style="display: none">	
+	<tr>
+		<td class="noticias">INTERCAMIOS EUROPEOS</td>
+	</tr>
+	<tr>
+		<td>Se abre el plazo para convocar a los centros europeos que deseen participar en actividades Europeas con centros españoles de Educación Secundaria. Formaran parte de las actividades tanto alumnos como profesores, quedando subvencionado parte del programa y el viaje.</td>
+	</tr>
+	<tr>
+		<td class="noticias">RIESGOS DE LAS REDES SOCIALES</td>
+	</tr>
+	<tr>
+		<td>Actividad enmarcada dentro de las jornadas de seguridad y protección al menor. Dirigidas a estudiantes de educación secundaria, bachillerato, ciclos formativos y familias. Plazas limitadas. Se entregará diploma de asistencia. Lugar Aula Magna del colegio salesiano ntra. sra. del Pilar de Zaragoza</td>
+	</tr>
+	<tr>
+		<td class="noticias">TALLER: E-LEARNING</td>
+	</tr>
+	<tr>
+		<td>Segundas jornadas del taller e-learning. Este taller va dirigido a personas con inquietudes emprendedoras y con una o varias ideas de negocio en mente. El objetivo de la actividad es que los asistentes conozcan la herramientas necesarias para testar su idea de negocio, principalmente el LEAN CANVAS, y que las pongan en prácticas a través de ejercicios o experiencias reales.</td>
+	</tr>
+</table>
+</div>
+
+<div class="pie">
+
+</div>
+
+</div>
+ 
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+TRIGGER 1.
+
+DROP TRIGGER IF EXISTS controlAcceso //
+CREATE TRIGGER controlAcceso
+AFTER INSERT ON usuarios
+for each row begin
+ INSERT INTO bitacora(usuario,operacion,fecha) VALUES ( new.usuario, "Alta",now());
+end
+//
+
+
+TRIGGER 2.
+
+DROP TRIGGER IF EXISTS controlLogin //
+CREATE TRIGGER controlLogin
+AFTER UPDATE ON usuarios
+for each row begin
+ INSERT INTO bitacora(usuario,operacion,fecha) VALUES ( old.usuario, "LOGIN",now());
+end
+//
+
+CONSULTA USUARIOS
+UPDATE `usuarios` SET idpais = 1
+
+CONSULTA PRODUCTOS
+UPDATE `productos` SET idpais = 1

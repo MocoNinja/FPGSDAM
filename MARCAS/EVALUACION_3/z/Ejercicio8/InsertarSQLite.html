@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Data Base SQLite</title>
+<script language="javascript">
+function cargar(){
+	// Nombre, version (arbritaria), comentario, tamaño en bytes: este de estándar
+	var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024); // Si existe la lee; si no, la crea
+	// La base de datos se guarda en el disco duro; esta en concreto copia la base de datos en el directorio del navegador
+	// La ruta es c\users\user\AppData\Local\Google\Chrome\User Data\Default\databases
+
+	// Una transaccion es una operacion (puede ser cualquiera)
+	// tx es el objeto sobre el que se produce la transacción ~~ la base de datos
+	db.transaction(function(tx){						// (nombrecampo1, nombrecampo2...) No hay que especificar los tipos de dato. Se puede poner la cláusula unique para que no admita repetidos
+		// executeSql -> para ejecutar una sentencia
+		tx.executeSql("CREATE TABLE IF NOT EXISTS DATOS (codigo unique, nombre)");
+		tx.executeSql("INSERT INTO DATOS (codigo, nombre) VALUES (1, 'Pepe')");
+		tx.executeSql("INSERT INTO DATOS (codigo, nombre) VALUES (2, 'Juan')");
+	});	
+}
+</script>
+</head>
+
+<body onload="cargar()">
+
+</body>
+
+</html>

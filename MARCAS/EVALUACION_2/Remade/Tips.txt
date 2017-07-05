@@ -1,0 +1,11 @@
+﻿TECLADO
+
+$(document).ready(function(){
+	$("#escribe").keydown(function(event){
+		$("#parrafo").text("El c�digo de la tecla " + String.fromCharCode(event.which) + " es " + event.which);
+		$("#escribe").val("");
+	});
+});
+
+
+EFECTOS CSS PURO: entorno al ejervivio19 al 21

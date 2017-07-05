@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Ejercicio 5 de CANVAS</title>
+<script type="application/javascript">
+	window.onload = function(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+			for(var i=0; i<4; i++)
+				for(var j=0; j<3; j++){
+					ctx.beginPath();
+					var x = 25 + (j*50);
+					var y = 25 + (i*50);
+					var radio = 20;
+					var angInicio = 0;
+					var angFin = Math.PI + (Math.PI * j)/2;
+					var anticlockwise = ((i%2)==0? false: true);
+					ctx.arc(x, y, radio, angInicio, angFin, anticlockwise );
+					if(i>1){
+						ctx.fill();
+					}else{
+						ctx.stroke();
+					}					
+				}
+		}
+	};
+
+</script>
+
+</head>
+<body>
+
+<canvas id="canvas" width="350" height="350"></canvas>
+
+</body>
+
+</html>

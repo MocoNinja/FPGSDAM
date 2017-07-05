@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Carrito de la compra</title>
+<link rel="stylesheet" href="EstilosC.css" type="text/css">
+<script type="application/javascript">
+	window.onload = ver;
+	var productos = ["dell", "sony", "apple", "pb", "acer"];
+	function ver(){
+		document.getElementById("cesta").innerHTML = "";
+		if(sessionStorage.length<1)
+			document.getElementById("cesta").innerHTML = "<h5>No tienes productos en el carrito</h5>";	
+		else
+			document.getElementById("cesta").innerHTML = "<table class='pro'><tr><td>PRO</td><td>UNDS</td></tr></table>";
+
+		for(i=0; i<5; i++)
+			if(sessionStorage.getItem(productos[i]) != null)	
+				document.getElementById("cesta").innerHTML += "<table class='pro'><tr><td>" + productos[i] + "</td><td>" + sessionStorage.getItem(productos[i]) + "</td><td><img src='iconos2/eliminar.jpg' id='eli' onclick=borrarElemento('" + productos[i] + "')><td></tr></table>";
+
+	}
+	
+	function borrarElemento(codigo){
+		sessionStorage.removeItem(codigo);
+		ver();
+	}
+	
+	function almacenar(codigo){
+		if(sessionStorage.getItem(codigo) == null)
+			sessionStorage.setItem(codigo, 1);
+		else
+			sessionStorage.setItem(codigo, parseInt(sessionStorage.getItem(codigo)) + 1);
+		ver();
+	}
+
+</script>
+
+</head>
+<body>
+<div id="principal">
+	<h1>TIENDA ONLINE</h1>
+	<div id="productos">
+		<table>
+			<tr><th>IMAGEN</th><th>DESCRIPCIÓN</th><th>COMPRAR</th></tr>
+			<tr>
+				<td><img src="iconos2/dell.jpg"</td>
+				<td><span id="d1">Ordenador Dell</span></td>
+				<td><input type="button" value="Comprar" onclick="almacenar('dell')"></td>
+			</tr>	
+			<tr>
+				<td><img src="iconos2/Sony.jpg"</td>
+				<td><span id="d2">Ordenador Sony</span></td>
+				<td><input type="button" value="Comprar" onclick="almacenar('sony')"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/Apple.jpg"</td>
+				<td><span id="d3">Ordenador Apple</span></td>
+				<td><input type="button" value="Comprar" onclick="almacenar('apple')"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/pb.jpg"</td>
+				<td><span id="d4">Ordenador PBell</span></td>
+				<td><input type="button" value="Comprar" onclick="almacenar('pb')"></td>
+			</tr>
+			<tr>
+				<td><img src="iconos2/acer.jpg"</td>
+				<td><span id="d5">Ordenador Acer</span></td>
+				<td><input type="button" value="Comprar" onclick="almacenar('acer')"></td>
+			</tr>
+		</table>	
+	</div>
+	<div id="carrito">
+		<h4>Este es el estado del carrito</h4>
+		<div id="cesta"></div>
+		<div id="total"></div>
+	</div>
+	<div id="pie"></div>
+</div>
+</body>
+
+</html>

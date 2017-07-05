@@ -1,0 +1,43 @@
+<html>
+<head><title>Métodos SLIDE</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	
+	$("#deslizar").click(function(event){
+		$("#rectangulo").slideUp(4000);
+	});
+	$("#deslizar2").click(function(event){
+		$("#rectangulo").slideDown(4000);
+	});
+	$("#Lento").click(function(event){
+		$("#rectangulo").slideUp("slow");
+	});
+	$("#Rapido").click(function(event){
+		$("#rectangulo").slideDown("fast");
+	});
+	$("#Conmensaje").click(function(event){
+		$("#rectangulo").slideUp(2000, function(){
+			alert("Efecto terminado");
+		});
+	});
+	$("#Toggle").click(function(event){
+		$("#rectangulo").slideToggle(2000);
+	});
+});
+
+</script>
+</head>
+<body>
+<input type="button" id="deslizar" value="Ocultar en 4000 milisegundos">
+<input type="button" id="deslizar2" value="Mostrar en 4000 milisegundos">
+<input type="button" id="Lento" value="Ocultar Lento">
+<input type="button" id="Rapido" value="Mostrar Rápido">
+<input type="button" id="Conmensaje" value="Mensaje Final">
+<input type="button" id="Toggle" value="Efecto SlideToggle">
+
+<div id="rectangulo" style="padding:30px 30px 30px 300px; background-color:yellow">
+	<img src="imagenes/fondo2.jpg">
+</div>
+</body>
+</html>

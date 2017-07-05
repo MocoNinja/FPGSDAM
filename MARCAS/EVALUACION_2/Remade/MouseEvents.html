@@ -1,0 +1,31 @@
+﻿<html>
+    <head>
+        <title>Eventos de ratón</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            var posX = 0, posY = 0;
+            $(function(){
+                $(document).mousemove(function(event){
+                    posX = event.clientX;
+                    posY = event.clientY;
+                    $("#coordenadas").text(posX + ", " + posY);
+                });
+                $(document).mousedown(function(event){
+                    $("#clicks").text("Pulsado");
+                })
+                $(document).mouseup(function(event){
+                    $("#clicks").text("Soltado");
+                    setTimeout(limpia, 500);
+                });
+            });
+            function limpia()
+            {
+                $("#clicks").text("");
+            }
+        </script>
+    </head>
+    <body>
+        <p id="coordenadas"></p>
+        <p id="clicks"></p>
+    </body>
+</html>

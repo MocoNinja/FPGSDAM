@@ -1,0 +1,35 @@
+﻿<html>
+  <head>
+    <title>Editor de texto!</title>
+    <link type="text/css" rel="stylesheet" href="Ejercicio3.css">
+    <script language="javascript" src="Ejercicio3.js"></script>
+  </head>
+  <body>
+    <div id="principal">
+      <h2>Mensajes Publicados</h2>
+      <div id="mensajes"></div>
+      <div id="editor">
+        <h3>Publica aquí tu mensaje</h3>
+        <div id="botones">
+          <img src="img/icons/negrita.jpg" class="boton" onclick="negrita()">
+          <img src="img/icons/cursiva.jpg" class="boton" onclick="cursiva()">
+          <img src="img/icons/subrayado.jpg" class="boton" onclick="subrayado()">
+          <img src="img/icons/alini.jpg" class="boton" onclick="alinearIzquierda()">
+          <img src="img/icons/alinc.jpg" class="boton" onclick="alinearCentro()">
+          <img src="img/icons/alind.jpg" class="boton" onclick="alinearDerecha()">
+          <img src="img/icons/alinf.jpg" class="boton" onclick="alinearJustificado()">
+          <img src="img/icons/lno.jpg" class="boton" onclick="listaDesordenada()">
+          <img src="img/icons/lor.jpg" class="boton" onclick="listaOrdenada()">
+          <img src="img/icons/subi.jpg" class="boton" onclick="subindice()">
+          <img src="img/icons/supi.jpg" class="boton" onclick="superindice()">
+          <img src="img/icons/bco.jpg" class="boton" onclick="colorFondo()">
+          <img src="img/icons/fco.jpg" class="boton" onclick="colorTexto()">
+          <img src="img/icons/hipervinculo.jpg" class="boton" onclick="hipervinculo()">
+          <img src="img/icons/imagen.jpg" class="boton" onclick="insertarImagen()"  >
+        </div>
+        <div id="contenido" contenteditable="true"></div>
+        <input type="button" value="Publicar comentario..." onclick="publicar()">
+      </div>
+    </div>
+  </body>
+</html>

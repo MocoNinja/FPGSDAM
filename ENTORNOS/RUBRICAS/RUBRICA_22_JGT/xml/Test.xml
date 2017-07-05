@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+  <tests>
+    <test id="001">
+      <string>Uno</string>
+      <letras>2</letras>
+      <numeros>1</numeros>
+    </test>
+    <test id="002">
+      <string>Mozambique</string>
+      <letras>5</letras>
+      <numeros>5</numeros>
+    </test>
+    <test id="003">
+      <string>Alcachofa</string>
+      <letras>4</letras>
+      <numeros>5</numeros>
+    </test>
+    <test id="004">
+      <string>I n33d scissors 61!!</string>
+      <letras>3</letras>
+      <numeros>8</numeros>
+      </test>
+    <test id="005">
+      <string>MGS:2</string>
+      <letras>0</letras>
+      <numeros>3</numeros>
+      </test>
+  </tests>

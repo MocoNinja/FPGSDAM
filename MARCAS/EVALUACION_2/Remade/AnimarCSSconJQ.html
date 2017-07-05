@@ -1,0 +1,47 @@
+﻿<html>
+    <head>
+        <title>Plantilla</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                var div = $("#cuadrado");
+                div.click(function(){
+                    $(this).animate({
+                        color: "red",
+                        opacity: 0.5,
+                        left: 1000
+                    }, "slow");
+                    $(this).animate({
+                        color: "red",
+                        width: 600,
+                        top: 800,
+                        height: 20
+                    }, "fast");
+                    $(this).animate({
+                        color: "red",
+                        opacity: 0.0,
+                        left: 10
+                    }, "fast");
+                    $(this).animate({
+                        color: "yellow",
+                        opacity: 1,
+                        top: 10,
+                        height: 1000
+                    }, "slow");
+                });
+            });
+        </script>
+        <style type="text/css">
+            #cuadrado
+            {
+                position: absolute;
+                background-color: lime;
+                width: 75px;
+                height: 75px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cuadrado"></div>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+﻿<html>
+    <head>
+        <title>MouseOver - CSS</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            /* Manera de cargar una funcion en el $(document).ready*/
+            /*
+            Alternativa:
+            x = $(document);
+            x.ready(inicializaEventos);
+            */
+            $(cargarObjetos);
+
+            function cargarObjetos(){
+                var objetos;
+                objetos = $("a");
+                objetos.mouseover(entrarMouse);
+                objetos.mouseout(salirMouse);
+            }
+
+            function entrarMouse()
+            {
+                //alert("dentro");
+                $(this).css("color", "red");
+                $(this).css("fontFamily", "Arial");
+                $(this).css("background-color", "lime");
+                $(this).css("cursor", "pointer");
+            }
+
+            function salirMouse()
+            {
+                $(this).css("background-color", "white");
+                $(this).css("color", "cyan");
+            }
+        </script>
+    </head>
+    <body>
+        <p>Links</p>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">VIDEO</a><br>
+        <a href="https://wiki.archlinux.org/">ARCH WIKI</a><br>
+        <a href="https://wiki.gentoo.org/wiki/Main_Page">GENTOO WIKI</a>
+    </body>
+</html>

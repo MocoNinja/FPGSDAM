@@ -1,0 +1,40 @@
+﻿<html>
+    <head>
+        <title>Ej2</title>
+        <script type="text/javascript" src="jquery-min.js"></script>
+         <script type="text/javascript" src="jquery-ui.js"></script>
+            <link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+        <script type="text/javascript">
+            $(function(){
+                $("img").click(function(){
+                    $(this).hide(2000).show(2000);
+                })
+           });
+        </script>
+        <style type="text/css">
+            #foto1
+            {
+                position: absolute;
+                left: 35;
+                top: 35;
+            }
+             #foto2
+            {
+                position: absolute;
+                left: 35;
+                top: 400;
+            }
+             #foto1
+            {
+                position: absolute;
+                left: 35;
+                top: 600;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="foto1" src="img/img1.png" width="250" height="300">
+        <img id="foto2" src="img/img2.png" width="250" height="300">
+        <img id="foto3" src="img/img3.png" width="250" height="300">
+    </body>
+</html>

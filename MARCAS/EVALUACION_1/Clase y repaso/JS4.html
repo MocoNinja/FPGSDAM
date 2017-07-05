@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>Trabajar con eventos</title>
+	<script language="JavaScript">
+
+	function cambiar(){
+		//alert("WOW. Very skill. Much coding");
+		//alert(DOGE)//Lo reconoce pero no lo muestra :(
+		DOGE.src = "pics/doge3.png";
+	}
+	function revertir(){
+		DOGE.src = "pics/doge1.png";
+	}
+	</script>
+</head>
+<body bgcolor="yellow">
+		<h1 align="center">Evento onMouseOver</h1>
+		<br>	<br>	<br>	
+		<img id=DOGE src="pics/doge1.png" height="512" width="512" onmouseover="cambiar()" onmouseout="revertir()">
+	
+</body>
+</html>

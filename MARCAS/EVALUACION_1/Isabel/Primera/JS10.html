@@ -1,0 +1,24 @@
+<html>
+	<head><title>Cambiar width imagen</title>
+	<script languaje="JavaScript">
+		var i=50;
+		objeto=setInterval('cambiar()',20)
+		
+		function cambiar(){
+			
+			i = (i + 1);
+			imagen.width=i;
+		}
+		
+		function parar(){
+		clearInterval(objeto);
+		}
+		
+	</script>
+	</head>
+	<body onload='objeto'>
+	<h1 align=center >Cambiar width imagen</h1>
+		<img id="imagen" src="imagenes/fondo.jpg"  width=50 ><br>
+		<input  type="button" value="Parar" onclick="parar()">
+	</body>
+</html>

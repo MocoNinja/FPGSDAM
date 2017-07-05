@@ -1,0 +1,35 @@
+<html>
+<head><title>Página de movimiento</title>
+<style type="text/css">
+img{position:absolute}
+</style>
+<script language="JavaScript">
+puntero = null;
+function cargar(){
+	if(event.srcElement.className == "movil")
+		puntero = event.srcElement;
+}
+function mover(){
+	if(puntero != null){
+		puntero.style.left = event.x - 75;
+		puntero.style.top = event.y - 75;
+	}		
+}
+function soltar(){
+	if(!(((parseInt(puntero.style.left) + puntero.width) < parseInt(papelera.style.left)) ||
+	   (parseInt(puntero.style.left) > (parseInt(papelera.style.left) + papelera.width)) ||
+	   ((parseInt(puntero.style.top) + puntero.height) < parseInt(papelera.style.top)) ||
+	   (parseInt(puntero.style.top) > (parseInt(papelera.style.top) + papelera.heigth))))
+		puntero.style.display = "none";
+	
+	puntero = null;
+}
+</script>
+</head>
+<body onmousedown="cargar()" onmousemove="mover(); return false;" onmouseup="soltar()">
+<img class="movil" src="imagenes/juguete.png" width=150 height=150 style="left:80; top:50">
+<img class="movil" src="imagenes/pelota.png" width=150 height=150 style="left:300; top:50">
+<img class="movil" src="imagenes/cerilla.jpg" width=150 height=150 style="left:700; top:50">
+<img id=papelera src="imagenes/papelera.png" width=200 height=250 style="left:400; top:350">
+</body>
+</html>

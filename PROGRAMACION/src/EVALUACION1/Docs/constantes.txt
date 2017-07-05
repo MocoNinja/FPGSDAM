@@ -1,0 +1,7 @@
+EN un método:
+
+	final tipo nombre; Ej: final int numero = 10;
+
+GLOBALES:
+	
+	static final tipo nombre; Ej: static final int DIAS_SEMANA = 7;

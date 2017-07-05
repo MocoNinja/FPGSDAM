@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <tittle>Eventos de teclado</html>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#escribe").keydown(function(event){
+                    // console.log("JODETE");
+                    // Recordar que cada vez que pasa algo, se crea e instancia un objeto de la clase event el sólo
+                    // Eso es lo que se manipula
+                    // wich es el atributo
+                    $("#parrafo1").text("El código de la tecla " + String.fromCharCode(event.which) + " es " + event.which);
+                    $("#escribe").val(""); // Esto hace que no salga aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>
+            <input type="tect" id="escribe" value="">
+        </p>
+        <p id="parrafo1">
+            Mantén pulsada una tecla y después suéltala
+        </p>
+    </body>
+</html>

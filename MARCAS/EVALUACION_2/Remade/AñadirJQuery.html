@@ -1,0 +1,51 @@
+﻿<html>
+    <head>
+        <title>Añadiendo elementos</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        // OJITO A LA SINTÁXIS:
+        /*
+            var nombre: $("<tag>",{PROPIEDADES});
+            Donde las propiedades se separan por comas, y pueden contener a su vez {SubPropiedades},
+        */
+        var img1 = $("<img>",{
+            src:"img/naruto1.jpg",
+            id:"imagen",
+            width: "500px",
+            height: "500px",
+            css:
+            {
+                padding: "100px",
+                cursor:"pointer"
+            },
+            click: function(/*event*/){alert("hola");}
+        });
+            $(function(){
+                $("#meteImagen").click(function(event){
+                    $("body").append(img1); /* Append necesita un tag con marca de cierre! */
+                });
+                $("#link").click(function(ev){document.location = "AñadirJQuery.html"})
+                /* Sintaxis alternativa: metiendo un objeto que se crea sobre la marcha */
+                $("#asistente1").append(
+                    $("<input>"). /* Esta es la forma alternativa de crear los objetos */
+                    attr("type", "button").
+                    attr("value", "Añadido mediante JQuery automáticamente").
+                    attr("class", "magicos")
+                );
+                $("#asistente2").append(
+                    $("<p>").
+                    attr("class", "magicos").
+                    text("Magia")
+                );
+            });
+        </script>
+    </head>
+    <body>
+        <input type="button" id="link" value="Pulsa para redirigir a esta misma página">
+        <input type="button" id="meteImagen" value="Pulsa para añadir Imagen">
+        <p>Al igual que antes hemos añadido elementos mediante la orden de JQuery ".html", podemos añadir elementos de forma más general con ".append"...</p>
+        <div id="asistente1"></div>
+        <div id="asistente2"></div>
+        
+    </body>
+</html>

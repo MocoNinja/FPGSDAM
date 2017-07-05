@@ -1,0 +1,31 @@
+﻿<html>
+<head>
+    <title>Añadir objetos en el body mediante JQuery</title>
+    <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+    <script type="text/javascript">
+
+    var imagen = $("<img>", {src:"img/cage1.png",
+        id:"imagen",
+        css:{"padding":"2px",
+            "cursor":"pointer"
+            },
+            click: function(e){
+                // alert("Soy un actor pésimo");
+                document.location="JQuery14.html"; // El objeto location del document es una redireccion. Es el que indica la url. Es como un enlace.
+            }
+     });
+    // No estará, se creará al pulsar el botón
+    // var objeto = $("<tag>", {propiedad1:"valor1", propiedad2:"valor2",...});
+     $(document).ready(function(){
+         $("#boton").click(function(){
+             // alert("Has ganado un iPad");
+             $("body").append(imagen); // el append solo tiene sentido para marcas con cierre. No meter una imagen dentro de otra.
+
+         });
+     });
+     </script>
+</head>
+<body>
+    <input type="button" id="boton" value="Añadir imagen">
+    <br>
+</body>

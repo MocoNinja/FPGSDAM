@@ -1,0 +1,59 @@
+ div.teclado {
+			position:absolute;
+			margin-left:75px;
+			float: left;
+			height: 175px;
+			width: 375px;
+			padding-top:20px;
+			background-color:#8CBC32;
+		}
+ div.tecladoAlfa {
+			position:relative;
+			margin-left:20px;
+			float: left;
+			height: 120px;
+			width: 241px;
+			padding:2px;
+		}
+div.tecladoNum {
+			position:relative;
+			float: right;
+			height: 71px;
+			width: 99px;
+
+		}
+
+div.fila {
+			position:relative;
+			float: left;
+			width: 241px;
+		}
+div.filaN {
+			position:relative;
+			float: right;
+			width: 99px;
+		}
+div.filaC {
+			position:relative;
+			width: 350px;
+			text-align:center;
+			padding-bottom:10px;
+			font-family:Arial;
+			font-size:12px;
+			color:#FFFFFF;
+
+		}
+
+ div.tecla{
+			position:relative;
+			float: left;
+			cursor:hand;
+		}
+ div.teclaN{
+			position:relative;
+			float: left;
+			cursor:hand;
+		}
+img{
+			cursor:hand;
+		}

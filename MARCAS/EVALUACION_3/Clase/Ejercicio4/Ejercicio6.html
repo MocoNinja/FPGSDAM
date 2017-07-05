@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 tiene objetos de la clase canvas</title>
+	<!-- No son ventanas dentro de una ventana, es un lugar para dibujar -->
+	<style>
+    #canvas
+    {
+      border: 2px solid black;
+    }
+  </style>
+  <script language="javascript">
+    window.onload = function() // Ver similitud con JQuery
+    {
+      // alert("Entra");
+      var canvas = document.getElementById("canvas");
+      if(canvas.getContext) // Es el lugar donde trabajar
+      {
+        var ctx = canvas.getContext("2d");
+        ctx.beginPath(); // Vamos a definir polígonos, así que hay que acotar el camino
+        ctx.moveTo(25, 25); // Empiezas es 25, 25
+        ctx.lineTo(105, 25); // Dibujas ua línea en 105, 25
+        ctx.lineTo(25, 105);
+        ctx.closePath(); // Cerrar
+        ctx.fill(); // Dibujar
+      }
+    }
+  </script>
+</head>
+<body>
+	<canvas id="canvas" width="150" height="150"></canvas>
+</body>
+</html>

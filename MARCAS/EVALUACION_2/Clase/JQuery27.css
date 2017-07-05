@@ -1,0 +1,64 @@
+body{
+    background-color: black;
+    font-family: Consolas;
+    font-size: 15pt;
+    padding: 10px;
+}
+
+ul.tabs{ 
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    height: 32px;
+    width: 600px;
+    margin-top: -7;
+}
+ul.tabs li{
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 31px;
+    line-height: 31px;
+    border: 1px solid #333;
+    margin-bottom: -1;
+    background: #333;
+    overflow: hidden;
+    border-radius: 7px 7px 0 0;
+}
+
+ul.tabs li a{
+    font-size: 14pt;
+    font-family: Consolas;
+    text-decoration: none;
+    color: deepskyblue;
+    padding: 0 20px;
+    outline: none;
+}
+
+ul.tabs li a:hover{
+    background: #666;
+}
+
+.contenedor{
+    float: left;
+    clear:both;
+    width: 600px;
+    height: 500px;
+    border: 2px dotted #666;
+    display: block;
+    color: black;
+    border-radius: 10px 10px 10px 10px;
+    background: linear-gradient(#FFFFFF, #6495ed);
+}
+
+ul.tabs li.activa, ul.tabs li.activa a, ul.tabs li.activa a:hover{
+    color: lime;
+    background: #CCC;
+    font-weight: bold;
+    border-bottom: 1px solid #CCC;
+}
+div{
+    font-size: 11pt;
+    color: mediumvioletred;
+}

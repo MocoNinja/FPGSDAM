@@ -1,0 +1,324 @@
+/**********************************************************************************
+
+	Project Name: SmartStore WebSite (ASP implementation, database, etc.)
+	Project Description: ASP implementation, database, etc.
+	File Name: master.css
+	Author: Marian Stroiu
+	Author mail: stroiu.marian@gmail.com
+	
+**********************************************************************************/
+
+/* ---------- Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui ---------- */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0; overflow-y: scroll;  }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:''}
+
+strong { font-weight:bold }
+em { font-style:italic;}
+a img { border:none } /* Gets rid of IE's blue borders */
+
+sup { font-size: 50%; }
+
+a, a:hover { text-decoration: none; }
+
+
+
+
+
+/* ---------- General Styles ---------- */
+body {
+	font-family: Calibri;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 1.4em;
+	background-color: #e7e7e7;
+	color: #3d3e41;
+	margin: 50px 0; /* Temporary margin to push down the form */
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+em {
+	color: #808286;
+	margin-bottom: 20px;
+	display: block;
+	
+	width: 280px;
+	font-weight: 300;
+}
+
+
+p.notfound {
+	margin: 20px 0 0;
+}
+
+
+
+/* ---------- Structural Styles ---------- */
+div#container {
+	width: 850px;
+	margin: 0 auto;
+	padding: 1px;
+	border:1px solid #c5c5c5;
+}
+
+
+
+/* ---------- Tabs Styles ---------- */
+ul#tabs {
+	background-color: #3d3e41;
+}
+
+ul#tabs li {
+	padding: 25px;
+	float: left;
+}
+
+	ul#tabs li h1, ul#tabs li span { margin-left: 50px; }
+	
+	ul#tabs li h1 {
+		font-size: 16px;
+		color: white;
+		
+		text-transform: uppercase;
+	}
+	
+	ul#tabs li span {
+		font-size: 12px;
+		color: #8c8e95;
+		display: block;
+		margin-bottom: 3px;
+	}
+	
+	div.signInTabContent { background: url("../img/signInIcon.png") left center no-repeat; height: 36px;}
+
+	div.signUpTabContent { background: url("../img/signUpIcon.png") left center no-repeat; height: 36px; }
+
+	ul#tabs li.activeTab {
+		position: relative;
+		float: left;
+	}
+	
+		ul#tabs li.activeTab span.activeTabArrow {
+			position: absolute;
+			background: url("../img/activeTabArrow.png") center center no-repeat;
+			width: 16px;
+			height: 8px;
+			top: 86px;
+			left: 34px;
+			
+			margin: 0;
+		}
+
+	ul#tabs li.inactiveTab {
+		cursor: pointer;
+		border-left: 1px solid #84b130;
+		float: right;
+		background-color: #8cbc32; /* Fallback */
+	}
+
+		ul#tabs li.inactiveTab:hover {
+			background-color: #79a22c; /* Fallback */
+		}
+	
+
+		ul#tabs li.inactiveTab span.activeTabArrow { display: none; }
+
+
+
+/* ---------- Sign In ---------- */
+div#signIn, div#signUp {
+	padding: 50px 25px 30px 25px;
+	background-color: #white; /* Fallback */
+	background: -moz-linear-gradient(top, white, #f0f2f4 1px, white 50px);
+	background: -webkit-gradient(linear, 0 0, 0 50, from(white), color-stop(2%, #f0f2f4), to(white));
+}
+/* cambio*/
+div#signIn form.cleanForm { width: 440px; height:500px; margin: 0 auto; }
+
+div#signUp form.cleanForm { width: 500px; float: left; }
+
+div#sidebar {
+	float: right;
+	padding: 25px;
+	
+	width: 240px;
+
+	border: 1px solid #eaedf1;
+
+	-moz-box-shadow: inset 0 0 35px 5px #fafbfd;
+	-webkit-box-shadow: inset 0 0 35px 5px #fafbfd;
+	box-shadow: inset 0 0 35px 5px #fafbfd;
+}
+
+	div#sidebar h3 {
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	
+	div#sidebar ul li {
+		color: #808286;
+		background: url("../img/bulletPoint.png") left 3px no-repeat;
+		margin: 0 0 10px 20px;
+		padding-left: 15px;
+	}
+
+
+
+
+
+/* ---------- Form Style ---------- */
+form.cleanForm p { margin-bottom: 15px; }
+
+	form.cleanForm div a {
+		color: #1271c1;
+		border-bottom: 1px dotted #1271c1;
+	}
+
+		form.cleanForm div a:hover {
+			color: #3d3e41;
+			border-bottom: 1px dotted #3d3e41;
+		}
+/* cambio */
+
+input[type="password"] {
+	color: #787a7e;
+	font-size: 18px;
+	padding: 0 15px;
+	border: 1px solid #d5d9de;
+	outline: none;
+	height: 20px;
+	width: 100px;
+	
+	-moz-box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+	-webkit-box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+	box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+}
+input[type="text"], input[type="email"], input[type="tel"] {
+	color: #787a7e;
+	font-size: 18px;
+	padding: 0 15px;
+	border: 1px solid #d5d9de;
+	outline: none;
+	height: 50px;
+	width: 250px;
+	
+	-moz-box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+	-webkit-box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+	box-shadow: 0 0 0 5px #faf9f9, inset 0 0 5px 5px #faf9f9;
+}
+
+input[type="submit"] {
+    border:1px solid #c5c5c5;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	
+	background-color: #8cbc32; /* Fallback */
+	background: url("../img/submitButtonArrow.png") 88% center no-repeat, -moz-linear-gradient(top, #8cbc32, ##8cbc32);
+	background: url("../img/submitButtonArrow.png") 88% center no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#8cbc32), to(#8cbc32));
+	
+	color: white;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	text-shadow: 1px 1px 0 #7a7a7a;
+	
+	padding: 12px 45px 12px 12px;
+	cursor: pointer;
+}
+
+	input[type="submit"]:hover {
+		background: #99cc38; /* Fallback */
+		background: url("../img/submitButtonArrow.png") 88% center no-repeat, -moz-linear-gradient(top, #99cc38, #99cc38);
+		background: url("../img/submitButtonArrow.png") 88% center no-repeat, -webkit-gradient(linear, 0 0, 0 100%, from(#99cc38), to(#99cc38));
+	}
+
+	input[type="text"]:hover, input[type="text"]:focus, input[type="password"]:hover, input[type="password"]:focus,
+	input[type="email"]:hover, input[type="email"]:focus, input[type="tel"]:hover, input[type="tel"]:focus {
+		border: 1px solid #c1c5ca;
+	}
+
+form.cleanForm p label {
+	font-weight: bold;
+	font-size: 14px;
+	
+	display: block;
+	float: left;
+	width: 130px;
+	height: 55px;
+	line-height: 55px;
+	
+	margin-right: 20px;
+	text-align: right;
+}
+
+	form.cleanForm p em { margin-top: 15px; }
+	
+	form.cleanForm span.requiredField {
+		font-size: 14px;
+		color: #ff0000;
+	}
+
+	/* cambio */
+
+	div.formExtra, div.distanceLeft input[type="checkbox"], input[type="submit"], em { margin-left: 145px; margin-top: 100px }
+	
+	div.distanceLeft { margin: 25px 0 20px 0; }
+	
+	div.distanceLeft label { padding-left: 5px; }
+
+
+
+
+
+
+
+/* ---------- Sign Up ---------- */
+div#signUp { display: none; }
+
+div#signUp form.cleanForm p label { width: 150px; }
+div#signUp div.distanceLeft input[type="checkbox"],
+div#signUp input[type="submit"], div#signUp em, div#signUp div.formExtra { margin-left: 165px; }
+
+div.formExtra {
+	border-top: 1px solid #eeeded;
+	margin-top: 20px;
+	padding-top: 20px;
+}
+
+
+
+
+
+/* ---------- Inline Form Validation Styles ---------- */
+div#signUp form.cleanForm input.valid {
+	background: url("../img/validationOk.png") 245px center no-repeat;
+}
+
+div#signUp form.cleanForm input.error {
+	background: url("../img/validationError.png") 245px center no-repeat;
+	border: 1px solid #f37f69;
+  
+	-moz-box-shadow: 0 0 0 5px #f6cec7, inset 0 0 5px 5px #faf9f9;
+	-webkit-box-shadow: 0 0 0 5px #f6cec7, inset 0 0 5px 5px #faf9f9;
+	box-shadow: 0 0 0 5px #f6cec7, inset 0 0 5px 5px #faf9f9;
+}
+
+div#signUp form.cleanForm input.error + em { color: red; }

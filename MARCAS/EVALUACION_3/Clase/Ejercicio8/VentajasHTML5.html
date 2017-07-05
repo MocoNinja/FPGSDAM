@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Base de datos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script language="javascript">
+      function cargar()
+      {
+        // nombre, versión, comentario, dimensiones (en bytes)
+        var db = openDatabase("MiBaseDatos", "1.0", "Comentario nada interesante", 2 * 1024 * 1024);
+      }
+    </script>
+  </head>
+  <body onload="cargar()">
+    <!-- Dentro de Chrome se puede usar SQLite que es muy sencilla y no relacional que va muy bien para estas cosas -->
+    <!-- Ruta Windows: c:\users\asole\appdata\local\Google\Chrome\User Data\Default\ -->
+    <!-- Ruta Linux: ~/.config/google-chrome/Default -->
+    <!-- https://www.chromium.org/user-experience/user-data-directory -->
+  </body>
+</html>

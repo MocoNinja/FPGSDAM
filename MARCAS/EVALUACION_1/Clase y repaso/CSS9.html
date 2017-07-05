@@ -1,0 +1,52 @@
+﻿<html>
+
+<head>
+	<title>Moviendo varios objetos</title>
+</head>
+
+<style type="text/css">
+
+	#foto{
+		position: absolute; left:500; top:200
+	} 
+	#gif{
+		position: absolute; left:100; top:200
+	}
+	.h1{color: yellow;}
+</style>
+
+<script language="JavaScript">
+	var puntero = null;
+	function pulsar(){
+		if (event.srcElement.tagName == "IMG"){
+				puntero = event.srcElement;
+				//alert(puntero);
+		}
+	}
+
+	function soltar(){
+		if (puntero != null){
+			puntero = null;
+			//alert(puntero);
+		}
+	}
+
+	function mover(){
+		if (puntero != null){
+			//alert(puntero);
+			puntero.style.left = event.x - 50;
+			puntero.style.top = event.y - 50;
+			event.returnValue=false;
+		
+		}	
+	}
+	
+</script>
+
+<body bgcolor="black" onmousedown="pulsar()" onmouseup="soltar()" onmousemove="mover()">
+<h1>Moviendo unas imágenes mediante css y javascript!</h1>
+<br>
+		<img id="foto" src="Pics/2.jpg">
+		<img id="gif" src="Pics/Doge_4.gif" width="200">
+</body>
+</html>

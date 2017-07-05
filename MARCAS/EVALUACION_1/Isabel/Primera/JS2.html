@@ -1,0 +1,21 @@
+<html>
+<head><title>Pasar parámetros con JavaScript</title>
+<script language="JavaScript">
+	function enColor(colorTexto, texto){
+		//alert(colorTexto);
+		document.write("<font color=" + colorTexto + ">" + texto + "<br>");
+		for(i=1; i<texto.length; i++)
+			document.write("-");
+		document.write("</font><br>");
+	}
+</script>
+</head>
+<body>
+<h1 align="center">Pasar parámetros con JavaScript</h1>
+<script language="JavaScript">
+enColor("red", "En un lugar de La Mancha, de cuyo nombre no quiero acordarme...");
+enColor("blue", "Había una vez, un circo, que alegraba siempre el corazón...");
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<html>
+    <head>
+        <title>Plantilla</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+        <script type="text/javascript">
+            $(function(){
+                $("img").click(function(event){
+                    // $(this).css("visibility", "hidden");
+                    $(this).animate(
+                        {opacity: "0"},
+                        4000,
+                        function(){
+                            $(this).remove();
+                        }
+                    );
+                });
+           });
+        </script>
+        <style type="text/css">
+        
+        </style>
+    </head>
+    <body>
+        <img src="img/gatito1.png" width="250" heigth="450"> <br>
+        <img src="img/gatito2.png" width="250" heigth="450"> <br>
+        <img src="img/gatito3.png" width="250" heigth="450"> <br>
+        <img src="img/gatito4.png" width="250" heigth="450"> <br>
+    </body>
+</html>

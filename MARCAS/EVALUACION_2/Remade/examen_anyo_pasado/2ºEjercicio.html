@@ -1,0 +1,36 @@
+<html> 
+	<head>
+		<title>2ºEjercicio</title>
+		<style type="text/css">
+		#parrafo1 {position:relative; left:0px; top:0px; width:300;background-color:orange}
+		</style>
+		<script type="text/javascript" src="jquery-2.2.0.min.js"></script>
+		<script script languaje="JavaScript">
+	   		$(document).ready(function(){
+				var cont = 1;
+				$("#up2").click(function() {
+    				var actual = $("#imagen");
+    				cont++;
+    				if(cont>4){
+    					cont=1;
+    				}
+    				actual.slideUp(4000, function() {
+        			actual.attr("src", "./imagenes/"+cont+".jpg").load(function() {
+            		actual.slideDown(4000);
+        			});
+    				});
+				});
+
+
+			});
+		</script>
+			
+	</head>
+	<body>
+	<
+	<div class="parrafo" id="parrafo1" title="parrafo1">
+		<img src="./imagenes/1.jpg" width="250" class="imagen" id="imagen">
+	</div>
+	<input type="button" id="up2" value="Cambia de imagen"><br>
+	</body>
+</html>

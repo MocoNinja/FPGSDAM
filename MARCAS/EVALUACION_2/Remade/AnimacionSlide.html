@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+        <title>Plantilla</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#pulsar").click(function(){
+                   // alert("Wolas");
+                   $("#magia").slideDown(5000);
+                });
+                $("#magia").click(function(){
+                    alert("Me plego...");
+                    $("#magia").slideUp(1000);
+                });
+            });
+        </script>
+        <style type="text/css">
+            #magia
+            {
+                display: none;
+                width: 250px;
+                height: 250px;
+                background-color: black;
+                color: deeppink;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pulsar">No me pulses, pls</div>
+        <div id="magia">Cara de culo</div>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Arrastrando objetos mediante HTML5</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+      function empezar(e)
+      {
+        // El objecto event que hemos pasado es el inicio del arrastre
+        // console.log("Llega");
+        // dataTransfer: es un contenedor de objetos drag and drop
+        e.dataTransfer.effectAllowed = 'move';
+        // evento -> coger la clase del objeto sobre el que sea ha producido el evento -> coger un atributo -> la id
+        e.dataTransfer.setData("Data", e.target.getAttribute('id'));
+        // console.log(e.target.getAttribute('id'));
+        // e.dataTransfer.setDrawImage(e.target, 0, 0); // ME DA ERROR
+        return true;
+      }
+      function terminar(e)
+      {
+        e.dataTransfer.clearData("Data"); // Borra del contenedor
+        return true;
+      }
+      function encima(e)
+      {
+        var arrastraID = e.dataTransfer.getData("Data");
+        var contenedorID = e.target.getAttribute("id");
+        console.log(arrastraID + " está encima de " + contenedorID);
+        if (contenedorID == 'des1') return false;
+        return true;
+      }
+ 
+      function soltar(e)
+      {
+        console.log("entra");
+        var arrastraID = e.dataTransfer.getData("Data");
+        e.target.appendChild(document.getElementById(arrastraID));
+        e.stopPropagation();
+        return false;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="des1" ondragover="return encima(event)" ondrop="soltar(event)">Contenedor 1</div>
+    <div id="des2" ondragover="return encima(event)" ondrop="soltar(event)">Contenedor 2</div>
+    <div id="des3" ondragover="return encima(event)" ondrop="soltar(event)">Contenedor 3</div>
+    <div id="ar1" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)">A1</div>
+    <!-- Estamos llamando a la funcion empezar; el return es una instrucción de javascript que parece que dice que no hace falta Edit: parece que sí lo requiere, ver la analogía con los eventos de Java -->
+    <div id="ar2" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)">A2</div>
+    <div id="ar3" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)">A3</div>
+  </body>
+</html>

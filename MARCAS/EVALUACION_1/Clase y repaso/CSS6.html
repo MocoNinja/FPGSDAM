@@ -1,0 +1,53 @@
+﻿<html>
+<head>
+	<title>Ejercicio </title>
+<script language="JavaScript">
+var posicion = 0;
+var velocidad = 10;
+var aux;
+	function mover(){
+		//alert(posicion);
+		//alert(afoto.style.left);
+			afoto.style.left = posicion;
+			afoto2.style.left = 2000 - posicion;
+			posicion += velocidad;
+			if (posicion > 2000)
+				posicion = 0;
+		}
+/*clase
+var n = 100;
+function mover(){
+	//alert("Llega; n vale: " + n);
+	n++;
+	afoto.style.left = n;
+	if ( n >= 2000)
+		n = 0;
+}
+*/
+</script>
+
+<style type="text/css">
+/*
+* Absoluto: parte de 0,0
+* El relativo debe ser coherente con las propiedades de texto
+* Absoluto: position:absolute; esto permite:
+* top: distancia respecto a lo de arriba;
+* left: a la izquierda;
+*/
+#afoto{position:absolute; top:50px; }
+#afoto2{position:absolute; top:300px; }
+/*
+* Debe ponerse dentro de div, sino alert(afoto.style.left) no rula bien
+*/
+</style>
+
+</head>
+<body bgcolor = "black" onload="setInterval('mover()',10)">
+<div id="afoto" style="left:10">
+<img width=150 src="Pics\Doge_4.gif">
+</div>
+<div id="afoto2" style="left:1990">
+<img width=450 src="Pics\2.jpg">
+</div>
+</body>
+</html>

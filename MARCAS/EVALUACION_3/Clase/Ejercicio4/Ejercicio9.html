@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 tiene objetos de la clase canvas</title>
+	<!-- No son ventanas dentro de una ventana, es un lugar para dibujar -->
+	<style>
+    #canvas
+    {
+      border: 2px solid black;
+    }
+  </style>
+  <script language="javascript">
+    window.onload = function() // Ver similitud con JQuery
+    {
+      // Dibujar una jeta
+      var canvas = document.getElementById("canvas");
+      if(canvas.getContext) // Es el lugar donde trabajar (viene a ser el objeto Graphics)
+      {
+        var ctx = canvas.getContext("2d");
+
+        // Melón
+        ctx.fillStyle = '#FF0';
+        ctx.beginPath();
+        ctx.arc(75, 75, 50, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+
+        // Hocico
+        ctx.fillStyle = '#000';
+        ctx.beginPath();
+        ctx.arc(75, 75, 35, 0, Math.PI, false);
+        ctx.closePath();
+        ctx.fill();
+
+        // Los ojicos
+        ctx.beginPath();
+        ctx.arc(50, 55, 5, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(100, 55, 5, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
+    }
+  </script>
+</head>
+<body>
+	<canvas id="canvas" width="550" height="550"></canvas>
+</body>
+</html>

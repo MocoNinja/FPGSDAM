@@ -1,0 +1,59 @@
+<head>
+<link rel="stylesheet" type="text/css" href="estilos.css">
+</head>
+<script type="text/javascript">
+var captcha = ["W68HP", "YPDVK", "NSF", "83tsU", "ahuyad", "following finding", "PQJRYD", "smwm"];
+var respuestas = ["./imagenes/captcha/1.gif", "./imagenes/captcha/2.gif", "./imagenes/captcha/3.gif", "./imagenes/captcha/41.gif", "./imagenes/captcha/5.gif", "./imagenes/captcha/6.gif", "./imagenes/captcha/7.gif", "./imagenes/captcha/8.gif"];
+var captcha;
+	function captchas()
+	{
+	 captcha = Math.floor(Math.random() * captcha.length);
+	 document.getElementById("fotoCaptcha").src = respuestas[captcha];
+
+	}
+
+	function check()
+	{
+	if(document.getElementById("entrada").value == captcha[captcha]) alert("nise");
+	 else (alert("rekt"));
+	}
+</script>
+
+<body onload="captchas()">
+<div class="contenedor" >
+
+<div class="cabecera">
+	<img src="./imagenes/logobolsa.gif" border="0">
+
+	<hr>
+</div>
+
+<div class="cuerpo">
+	<form>
+	<p class="resaltado">Podrias indicarnos el motivo de tu solicitud</p>
+	
+	<ul>
+		<li><input type="radio" name="inputE1" id="inputE1" value="1">Modificaci�n de datos</li>
+		<li><input type="radio" name="inputE1" id="inputE1" value="2">Cancelaci�n ficha alumno</li>
+		<li><input type="radio" name="inputE1" id="inputE1" value="3">Notificaci�n de incidencia</li>
+		<li><input type="radio" name="inputE1" id="inputE1" value="4">Reclamaci�n de certificado</li>
+	</ul>
+	<img src="./imagenes/primera.jpg">
+	<hr>
+	<p class="resaltado"><a href="encuesta2.html">Siguiente</a></p>
+	
+	</form>
+
+	<button id="captchaneitor" value="captchaneitor" onclick="check()">
+	<img id="fotoCaptcha">
+	<input id="entrada" type="text" value="">
+</div>
+
+<div class="pie">
+</div>
+
+</div>
+ 
+</body>
+</html>
+

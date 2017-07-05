@@ -1,0 +1,7 @@
+No he podido usar el repositorio del tutorial, pues me daba error 403. Por si acaso he creado mi propio repo para practicar los pull/push, aunque debido a que no existían las mismas diferencias, los diff han diferido ligeramente.
+
+
+Los comandos utilizados en esta rúbrica han sido mayoritariamente los mismos a los vistos en el tutorial, con la aparición de:
+
+- Concepto HEAD: es un puntero al estado determinado por el último commit
+* Comando: git diff: permite ver las diferencias en los archivos, según los parámetros que se le pasen (a HEAD, a un estado...)

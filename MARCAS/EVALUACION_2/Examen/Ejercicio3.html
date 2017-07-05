@@ -1,0 +1,74 @@
+﻿<html>
+    <head>
+        <title>Ej3</title>
+        <script type="text/javascript" src="jquery-min.js"></script>
+         <script type="text/javascript" src="jquery-ui.js"></script>
+            <link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+        <script type="text/javascript">
+            
+            var numero = 1;
+            var prefijo = "#img";
+            var imagen = prefijo + numero;
+
+            $(function(){
+                $(".contenedor div").hide();
+	            $(".contenedor div:first").show();
+	            $("ul.tabs li").click(function(){
+                    numero = $(this).find("a").attr("name");
+                    $(imagen).slideUp(4000, function(){
+                        imagen = prefijo + numero;
+                        //alert(numero);
+                        //alert(imagen);
+                        //$(imagen).slideDown(4000); // NO ME RULA
+                        // Chapuza
+                        $(".contenedor div").show()
+                        $(imagen).css("z-index", "100");
+                    });
+                });
+            });
+        </script>
+        <style type="text/css">
+            img
+            {
+                width: 600;
+                height: 500;
+                position: absolute;
+                left: 120;
+                top: 120;
+            }
+            ul{
+            list-style-type:none;
+            }  
+            li
+            {
+                display:inline-block;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <table align=center>
+	    <tr><td>
+		<ul class="tabs">
+			<li><a href="#tab1" name="1">Menu1</a></li>
+			<li><a href="#tab2" name="2">Menu2</a></li>
+			<li><a href="#tab3" name="3">Menu3</a></li>
+			<li><a href="#tab4" name="4">Menu4</a></li>
+		</ul>
+		<div class="contenedor">
+			<div id="1">
+				<img id="img1" src="img/img1.png">
+			</div>	
+			<div id="2">
+				<img id="img2" src="img/img2.png">
+			</div>
+			<div id="3">
+				<img id="img3" src="img/img3.png">
+			</div>	
+			<div id="4">
+				<img id="img4" src="img/img4.png">
+			</div>		
+		</div>
+	    </td></tr>
+    </body>
+</html>

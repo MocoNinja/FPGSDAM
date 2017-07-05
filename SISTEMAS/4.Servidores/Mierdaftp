@@ -1,0 +1,26 @@
+Inicio -> Herramientas Administrativas -> Administrador del servidor
+
+Roles -> Añadir FTP
+Este servidor depende del Web; para hacer el FTP hay que hacer el Web con FTP o modificarlo para meterla.
+	Click dcho -> Agregar rol -> Marcamos los dos de FTP
+
+Configurarlo:
+	Antes de empezar: inicio -> equipo -> crear carpeta servidorftp en c:
+	Inicio -> herramientas adminisitrativas -> usuarios y equipos de active directory
+
+	Crear unidad organizativa: pinchar dominio -> click derecho -> nueva -> nueva unidad organizativa
+		Ahí se crean los usuarios del ftp
+	Crear grupo -> como antes -> creamos nuevo grupo FTP_RW. Las otras opciones, por defecto.
+	Se crean grupos así igual, pero llamandos FTP_R según permisos
+	Luego vamos creando usuarios
+	password: minimas de 8 caracteres
+
+	Hacer dobleclick en losgrupos y añadir los usuarios
+
+	Adminisitrando el server web en sitios -> click derecho -> agregar sitio ftp
+	configurar: igual que el server
+	aqui lo dejamos a partir de la ip por fecto y sin ssl
+	Dejamos autentificacion basica y por roles o grupos
+		Ahi metemos uno (en plan FTP_R) y en servidor ftp le damos a reglas de autorizacion de ftp
+
+	Para acceder ftp://IP

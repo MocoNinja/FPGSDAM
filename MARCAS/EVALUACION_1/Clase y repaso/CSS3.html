@@ -1,0 +1,49 @@
+<html>
+<!--
+- - 3 en raya
+-->
+<head>
+	<title>I have come here to code and chew gum. And I am all outta gum</title>
+</head>
+<style type="text/css">
+body{background-color:#ffee00}
+.val{background-color:cyan; width:30;height:35;text-align:center}/*Esto es una clase*/
+.noval{background-color:red; width:30;height:35;text-align:center}
+</style>
+<script language="JavaScript"">
+	/*
+	* Cuando hagamos click en una celda de clase val, que cambie a noval
+	*/
+	function cambiar(){
+		//alert(event.srcElement);
+		/*
+		* Hay que descubrir donde hacemos click
+		* Un click es un evento (al hacer cualquier cosa, se genera un objeto llamado event de la clase event)
+		* Estos "objetos" son realmente punteros
+		* Una caracteristica es saber donde se ha producido (.srcElement)
+		* srcElement -> devuelve una direccion de memoria
+		* objeto = srcElement -> el objeto es el valor de una direccion de memoria: es un puntero
+		*/
+		
+		if (event.srcElement.className == "val")
+			event.srcElement.className = "noval";
+		else if (event.srcElement.className == "noval")
+			event.srcElement.className = "val";
+	}
+</script>
+<body onclick="cambiar()">
+<h1>Tres en raya</h1>
+<table border=2 cellpadding=0 cellspacing=5 align="center">
+	<tr>	
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>	
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>	
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+</table>
+
+</body>
+</html>

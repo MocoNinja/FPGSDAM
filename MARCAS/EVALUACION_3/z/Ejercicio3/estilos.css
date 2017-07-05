@@ -1,0 +1,52 @@
+﻿#principal{
+	width:600px;
+	padding:20px;
+	background:#A4A4A4;
+	border-radius:20px;
+	margin:auto;
+	text-align:center;
+}
+
+#editor{
+	width:560px;
+	padding:15px;
+	background:#BDBDBD;
+	border-radius:10px;
+	margin:10px auto;
+	text-align:center;
+}
+
+#contenido{
+	width:500px;
+	min-height:100px;
+	padding:10px;
+	background:#F2F2F2;
+	border:2px solid black;
+	margin:auto;
+}
+
+#botones{
+	width:540px;
+	padding:12px;
+	background:#848484;
+	margin:10px auto;
+	border-radius:20px;
+}
+
+.boton{
+	width:30px;
+	height:30px;
+	border:1px solid black;
+}
+
+h2{
+	background:#585858;
+	border:3px solid white;
+	color:white;
+}
+
+
+
+
+
+

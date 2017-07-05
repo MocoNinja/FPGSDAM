@@ -1,0 +1,57 @@
+﻿<html>
+    <head>
+        <title>Drag 'n Drop</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- OJO; NUEVO ARCHIVO DE JQ -->
+        <script type="text/javascript" src="jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="jquery-ui.css"/>
+        <script type="text/javascript">
+            // Ejercicio: arrastrar y que vuelva al origen al soltar;
+            var tope = 0, izquierda = 0;
+            $(function(){
+                $(".dibujo").draggable({ /*Esto pone la propiedad draggable, por lo que sin programar nada ya pueden arrastarse*/
+                    start: function(event, ui){// Hacerle click
+                        tope = ui.position.top; // El objeto ui no se puede modificar, pero es el this igual
+                        izquierda = ui.position.left;
+                    },
+                    stop: function(event, ui){// Soltarlo
+                        this.style.top = tope; // Lo de arriba; aqui modificamos con el this porque no podemos cambiar el ui
+                        this.style.left = izquierda;
+                    }
+                });
+            });
+        </script>
+        <style>
+            #papelera1
+            {
+                position: absolute;
+                left: 170px;
+                top: 70px;
+            }
+            #papelera2
+            {
+                position: absolute;
+                left: 280px;
+                top: 70px;
+            }
+            #papelera3
+            {
+                position: absolute;
+                left: 390px;
+                top: 70px;
+            }
+            #papelera4
+            {
+                position: absolute;
+                left: 500px;
+                top: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="papelera1" class="dibujo"><img src="img/doge1.png" class="dibujo" width="250px" height="250px"></div>
+        <div id="papelera2" class="dibujo"><img src="img/doge1.png" class="dibujo" width="250px" height="250px"></div>
+        <div id="papelera3" class="dibujo"><img src="img/doge1.png" class="dibujo" width="250px" height="250px"></div>
+        <div id="papelera4" class="dibujo"><img src="img/doge1.png" class="dibujo" width="250px" height="250px"></div>
+    </body>
+</html>

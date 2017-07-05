@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Cuenta atrás</title>
+</head>
+	<script language="JavaScript">
+	/*
+	* Cuenta atras desde 100 hasta 0
+	* Pero en plan cronometro
+	*/
+	var contador = 5;
+	function iterar(){
+		caja.value = contador;
+		--contador;
+		if (contador >= 0){
+			setTimeout("iterar()", 1000);
+		}	
+	}
+	</script>
+<body bgcolor="black" onload='iterar()'>
+	<center>
+		<font color="red">
+		<h1>CUENTA ATRÁS!!!!!!!!!!!111!!!!!1</h1>
+		<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+		<input id="caja" size = 3>
+		</font>
+	</center>
+</body>
+</html>

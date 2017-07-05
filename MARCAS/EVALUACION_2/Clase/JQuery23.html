@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Transiciones</title>
+        <style>
+            li{
+                color:lightblue;
+            }
+            body{
+                background-color: coral;
+            }
+            .elemento1, .elemento2{
+                visibility: hidden;
+                border:1px solid #ccc;
+                padding: 2px;
+                align-self: center;
+                width: 400;
+                text-align: center;
+                font-family: Inconsolata;
+                font-size: 14pt;
+                position: absolute;
+                top:250;
+                left: 500;
+            }
+            #elemento1:hover .elemento1{
+                visibility: visible;
+                background-color:  midnightblue;
+                color: palegreen;
+            }
+            #elemento2:hover .elemento2{
+                visibility: visible;
+                background-color:  midnightblue;
+                color: mediumvioletred;
+            }
+        </style>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <ul>
+            <li id="elemento1">Mostrar el primer DIV oculto
+                <br>
+                <div class="elemento1">SURPRISE MOOTHERFUCKER</div>
+            </li>
+            <br>
+            <li id="elemento2">Mostrar el segundo DIV oculto
+                <br>
+                <div class="elemento2">SURPRISE MOOTHERFUCKER II: With a Vengeance</div>
+            </li>
+        </ul>
+    </body>
+</html>

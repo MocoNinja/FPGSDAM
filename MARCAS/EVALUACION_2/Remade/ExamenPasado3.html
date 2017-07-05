@@ -1,0 +1,31 @@
+﻿<html>
+    <head>
+        <title>Plantilla</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+        <script type="text/javascript">
+            $(function(){
+                $("#texto").keypress(function(events){
+                    // alert("d");
+                    $("#parrafo").text(String.fromCharCode(event.which));
+                    $("#texto").val("");
+                    // console.log($("#parrafo").text());
+                    $("#parrafo").animate({'font-size':300}, 3000).animate({'font-size':30}, 3000);
+                });
+           });
+        </script>
+        <style type="text/css">
+            div
+            {
+                background-color: cyan;
+                width: 1000;
+                height: 1000;
+            }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="texto">
+        <div id="parrafo"></div>
+    </body>
+</html>

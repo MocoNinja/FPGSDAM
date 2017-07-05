@@ -1,0 +1,61 @@
+<html>
+	<head><title>Cambiar de clase</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<style type="text/css">
+		.bloque1{
+			position:absolute;
+			top:50px;
+			left:20px;
+			width:300px;
+			background-color:lemonchiffon;
+		}
+		
+		.bloque2{
+			position:absolute;
+			top:50px;
+			left:400px;
+			width:300px;
+			background-color:lightcoral;
+		}
+	</style>
+	<script languaje="JavaScript">
+		function cambiarposicion(){
+			//alert(bloque1.className)
+			if(bloque1.className =="bloque1"){
+				bloque1.className ="bloque2";
+				bloque2.className='bloque1';
+			}else{
+				bloque1.className ="bloque1";
+				bloque2.className='bloque2';
+			}
+				
+		var i=50;
+		objeto=setInterval('cambiar()',20)
+		
+		function cambiar(){
+			
+			i = (i + 1);
+			imagen.width=i;
+		}
+		
+		function parar(){
+		clearInterval(objeto);
+		}
+				
+		}
+	</script>
+	</head>
+	<body >
+		<div id="bloque1" class="bloque1">
+			<img src="imagenes/circulo.png" width="100px">
+			El rey abrió este lunes con el diputado de Nueva Canarias, Pedro Quevedo, su quinta ronda de consultas para buscar candidato a la Presidencia del Gobierno, esta vez con la perspectiva de que la abstención del PSOE a la investidura de Mariano Rajoy facilite que esta misma semana pueda ser elegido por el Congreso.
+		</div>
+		
+		<div id="bloque2" class="bloque2">
+			<img src="imagenes/cruz.png" width="100px">
+			Felipe VI recibe a Quevedo en su despacho del Palacio de la Zarzuela en la primera de las quince reuniones con los dirigentes políticos que mantendrá durante dos jornadas, y que concluirá este martes, a primera hora de la tarde, con el presidente del Gobierno en funciones, Mariano Rajoy.
+		</div>
+		
+		<button onclick="cambiarposicion()">Cambiar</button>
+	</body>
+</html>

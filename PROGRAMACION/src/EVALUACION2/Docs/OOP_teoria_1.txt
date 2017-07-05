@@ -1,0 +1,18 @@
+/*
+*                                              *** CONCEPTOS ***
+* Concepto principal: CLASE
+* Concepto derivado: OBJETO
+* Clases: prototipo, idea, concepto
+* Objeto: entidades de la clase
+* Ej: clase Silla: tiene atributos (= propiedades = caracteristicas): patas, altura, color, precio...;   CLASE: DEFINICIÓN -> ATRIBUTOS + MÉTODOS
+* Cuando cogemos dos sillas, cada una es un objeto de esa clase;    OBJETO: Instancia de esa clase
+*
+*                                              *** NORMAS ***
+*   HERENCIA: las clases se estructuran en forma de arbol, por lo que puede haber subclases derivadas de las que derivan otras subclases, y asín. La idea fundamental (EN *JAVA*): una clase puede tener varias subclases, pero una sola superclase (esto se llama herencia múltiple).
+*   POLIMORFISMO: diferente forma; hay métodos con el mismo nombre, pero que distinta forma (distintos retornos, argumentos...). Ej: pintar  -> void pintar(String x) != void pintar()
+*   ENCAPSULAMIENTO: protección, para que no se pueda acceder a ciertas cosas. Son los modificadores public, private...
+*/
+
+/*
+* Clases: tienen extensión .java Deben empezar con mayúscula. Al compilar, dan .class
+*/

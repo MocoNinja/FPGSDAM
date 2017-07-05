@@ -1,0 +1,26 @@
+<html>
+<head><title>Visible y oculto</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(event){
+	$("#mostrar").click(function(event){
+		$("#boton").show(4000);
+		$(".imagen").show(4000);
+	});
+	$("#ocultar").click(function(event){
+		$("#boton").hide(4000);
+		$(".imagen").hide(4000);
+	});
+
+});
+</script>
+</head>
+<body>
+<input type="button" id="boton" value="Botón aparece y desaparece">
+<img src="imagenes/papelera1.jpg" class="imagen">
+<br><br><br><br>
+<input type="button" id="mostrar" value="Click para mostrar elementos">
+<br><br><br><br>
+<input type="button" id="ocultar" value="Click para ocultar elementos">
+</body>
+</html>

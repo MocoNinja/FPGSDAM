@@ -1,0 +1,47 @@
+Mierda de sistemas de router
+
+Protocolo estatico
+
+Hay que poner router del primero
+Se apaga
+Para meter modulos: cogemos el 4 y lo arrastramos al bujero de la izquierda y el de la derecha _> tenemos dos puertos de ethernet
+
+Configurar ruter protocolo estatico
+router>config>static>meter lo que pone por ahi red: la del switch destino; hop: por que puerto se va a accerder a esa red (la del siguiente router en el camino )
+
+Protocolo dinamico RIP
+
+se mete directamente la ip de las redes que puede acceder (es decir, poner la red que accede por cada puerto)
+
+
+
+
+EJERCICIO 1 GORDO
+
+PLAYSTATION
+web: www.playstation.es
+ftp: ftp.playstations.es
+soporte usuario
+email: playstation
+cliente correo
+nº hosts 70 000
+
+XBOX www.wbox.es
+ftp.xbox.es
+usuario soporte
+email xbox.es correo con cliente
+100 hosts
+
+
+NINTENDO
+ www.nintendo.es
+ftp.nintendo.es
+usuario soporte
+email xbox.es correo con cliente
+100 hosts
+
+
+2 pcs por red
+1 dns por red
+union con 3 routers, estaticos
+

@@ -1,0 +1,54 @@
+﻿<html>
+    <head>
+        <title>Bienvenido a mi página web</title>
+        <script type="text/javascript">
+            function mostrarEdad(valor)
+            {
+                // alert("llega");
+                // console.log(valor);
+                document.getElementById("verEdad").innerHTML = valor;
+            }
+        </script>
+        <link REL=StyleSheet href="Ejercicio1.css" type="text/css">
+    </head>
+    <body>
+        <form>
+            <h2>Formulario HTML 5</h2>
+            <p>
+                <!-- autofocus: Recibe el foco de forma automática -->
+                <!-- required: No puede mandarse el formulario sin rellenar ese campo -->
+                Nombre: <input type="text" name="nombre" autofocus required>
+            </p>
+            <p>
+                <!-- Este no existe en HTML -->
+                <!-- placeholder: mete un texto difuminado dentro del input -->
+                E-mail: <input type="email" placeholder="Introduce tu correo">
+            </p>
+            <p>
+                <!-- span: html no respeta ni espacios en blanco ni nada. Esta marca hace que se respete todo -->
+                Edad: <input type="range" id="edad" name="edad" min="0" max="120" step="1" value="35" onchange="mostrarEdad(this.value)">
+                <span id="verEdad">35</span>
+            </p>
+            <p>
+                Color: <input type="color" name="color" id="color">
+            </p>
+            <p>
+                <!-- autocomplete es de html tal cual -->
+                URL: <input type="url" autocomplete="on">
+            </p>
+            <p>
+                Nº Par de 0 a 10: <input type="number" name="par" id="par" min="-10" max="100" step="2">
+            </p>
+            <p>
+                Destinatario: <input type="email" name="destinatario" id="destinatario" list="listaDestinatarios" required>
+                <datalist id="listaDestinatarios">
+                    <option value="admin@salesianos.edu">Administrador</option>
+                    <option value="gorka@salesianos.edu">Ejecutor</option>
+                    <option value="agustin@gmail.com">Profe</option>
+                </datalist>
+            <p>
+                Envíar datos: <input type="submit">
+            </p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML5 tiene objetos de la clase canvas</title>
+	<!-- No son ventanas dentro de una ventana, es un lugar para dibujar -->
+	<style>
+    #canvas
+    {
+      border: 2px solid black;
+    }
+  </style>
+  <script language="javascript">
+    window.onload = function() // Ver similitud con JQuery
+    {
+      // alert("Entra");
+      var canvas = document.getElementById("canvas");
+      if(canvas.getContext) // Es el lugar donde trabajar
+      {
+        var ctx = canvas.getContext("2d");
+        for (i = 0; i < 4; i++)
+        {
+          for (j = 0; j < 3; j++)
+          {
+            ctx.beginPath();
+            var posX = 25 + (50 * j);
+            var posY = 25 + (50 * i);
+            var radio = 20;
+            var anguloInicial = 0;
+            var anguloFinal = Math.PI + (Math.PI * j) / 2;
+            var anticlockwise = ((i%2) == 0? false: true);
+            ctx.arc(posX, posY, radio, anguloInicial, anguloFinal, anticlockwise); // El booleano hace referencia al sentido contrario de las agujas del reloj
+            ctx.closePath();
+            if (i == 0 || i == 3) ctx.fill();
+            else ctx.stroke();
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+	<canvas id="canvas" width="550" height="550"></canvas>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<head><title>Reloj digital con JavaScript</title>
+	<script languaje="JavaScript">
+		n=60;
+		objeto=setInterval('cuentaAtras()',1000)
+		function cuentaAtras(){
+			if(n == 50)
+				clearInterval(objeto);
+			caja.value=n--;
+		}
+		
+		
+	//La funcion setInterval devulve un objeto
+	//Para poder para el setInterval hay que meterlo en una variable para poder llamarlo y asi poner el clearInterval	
+	//si se llama antes al objeto de poner el value se parara en ese numero.
+	</script>
+	</head>
+	<body onload='objeto'>
+		<h1 align=center >Cronometro con JavaScript</h1>
+		<center>
+		<input id="caja" size="8" >
+	</body>
+</html>

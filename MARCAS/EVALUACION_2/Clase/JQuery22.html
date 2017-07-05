@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Transiciones</title>
+        <style>
+            div{
+                position: absolute;
+                padding: 10px;
+                left: 10;
+                background-color: lemonchiffon;
+                transition: background-color 1.5s, left 4s, padding 15s ease;
+            }
+            div:hover{
+                background-color:greenyellow;
+                left: 300;
+                padding: 400px
+            }
+        </style>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+        // alternativa
+        transition: all 1s ease
+        </script>
+    </head>
+    <body>
+        <div style="width: 100px; height: 100px"/div>
+    </body>
+</html>

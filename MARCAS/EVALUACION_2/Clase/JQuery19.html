@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <tittle>Eventos de teclado</html>
+        <script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#escribe").keydown(function(event){
+                    $("#parrafo1").text("Tecla Pulsada");
+                    $("#escribe").val(""); 
+                });
+                $("#escribe").keyup(function(event){
+                    $("#parrafo1").text("Tecla Soltada");
+                });
+            });
+            
+        </script>
+    </head>
+    <body>
+    <p>
+            <input type="tect" id="escribe" value="">
+        </p>
+        <p id="parrafo1">
+            Mantén pulsada una tecla y después suéltala
+        </p>
+    </body>
+</html>

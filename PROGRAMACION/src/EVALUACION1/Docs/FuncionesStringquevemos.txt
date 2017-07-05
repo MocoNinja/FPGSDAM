@@ -1,0 +1,11 @@
+char charAt (int)
+String substring (int, int)
+int compareTo (String)
+boolean equals (String)
+int indexOf(String, int)
+int indexOf(char, int)
+replace(char, char)
+String replace (String, String)
+String valueOf(Otro tipo de dato primitivo (un int, un double...))
+
+y las de mayusculas

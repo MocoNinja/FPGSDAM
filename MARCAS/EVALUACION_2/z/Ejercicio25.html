@@ -1,0 +1,32 @@
+<html>
+<head><title>Galería de imágenes 1</title>
+<link rel="stylesheet" href="Ejercicio24.css" type="text/css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#next").click(function(){
+		$("#galeria li:first").appendTo("#galeria:first");
+	});
+	$("#before").click(function(){
+		$("#galeria li:last").prependTo("#galeria:first");
+	});
+});
+</script>
+<style>
+div{width:600; height:400; overflow:hidden}
+ul, li{padding:0px; margin:0px}
+li{float:left; list-style:none}
+</style>
+</head>
+<body>
+<div>
+	<ul id="galeria">
+		<li><img width=600 height=400 src="imagenes/1.jpg"></li>
+		<li><img width=600 height=400 src="imagenes/2.jpg"></li>
+		<li><img width=600 height=400 src="imagenes/3.jpg"></li>
+	</ul>
+</div>
+<button id="next">Siguiente</button>
+<button id="before">Anterior</button>
+</body>
+</html>

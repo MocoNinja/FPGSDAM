@@ -1,0 +1,33 @@
+<html>
+<head><title>Evento de ratón 1</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+x = $(document);
+x.ready(inicializaEventos);
+
+function inicializaEventos(){
+	var objetos;
+	objetos = $("a");
+	objetos.mouseover(entrarMouse);
+	objetos.mouseout(salirMouse);
+}
+function entrarMouse(){
+	$(this).css("background-color", "#ff0");
+}
+function salirMouse(){
+	$(this).css("background-color", "#fff");
+}
+</script>
+</head>
+<body>
+<a href="http://www.marca.es">Marca</a><br>
+<a href="http://www.as.es">As</a><br>
+<a href="http://www.eldiario.es">El diario</a><br>
+
+
+
+
+
+</body>
+</html>
+

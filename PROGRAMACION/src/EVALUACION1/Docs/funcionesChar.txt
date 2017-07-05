@@ -1,0 +1,3 @@
+
+
+Convertir minúscula a mayúscula: Character.toUpperCase(char);

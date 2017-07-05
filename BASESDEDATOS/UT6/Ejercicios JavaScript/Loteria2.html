@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Loteria</title>
+
+  <script type="text/javascript">
+  var veces = 0;
+  var numero;
+  var imagen = 1;
+  function funcion()
+  {
+      if(document.getElementById("text").style.color == "deeppink")
+        document.getElementById("text").style.color = "aqua";
+      else
+      document.getElementById("text").style.color = "deeppink";
+    veces++;
+    if (veces <= 100){
+      numero = Math.floor(Math.random()*9);
+      document.getElementById("im" + imagen).src = "img/" + numero + ".png";
+      setTimeout("funcion()", 5);
+    }
+    else if(imagen < 4  )
+    {
+      veces = 0;
+      imagen++;
+      setTimeout("funcion()", 100);
+    }
+    else
+    {
+       if(document.getElementById("text").style.color == "deeppink")
+        document.getElementById("text").style.color = "aqua";
+      else
+      document.getElementById("text").style.color = "deeppink";
+      setTimeout("funcion()", 100);
+    }
+  }
+  </script>
+  <style type="text/css">
+    body{
+      background-color: aqua;
+      background-image: url("img/space.gif");
+    }
+    img
+    {
+      width: 150px;
+      height: 400px;
+      align-self: center;
+      align-items: center;
+      align-content: center;
+    }
+    h1
+    {
+      font-size: 45px;
+      font-family: "Comic Sans MS";
+      color: deeppink;
+      text-align: center;
+    }
+  </style>
+</head>
+<body onload="funcion()">
+  <h1 id="text">PEAZO LOTERIA</h1>
+  <center>
+  <img id="im1">
+  <img id="im2">
+  <img id="im3">
+  <img id="im4"> 
+  </center>
+
+</body>
+</html>

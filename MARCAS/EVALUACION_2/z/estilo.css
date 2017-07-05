@@ -1,0 +1,40 @@
+﻿ul{
+	list-style-type:none;
+	padding:0;
+	text-align:center;
+}
+
+#menu{
+	width:200px;
+}
+
+#menu>li{
+	background-color:#4bcdc8;
+	border:1px outset #4bcdc8;
+	padding:5px;
+	position:relative;
+}
+
+.submenu{
+	position:absolute;
+	top:0;
+	left:199px;
+	display:none;
+}
+
+.submenu>li{
+	background-color:#189a96;
+	border:1px outset #189a96;
+	width:180px;
+	padding:2px;
+}
+
+#menu li:hover{
+	background-color:#086461;
+	color:white;
+	cursor:pointer;
+}
+
+#menu li:hover ul{
+	display: block;	
+}

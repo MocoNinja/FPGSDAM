@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title>Esto cayó en el examen!!!</title>
+</head>
+<script type="text/javascript">
+	/*
+		Tenemos varias imagenes, una papelera (estatica) y una cerilla
+		Al tirar algo a la papelera desparece y si tiramos la cerilla, se prende fuego
+	*/
+	objeto = null;
+	relieve = 2;
+
+	function cargar(){
+		if(event.srcElement.className == "movil"){
+			objeto = event.srcElement;
+			objeto.style.zIndex = relieve;
+			relieve++;
+		}
+	}
+
+	function soltarAgustin(){
+		if(!(((puntero.style.left + puntero.width) < papelera.style.left) ||
+					(puntero.style.left > (papelera.style.left + puntero.width)) ||
+					((puntero.style.top + puntero.height) < papelera.style.top) ||
+					(puntero.style.top > (puntero.style.top + puntero.heigth)))) 
+						puntero.style.display = "none";
+			//Aqui hay otro problema que devuelve Strings, asi que se usa:
+			parseInt(puntero.style.left);
+
+	}
+	function soltar(){
+		
+		if(objeto.x < 370 && objeto.x > 150){ 
+			//alert("X está entre 50 y 300");
+			if(objeto.y < 550 && objeto.y > 400){
+				//alert("Y está entre 300 y 400 también");
+				objeto.style.visibility="hidden";
+				//boom3.style.visibility = "visible";
+				//await sleep(2000);
+				//boom3.style.visibility = "hidden";
+				if (event.srcElement.id == "quemar"){
+					//alert("SAYONARA");
+					trituradora.src = "img/doge_fire.jpg";
+					boom1.style.visibility = "visible";
+					boom2.style.visibility = "visible";
+					document.body.style.backgroundImage = "url('img/flames.gif')"
+				} else {
+					//alert("A LA MIERDA");
+					objeto.style.visibility="hidden";
+				}
+			}
+		}
+						
+		if(objeto != null)
+			objeto = null;
+	}
+
+	function mover(){
+		if(objeto != null){
+			objeto.style.left = event.x -50;
+			objeto.style.top = event.y -50;
+			
+		}
+	}
+	
+</script>
+
+<style type="text/css">
+	#quemar{
+			position: absolute;
+			top:  150px;
+			left: 850px;
+		}
+		#trituradora{
+			position: absolute;
+			top:  400px;
+			left: 150px;
+		}
+		#basura1{
+			position: absolute;
+			top:  150px;
+			left: 150px;
+		}
+		#basura2{
+			position: absolute;
+			top:  150px;
+			left: 400px;
+		}
+		#boom1{
+			position: absolute;
+			top:  150px;
+			left: 600px;
+			visibility: hidden;
+		}
+		#boom2{
+			position: absolute;
+			top:  150px;
+			left: 100px;
+			visibility: hidden;
+		}
+		#boom3{
+			position: absolute;
+			top:  150px;
+			left: 400px;
+			visibility: hidden;
+		}
+</style>
+
+<body bgcolor="black" onmousedown="cargar()" onmouseup="soltar()" onmousemove="mover(); event.returnValue=false">
+	<input type="button" name="Reset" onclick="location.reload()">
+	<img id="quemar" src="img/flamethrower.jpg" width="250" class="movil">
+	<img id="trituradora" src="img/trituradora.png" width="450" class="inmovil">
+	<img id="basura1" src="img/platano.png" width="250" class="movil">
+	<img id="basura2" src="img/papel.png" width="250" class="movil">
+	<img id=boom1 src="img/boom.gif" width="150" class="boom">
+	<img id=boom2 src="img/boom.gif" width="150" class="boom">
+	<img id=boom3 src="img/boom.gif" width="150" class="boom">
+
+</body>
+</html>

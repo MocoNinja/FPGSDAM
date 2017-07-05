@@ -1,0 +1,76 @@
+<html>
+<head><title>Galería de imágenes 2</title>
+<link rel="stylesheet" href="Ejercicio24.css" type="text/css">
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script>
+var validosNombre = "^[a-z A-Z]{4,30}$";
+var validosEmail = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,4}$";
+
+$(function(){
+	checkForm("#contacto");
+});
+
+function checkForm(idForm){
+	$(idForm + " *").on("change keyup", function(){
+		if(checkInput("#nombre", validosNombre)
+			&& checkInput("#apellidos", validosNombre)
+			&& checkInput("#email", validosEmail)
+			&& checkSelect("#edad")
+			&& checkTextArea("#comentario")
+			&& checkRadioBox("#legal")
+			&& checkRadioBox("[name = boletin]"))
+		{
+			$(idForm + " button.submit").removeAttr("disabled");
+		}else{
+			$(idForm + " button.submit").attr("disabled", "disabled");
+		}
+	});
+}
+
+function checkInput(idInput, validacion){
+	return $(idInput).val().match(validacion) ? true : false;
+}
+function checkSelect(idSelect){
+	return $(idSelect).val() ? true : false;
+}
+function checkTextArea(idText){
+	return $(idText).val().length > 12 ? true : false;
+}
+function checkRadioBox(nombreRadioBox){
+	return $(nombreRadioBox).is(":checked") ? true : false;
+}
+</script>
+<style>
+form{margin:1em}
+label{display:block; margin:.5em 0}
+</style>
+</head>
+<body>
+<form name="contacto" id="contacto" method="post">
+	<label for="nombre">Nombre</label>
+	<input name="nombre" id="nombre" size="30">
+	<label for="apellidos">Apellidos</label>
+	<input name="apellidos" id="apellidos" size="30">
+	<label for="email">E-mail</label>
+	<input name="email" id="email" size="30">
+	<label for="edad">Edad</label>
+	<select name="edad" id="edad">
+		<option></option>
+		<option value="18-25">18 a 25 años</option>
+		<option value="26-45">26 a 45 años</option>
+		<option value="46-65">46 a 65 años</option>
+		<option value="65+">Más de 65 años</option>
+	</select>
+	<label for="comentario">Comentario : </label>
+	<textarea name="comentario" id="comentario" cols="40", rows="4"></textarea>
+	<label for="legal"><input type="checkbox" name="legal" id="legal"/>Estoy de acuerdo</label>
+	<label>¿Quiere recibir nuestro boletín?
+		<input type="radio" name="boletin" value="si"/>Sí
+		<input type="radio" name="boletin" value="no"/>No
+	</label>
+
+<br/><br/><br/>
+<button class="submit" disabled>Enviar</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,13 @@
+Notas para empezar a programar en PHP:
+
+* El navegador no puede correr tal cual el codigo php, así que hay que usar servidor apache
+
+* Hay que crear una carpeta en htdocs (ej: ejercicios)
+
+* /XAMPP/HTDOCS: va a ser nuestro localhost.
+    Habrá que poner en el navegador localhost/ejercicios
+
+
+* Las variables llevan un $: $variable
+
+* La concatenación va con str.str

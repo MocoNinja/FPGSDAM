@@ -1,0 +1,123 @@
+!<!DOCTYPE html>
+<html>
+    <title>Carrito de la compra alternativo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <script type="text/javascript">
+      window.onload = mostrar;
+      var etiquetas = ['dell', 'sony', 'apple', 'pb', 'acer'];
+
+      function mostrar()
+      {
+        var mensaje = "";
+        if(sessionStorage.length == 0)
+        {
+          mensaje = "<h5>No tiene ningún elemento en el carrito</h5>";
+        }
+        else
+        {
+          mensaje = "<table><tr><th>Producto</th><th>Cantidad</th><th>Borrar</th></tr>"
+          var i = -1;
+          while (++i < 5)
+          {
+            
+            producto = etiquetas[i];
+            valor = sessionStorage.getItem(producto);
+            if (valor != null)
+            {
+              mensaje += "<tr><td>"+ producto + "</td><td>" + valor + "</td><td><input type='button' value='borrar' onclick='borrarElemento(" + '"' + producto + '"' + ")'></td></tr>";
+            }
+          }
+          mensaje += "</table>";
+          console.log(mensaje);
+        }
+        document.getElementById("cesta").innerHTML = mensaje;
+      }
+
+      function almacenar(codigo)
+      {
+        if (sessionStorage.getItem(codigo))
+        {
+          console.log(codigo + " si estaba en el carrito. Metiendo otra unidad");
+          console.log("Número unidades: " + sessionStorage.getItem(codigo));
+          precio = parseInt(sessionStorage.getItem(codigo));
+          precio++;
+          sessionStorage.setItem(codigo, precio);
+        }
+        else
+        {
+          console.log(codigo + " no estaba en el carrito. Metiendolo");
+          console.log("Número unidades: " + sessionStorage.getItem(codigo));
+          sessionStorage.setItem(codigo, 1);
+        }
+        mostrar()
+      }
+
+      function borrarElemento(codigo)
+      {
+        console.log("borrando " + codigo);
+        sessionStorage.removeItem(codigo);
+        location.reload();
+      }
+
+      function borrarTODO()
+      {
+        sessionStorage.clear();
+        localStorage.clear();
+        location.reload();
+      }
+
+    </script>
+    <!--
+  El ejercicio de antes pero con una dupla: codigo, cantidad (las duplas son codigo -> valor)
+  El codigo será el nombre de producto (producto1, producto2...)
+  Tambien debe coincidir con el nombre del archivo
+  La cantidad la mantenemos, pero el boton solo añadira de una en una
+  Del precio y descripcion vamos a pasar porque normalmente estarán en una base de datos
+-->
+  </head>
+  <body>
+    <div id="principal">
+      <h1>TIENDA ONLINE</h1>
+      <div id="productos">
+        <table>
+          <tr><th>IMAGEN</th><th>DESCRIPCIÓN</th><th>COMPRAR</th></tr>
+          <tr>
+            <!-- Nuevo juego. La variable de sesión no va a ser d1, sino el CONTENIDO de d1 (dell en este caso -->
+            <td><img src="img/dell.jpg"></td>
+            <td><span id="d1">Ordenador Dell</span></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar('dell')"></td>
+          </tr>
+          <tr>
+            <td><img src="img/sony.jpg"></td>
+            <td><span id="d2">Ordenador Sony</span></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar('sony')"></td>
+          </tr>
+          <tr>
+            <td><img src="img/apple.jpg"></td>
+            <td><span id="d3">Ordenador Apple</span></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar('apple')"></td>
+          </tr>
+          <tr>
+            <td><img src="img/pb.jpg"></td>
+            <td><span id="d4">Ordenador PBell</span></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar('pb')"></td>
+          </tr>
+          <tr>
+            <td><img src="img/acer.jpg"></td>
+            <td><span id="d5">Ordenador ACER</span></td>
+            <td><input type="button" value="Añadir al carrito" onclick="almacenar('acer')"></td>
+          </tr>
+        </table>
+      </div>
+      <div id="carrito">
+        <h4>Estado de su carrito</h4>
+        <div id="cesta"></div>
+        <div id="total"></div>
+      </div>
+      <div id="pie"></div>
+      <div id="borrarTodo"><input type="button" value="Borrar todos los elementos" onclick="borrarTODO()"/></div>
+    </div>
+  </body>
+</html>

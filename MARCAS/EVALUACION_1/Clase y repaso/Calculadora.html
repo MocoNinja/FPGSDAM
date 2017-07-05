@@ -1,0 +1,68 @@
+
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*
+			Calculadora:
+			Dos cajas donde metemos datos, con una intermedia donde seleccionamos la operaicón de un menu desplegable
+			Un botón de igual que pone el resultado de la operacion
+		*/
+		var operando1 = 0;
+		var operando2 = 0;
+		var operacion = 0;
+
+		function operar(a, b, c){
+			switch (c){
+				case "sumar": //suma
+					resultado.value = a + b;
+					break;
+				case "restar": //resta
+					parseInt(resultado.value = a - b);
+					break;
+				case "producto": //producto
+					parseInt(resultado.value = a * b);
+					break;
+				case "cociente": //cociente
+					parseInt(resultado.value = a / b);
+					break;
+			}
+			
+		}
+
+		function leer(){
+			operando1 = parseInt(caja1.value);
+			if(operando1 == "NaN")
+				alert("wow");
+			operando2 = parseInt(caja2.value);
+			if(operando1 == "NaN")
+				alert("wow");
+			operacion = selector.value;
+			//alert(operando1 + ", " + operando2+ ", " + operacion);
+			operar(operando1, operando2, operacion);
+		}
+
+	</script>
+</head>
+<body background="raw.gif">
+<font color="yellow" align="center">
+<h1>Mejor calculadora ever</h1>
+<center>
+<div id="operaciones">
+	<form>
+		<input type="number" name="caja1" id="caja1">
+		<select id="selector">
+		  <option value="sumar">+</option>
+		  <option value="restar">-</option>
+		  <option value="producto">*</option>
+		  <option value="cociente">/</option>
+		</select>
+		<input type="number" name="caja2" id="caja2">
+		<input type="button" name="igual" value="=" onclick="leer()">
+		<input type="box" name="resultado" id="resultado">
+		</form>
+</div>
+</center>
+
+</body>
+</html>

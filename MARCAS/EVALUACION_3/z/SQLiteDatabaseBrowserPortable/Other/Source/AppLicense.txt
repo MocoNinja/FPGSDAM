@@ -1,0 +1,1 @@
+In the spirit of the original SQLite source files, the authors disclaim copyright to this source code. It may be used as the basis for other programs, public domain, open source or commercial. Do whatever you want with it.

@@ -1,0 +1,27 @@
+<html>
+	<head><title>Cambiar imagen</title>
+	<script languaje="JavaScript">
+		var i=0;
+		objeto=setInterval('cambiarimagen()',1000)
+		
+		function cambiarimagen(){
+			
+			if(i % 2 == 0)
+				imagen.src='imagenes/fondo.jpg';
+			else
+				imagen.src='imagenes/fondo2.jpg';
+			i = (i + 1) % 2;
+		}
+		
+		function parar(){
+		clearInterval(objeto);
+		}
+		
+	</script>
+	</head>
+	<body onload='objeto'>
+	<h1 align=center >Cambiar imagen</h1>
+		<img id="imagen" src="imagenes/fondo.jpg"  width=250 height=250><br>
+		<input  type="button" value="Parar" onclick="parar()">
+	</body>
+</html>

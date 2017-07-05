@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Leer datos de SQLite</title>
+<script language="javascript">
+function leer(){
+	var db = openDatabase("MiBaseDatos", "1.0", "Comentario sobre BD", 2 * 1024 * 1024);
+	db.transaction(function(tx){
+						// Consulta, [] <- como la consulta era de seleccion en vez de accion, se crea un resultado que es un *conjunto* de registros
+																// resultados es la tabla generada con la respuesta
+		tx.executeSql("SELECT * FROM PRODUCTOS", [], function(tx, resultados){
+			var len = resultados.rows.length;
+			msg = "<p>Número de filas : " + len + "</p>";
+			// otra forma de acceder a un objeto
+			document.querySelector("#estado").innerHTML += msg;
+		
+			for(i=0; i<len; i++){
+				msg = "<p><b>" + resultados.rows.item(i).codigo + "</b> - " + resultados.rows.item(i).nombre + "</p>";
+				document.querySelector("#estado").innerHTML += msg;
+			}
+		}, null);
+	});	
+}
+</script>
+</head>
+
+<body onload="leer()">
+<div id="estado" name="estado">Mensaje de estado</div>
+</body>
+
+</html>

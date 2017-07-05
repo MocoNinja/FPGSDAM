@@ -1,0 +1,16 @@
+1.- Situarás una imagen en el centro de la página y un botón debajo de ella.  Cuando pulses el botón la imagen irá desapareciendo gradualmente en 10 segundos.  La propiedad de estilos que permite esto es "opacity" y puede tomar valores entre 0 y 1.  Mientras desparece, la imagen también irá reduciendo su tamaño.
+3 puntos
+
+2.- Diseñad una tabla en cuya primera fila se disponga una sola celda en la que se carga inicialmente la imagen 1.
+En la segunda fila habrá 4 celdas, en cada una de ellas habrá una imagen, la 1, 2, 3 y 4.
+Cuando hagamos click en una de las imágenes de la fila de abajo, la imagen de esa celda pasará a la celda de la fila
+de arriba.
+2 puntos
+
+3.- Tienes un menú desplegable (un select) en el que se muestran los nombres de 4 imágenes, cuando selecciones uno de esos nombres, en la parte inferior se mostrará la imagen seleccionada.
+2 puntos
+
+4.- Un avión se va desplazando por la pantalla en línea recta y hacia la derecha.  Cuando pulses la tecla "q" el avión subirá 20 pixels y cuando pulses la "a" el avión bajará 20 pixels, de manera que serás tú, desde el teclado, quien maneje su trayectoria.
+3 puntos
+
+

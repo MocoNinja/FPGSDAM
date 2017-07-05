@@ -1,0 +1,33 @@
+Servidor web: aloja páginas web
+
+1) Inicio -> Herramientas Administrativas -> Administrador del servidor
+
+2) Hay que añadir el rol de Servidor Web (IIS)
+
+3) Aquí hay varias opciones según necesidades. Aquí aceptamos sin tocar nada.
+
+4) Una vez hecho, en herramientas administrativas aparece una opción nueva de Admnistrador del IIS
+
+5) Hoy vamos al sitio por defecto
+
+Nota: NO coge PHP por defecto
+
+6) Documentos predeterminados: el index. Ruta por defecto para dejar los archivos: C:\inetpub\wwwroot
+Tenemos que agregar el archivo que hemos metido en ese directorio.
+Accedemos mediante localhost/ruta/ip en el navegador.
+
+7) ¿Y qué pasa si queremos alojar varias?
+
+8) En sitios de donde antes hemos cogido el default, se añaden y pista.
+Se pueden alojar donde te salga de los cojones. El recomienda otro alojamiento para tener más orden c:\web
+ -> http o https; no se puede juntos. Si se quieren los 2 hay que duplicar.
+ -> ip ~~ tarjeta de red. Todas las no asignadas acepta cualquiera, si no la ruta que se quiera.
+
+ 9) Triquiñuela para que actue como dns local
+  -> meterlo en predeterminados de la *nueva pagina*
+  -> editar el hosts (C:\Winbugs\System32\drivers\etc\hosts)
+
+  ÑAPA: notar como esta subsección es un plagio de UNIX
+
+  -> meter al host:
+  	$ipserver www.javiguapo.es

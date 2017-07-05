@@ -1,0 +1,22 @@
+Vamos a empezar a hacer subclases de la clase Frame.
+Esto es una clase para hacer interfaces gráficas.
+Hoy en día no se usa, pero vamos a verlo porque es útil para aprender.
+
+/*
+* Ventana con un botón
+* Cada pulsación creará óvalos en posiciones aleatorias, con distintos colores y tamaños
+*
+* Dentro de un objeto de la clase frame, está el objeto de la clase Graphics
+* -> dentro de este objeto puede dibujarse lo que se quiera. AL modificar el graphic, se modifica el frame
+* Post ejercicio dice que es mentira
+* El frame no lleva el Graphics, lleva "un bolsillo" para la direccioj si la necesitamos
+* Todos los objetos son punteros
+* frame pues es un conjunto de direcciones de memoria, que apuntan a Frame, Graphics...
+            // Noto cierta incoherencia en la explicacion, pues luego ha hecho el diagrama con frame BB00 y g con AA00
+            // Es decir, no me queda del todo claro si son variables discretas o una multiple
+            // Pero bueno, que la idea fundamental esta bien
+* es decir, frame no ocupa una mierda porque tiene las direcciones unicamente. Frame y Graphics es lo que ocupa un cojon.
+* el objeto graphics que hemos creado (titanx) es un puntero que apunta a Graphics -> apunta al mismo objeto que el programa ppal.
+* Mucha gente puede apuntar a una misma columna, pero solo existe una columna. Si mandamos a alguien a la columna, puede fijarse en cualquiera de los apuntadores, que llegara a la misma columna
+* Un objeto puede ser apuntado por muchos otros, pero no esta dentro de ellos.
+*/

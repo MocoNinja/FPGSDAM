@@ -1,0 +1,37 @@
+<html>
+<head><title>Animar y Parar</title>
+<script type="text/javascript" src="jquery-1.11.2.min.js"></script>
+<script language="JavaScript">
+$(document).ready(function(){
+	$("#flip").click(function(){
+		$("#panel").slideDown(5000);
+	});
+	$("#parar").click(function(){
+		$("#panel").stop();
+	});
+});
+</script>
+<style>
+#panel, #flip{
+	padding: 5px;
+	font-size: 18px;
+	text-align: center;
+	background-color: #555;
+	color: white;
+	border: solid 1px #666;
+	border-radius: 3px;
+}
+#panel{
+	padding: 50px;
+	display: none;
+}
+
+</style>
+</head>
+<body>
+<button id="parar">Parar Animacion</button>
+<div id="flip">Click aquí para aumentar el panel</div>
+<div id="panel">FELIZ AÑO</div>
+
+</body>
+</html>

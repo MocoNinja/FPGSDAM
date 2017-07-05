@@ -1,0 +1,33 @@
+IP: 192.168.154.0 (Máscara 255.255.255.0) CLASE CLASE
+Hosts: 6, 10, 60, 45
+
+El mayor número de hosts posible son 60, así que tenemos que coger 2**6 - 2 = 62 Hosts posibles
+
+La división va a ser a partir del sexto bit LO: (0 0 | 0 0 0 0 0 0) Siendo los primeros de la subred y los siguientes de los hosts
+
+1) Calcular la mascara de subred: 255.255.255.m
+Para calcular ese numero ponemos los bits de red a 1 y pasamos a decimal: entonces 1 1 0 0 0 0 0 0 es en decimal 128 + 64 = 192
+
+Obtenemos una máscara de subred de 255. 255. 255. 192
+
+2) Hay que obtener las direcciones de las subredes que se nos han planteado al principio -> contando en binario
+
+1: 6  hosts --> 0 0 | 0 0  0 0 0 0
+2: 10 hosts --> 0 1 | 0 0  0 0 0 0
+3: 60 hosts --> 1 0 | 0 0  0 0 0 0
+4: 45 hosts --> 1 1 | 0 0  0 0 0 0
+
+3) Ahora que ya tenemos las separaciones hechas y el valor de la mascara, ya podemos hacer los cálculos
+
+    a) Dirección de red: se mantienen los dos bits destinados a redes y ponemos los bits que identifican a los hosts se ponen a 0
+    Entonces, para la primera subred, se tiene una direccion de red: D.S:192.168.154.0
+    Para la dirección de broadcast se mantienen los bits destinados a las subredes y los de host se asignan a 1; D.B: 0 0 1 1  1 1 1 1 -> 192.168.154.63
+    El rango de IPs va entonces de la 192.168.154.1 a la 192.186.154.62
+
+    b) D.S: 192.168.54.64 D.B: 192.168.154.127 Rango: 192.168.154.127.65 -> 192.168.154.126
+
+    Protip: ver que va por inctrementos -> vale usar la cuenta de la vieja
+
+    c) 192.168.154.128; D.B: 192.168.154.191; Rango: 192.168.154.129 -> 192.168.154.190
+
+    d) D.S: 192.168.154.192 D.B: 192.168.154.255; Rango: 192.168.154.193 -> 192.168.154.254

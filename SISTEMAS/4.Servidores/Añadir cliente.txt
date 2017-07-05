@@ -1,0 +1,20 @@
+Añadir cliente 
+
+Configuración avanzada del sistema -> Nombre de equipo
+
+Descripción: no hace falta ponerla; se puede poner el mismo nombre que tendrá en en la red
+Nombre de equipo *Recordar que debe ser único*: nombre
+Dominio: el nombre de nuestro dominio -> pedira usuario y contraseña
+	Si no sale la pantalla puede ser porque:
+		1) No hay comunicación cliente / server
+		2) No funciona el dominio
+
+Se reinicia y se va al server
+Usuarios y equipos de active directory
+	-> computers ->debea aparecer
+
+___________
+DNS INVERSO
+añadirlo en nueva zona, opciones por defecto
+
+los reenviadores: las peticiones que no entienda el dns privado se las manda a estos reenviadores (que son ips de dns publicos para poder resolverlo)

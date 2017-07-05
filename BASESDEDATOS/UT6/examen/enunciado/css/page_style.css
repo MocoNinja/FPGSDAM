@@ -1,0 +1,360 @@
+@charset "utf-8";
+
+/**********************************************************************************
+
+	Project Name: SmartStore WebSite
+	Project Description: ASP implementation, database, etc.
+	File Name: page_style.css
+	Author: Marian Stroiu
+	Author mail: stroiu.marian@gmail.com
+	
+**********************************************************************************/
+
+/* ---------- Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui ---------- */
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+table { border-collapse:collapse; border-spacing:0; overflow-y: scroll;  }
+fieldset, img { border:0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
+ol, ul, li { list-style:none }
+caption, th { text-align:left }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
+q:before, q:after { content:''}
+
+strong { font-weight:bold }
+em { font-style:italic;}
+a img { border:none } /* Gets rid of IE's blue borders */
+
+sup { font-size: 50%; }
+
+a, a:hover { text-decoration: none; color: #323232; }
+
+
+
+
+
+/* ---------- General Styles ---------- */
+
+body {
+	font-family: Calibri;
+	font-size: 16px;
+	background: #e7e7e7;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	
+}
+
+
+h4 {
+	font-family: Calibri;
+	font-size: 16px;
+	padding: 20px 10px 0;
+	font-weight: bolder;
+	color: #323232;
+}
+
+h3 {
+	font-family: Calibri;
+	font-size: 16px;
+	padding: 20px 10px 0;
+	font-weight: bolder;
+	color: #323232;
+	margin-bottom: -20px;
+}
+
+a.logged {
+	font-weight: bold;	
+}
+
+a.cart_counter {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+/* ---------- #container styles ---------- */
+
+#container {
+	margin: 0 auto;
+	width: 960px;
+	 
+}
+
+
+/* ---------- #header styles ---------- */
+
+#header {
+	padding: 10px 10px 0;
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	border-top: none;
+	height: 120px;
+	
+}
+
+	.top_nav ul{
+		float: right;
+
+		list-style-type: none;
+	}
+
+	.top_nav ul li { 
+		display: inline; 
+	}
+	
+	hr {
+		display: block;
+		position: relative;
+		margin: 8px auto;
+		width: 100%;
+		clear: both;
+		border: none;
+		border-top: 1px solid #AAA;
+		border-bottom: 1px solid #FFF;
+		font-size: 1px;
+		line-height: 0;
+		overflow: visible;	
+	}
+	
+	
+	.logo {
+		float: left;
+		margin: 10px 0 0 ;	
+	}
+	
+	.right_nav { 
+		width:100%;
+		height:30px;
+		
+	}
+		.right_nav ul {
+			float: right;
+			margin:25px 0 0; 
+			padding:0px;
+			font-family: Calibri;
+			font-size: 23px;
+			font-weight: bolder;
+			color: #323232;
+		}
+			
+		.right_nav ul li{
+			display:inline; 
+			height:30px; 
+			float:left; 
+			list-style:none; 
+			margin-left:15px;
+		}
+		
+		.right_nav li a:hover {
+			background-color: #8dbd34;	
+		}
+		
+		
+
+/* ---------- #left_sidebar styles ---------- */
+
+#left_sidebar {
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	float: left;
+	height: 1000px;
+	margin: 10px 0 5px;
+	margin-bottom: 10px;
+	width: 175px;
+	
+}
+
+		.poster {
+			float:left;
+			padding: 5px 10px 0;
+			margin-bottom: 20px;	
+			
+		}
+		
+		.newsletter_form {
+			float: left;
+			padding: 5px 10px 0;	
+		}
+		
+			.input {
+    			border: 1px solid #dddddd;
+    			background: #fff;
+				height: 20px;
+				margin-bottom: 5px;
+				font-family: Calibri;
+				width: 155px;
+			}
+			.button {
+				border: 1px solid #dddddd;
+				background: #8dbd34;
+				height: 25px;
+				width: 80px;
+				font-family: Calibri;
+				font-size: 15px;
+				font-weight: bold;
+				margin-bottom: 20px;
+		}
+		
+
+/* ---------- #main_content styles ---------- */
+
+#main_content {
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	float: left;
+	height: 1000px;
+	margin: 10px 5px 5px ;
+	margin-bottom: 10px;
+	width: 565px;
+	
+}
+
+		.slider {
+			padding: 10px 10px 0;
+			float: left;
+		}
+		
+		.product {
+			position:relative;
+			float: left;
+			padding: 10px 5px 0;
+			height: 200px;
+			width: 172px;
+			margin-left: 5px;
+			z-index: 1;
+		}
+		
+		.product .text {
+			position:absolute;
+			top:10px; /* in conjunction with left property, decides the text position */
+			left:10px;
+			width:172px; /* optional, though better have one */
+		}
+		p.product_title {
+			float: left;
+			margin: 4px 0 0;
+		}
+
+		p.price {
+			margin: 150px 7px 0;
+			font-family: Tahoma, Geneva, sans-serif;
+			font-size: 36px;
+			font-weight: none;
+			color: #000;
+			text-shadow: #555 3px 3px 3px;
+			-webkit-text-shadow: #555 3px 3px 3px;
+			-moz-text-shadow: #555 3px 3px 3px;
+		}
+		
+		.buy {
+			margin: -18px 7px 0;
+			float: right;
+			z-index: 2;	
+		}
+		
+		
+		h2 {
+		font-family: Calibri;
+		font-size: 24px;
+		margin: 20px 0 0;
+		font-weight: bolder;
+		color: #323232;
+		text-align: center;
+		
+}
+
+		table { 
+			margin: 20px 5px 0;
+			width: 550px;
+			border:solid 1px #dedede;
+			background:#fff;
+		
+		 }
+		td, th { 
+		padding: 10px;
+		
+		}
+
+
+
+		
+		
+		
+/* ---------- #right_sidebar styles ---------- */
+
+#right_sidebar {
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	float: left;
+	height: 1000px;
+	margin: 10px 0 0;
+	margin-bottom: 10px;
+	width: 204px;
+	
+}
+
+
+.cart {
+	float: left;
+	margin: 20px 5px 0;
+	height: 175px;
+	width: 192px;
+	background-color: #efefef;
+	border: 1px solid #e8e8e8;
+	z-index: 1;
+}
+
+img.cart_big {
+	float: left;
+	margin: 10px 57px 0;
+
+}
+
+p.checkout{
+	font-size: 13px;
+	font-family: Calibri;
+	font-weight: bold;
+	float: left;
+	margin-left: 22px;
+	margin-top: 5px
+}
+
+h5 {
+	font-family: Calibri;
+	font-size: 16px;
+	margin: 10px 20px 0;
+	font-weight: bolder;
+	color: #323232;
+	text-transform: uppercase;
+}
+
+.counter {
+	margin: -11px -1px 0;
+	height: 20px;
+	width: 20px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background-color: #ec2f03;
+	z-index: 2;
+	text-align: center;
+	font: Calibri;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+}
+		
+
+
+
+/* ---------- #footer styles ---------- */
+
+#footer {
+	background: #f3f3f3;
+	border: 1px solid #dddddd;
+	float: left;
+	height: 100px;	
+	width: 957px;
+}
+
+
+
+

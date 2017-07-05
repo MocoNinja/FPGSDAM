@@ -1,0 +1,46 @@
+﻿<html>
+    <head>
+        <title>Animaciones</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("#dcha").click(function(ev){
+                    $("body").animate(
+                        {backgroundPositionX:"1500px"
+                        }, 5000
+                    );
+                });
+                $("#izq").click(function(ev){
+                    $("body").animate(
+                        {backgroundPositionX:"-1500px"
+                        }, 5000
+                    );
+                });
+                // Ojito con este nivel de encapsulado y los parentesis y tal
+                $("#combi").click(function(ev){
+                    $("body").animate(
+                        {backgroundPositionX:"1500px"
+                        },
+                        5000,
+                        "swing",
+                        function(){
+                            $("body").animate(
+                                {backgroundPositionX:"0px"
+                                },
+                                5000,
+                                "swing",
+                                function(){
+                                    alert("Pues se acabó");
+                            })
+                        }
+                    );
+                });
+            });
+        </script>
+    </head>
+    <body background="img/naruto1.jpg">
+        <input type="button" id="dcha" value="Mueve Derecha">
+        <input type="button" id="izq" value="Mueve Izquierda">
+        <input type="button" id="combi" value="Combi">
+    </body>
+</html>

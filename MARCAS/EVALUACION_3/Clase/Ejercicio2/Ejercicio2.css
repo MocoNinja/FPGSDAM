@@ -1,0 +1,110 @@
+
+#web
+{
+  background-color: lightskyblue;
+  width: 960px;
+  height: 1000px;
+  margin: 0 auto; /* El auto, lo centra */
+  box-shadow: 0px 0px 10px #000;
+  border-radius: 20px;
+
+}
+header
+{
+  background-image: url("img/space.gif");
+  padding: 1px;
+  text-align: center;
+  color: deeppink;
+  font-family: Ubuntu;
+  font-size: 12pt;
+  border-radius: 20px 20px 0 0;
+}
+nav
+{
+  padding: 2px;
+  background-color: deepskyblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  text-align: center;
+}
+nav ul /* los ul inmediatamente dentro de nav */
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul>li /* todos los li de los ul inmediatamente dentro de nav */
+{
+  display: inline-block;
+  width: 150px;
+  color: red;
+  background-color: cornflowerblue;
+  border: 1px outset lavenderblush;
+  cursor: pointer;
+  padding: 2px;
+}
+#contenido
+{
+  background-color: lightgreen;
+  color: seagreen;
+  min-height: 350px;
+  padding: 1%;
+  width: 65%;
+  float: left;
+}
+
+#contenido section
+{
+  font-family: "Comic Sans MS";
+  width: 33%;
+  float: left; /* Cuando algo no cabe, también los va poniendo en orden. No sólo alínea a la izquierda, sino que coloca con orden*/
+  padding: 5%;
+  border: 1px dashed magenta;
+  margin-left: 40px;
+}
+
+#contenido section article div /* Los párrafos div dentro de un artículo dentro de ... */
+{
+  height: 150px;
+  overflow: auto;
+}
+
+#article
+{
+  text-align: justify;
+}
+
+#article>div
+{
+  padding: 12px;
+}
+img
+{
+  cursor: pointer;
+}
+
+aside
+{
+  background-color: lemonchiffon;
+  color: tomato;
+  min-height: 450px;
+  width: 30%;
+  float: right;
+  padding: 1%;
+}
+
+aside section
+{
+  text-align: center;
+  font-family: "Comic Sans MS";
+  margin: 2px;
+  min-height: 150px;
+}
+
+footer
+{
+  color:red;
+  text-align: center;
+  margin: auto;
+
+}

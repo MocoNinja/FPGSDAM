@@ -1,0 +1,47 @@
+<html>
+<!--
+- - 3 en raya
+- - PARTE 2. ELIMINO COMENTARIOS VIEJOS
+-->
+<head>
+	<title>I have come here to code and chew gum. And I am all outta gum</title>
+</head>
+<style type="text/css">
+body{/*background-color:#ffee00*/ /*background-image: Pics/Fondo.png*/}
+.val{background-color:cyan; width:30;height:35;text-align:center}/*Esto es una clase*/
+.noval{background-color:red; width:30;height:35;text-align:center}
+</style>
+<script language="JavaScript"">
+	var clicks = 0;
+	function cambiar(){
+		/*
+		* Vamos a meter cosas dentro de marcas (delimitadas por apertura y cierre) mediante JavaScript
+		* _.innerHtml
+		* _.innerText
+		* Lo que vamos a hacer es meter una imagen al hacer click en un td
+		*/
+		objeto = event.srcElement;
+		if ((clicks % 2 == 0) && event.srcElement.className == "val")
+			objeto.innerHTML = "<img src=Pics/Doge_4.gif width=50 height=55 class=val>" /*HTML mayusculas o no rula, diga lo que diga el sublime del demonio*/
+		else if (((clicks % 2 == 1) && event.srcElement.className == "val"))
+			objeto.innerHTML = "<img src=Pics/Doge_3.gif width=50 height=55 class = val>"
+		clicks++;
+	}
+</script>
+<body onclick="cambiar()" background="Pics/Fondo1.gif">
+<font color="yellow">
+<h1 align="center">Tres en raya</h1>
+<table border=2 cellpadding=0 cellspacing=5 align="center">
+	<tr>
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+	<tr>
+	<td class=val></td><td class=val></td><td class=val></td>
+	</tr>
+</table>
+
+</body>
+</html>

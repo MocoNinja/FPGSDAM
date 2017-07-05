@@ -1,0 +1,3 @@
+Explicación recursividad
+
+multiplicar(5,4) = 5 + multiplicar (5,3) = 5 + 5 + multiplicar (5,2) = 5 + 5 + 5 +multiplicar(5,1) = 5 + 5 + 5 + 5

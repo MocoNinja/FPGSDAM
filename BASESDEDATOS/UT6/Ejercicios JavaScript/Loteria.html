@@ -1,0 +1,36 @@
+<html>
+<head>
+  <title>Loteria</title>
+
+  <script type="text/javascript">
+  var veces = 0;
+  var numero;
+  function funcion()
+  {
+    for (i = 1; i <= 4; i++)
+    {
+      numero = Math.floor(Math.random()*9);
+      document.getElementById("im" + i).src = "img/" + numero + ".png";
+    }
+    veces++;
+    if (veces <= 5) setTimeout("funcion()", 500);
+  }
+  </script>
+  <style type="text/css">
+    body{
+      background-color: aqua;
+    }
+    img
+    {
+      width: 150px;
+      height: 400px;
+    }
+  </style>
+</head>
+<body onload="funcion()">
+  <img id="im1">
+  <img id="im2">
+  <img id="im3">
+  <img id="im4">
+</body>
+</html>

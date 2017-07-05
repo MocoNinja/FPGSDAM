@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Ejercicio 6 de CANVAS</title>
+<script type="application/javascript">
+	window.onload = function(){
+		var canvas = document.getElementById("canvas");
+		if(canvas.getContext){
+			var ctx = canvas.getContext("2d");
+			ctx.beginPath();
+			ctx.arc(75, 75, 50, 0, Math.PI*2, true);
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.fillStyle = '#FFF';
+			ctx.beginPath();
+			ctx.arc(75, 75, 35, 0, Math.PI, false);
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(60, 65, 5, 0, Math.PI*2, false);
+			ctx.closePath();
+			ctx.fill();
+			
+			ctx.beginPath();
+			ctx.arc(90, 65, 5, 0, Math.PI*2, false);
+			ctx.closePath();
+			ctx.fill();
+
+		}
+	};
+
+</script>
+
+</head>
+<body>
+
+<canvas id="canvas" width="350" height="350"></canvas>
+
+</body>
+
+</html>

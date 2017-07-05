@@ -1,0 +1,30 @@
+<html>
+<head>
+	<title>Party hard!</title>
+	<script type="text/javascript">
+		
+	var veces = 0;
+	var objeto;
+		function cambiar(){
+			if (veces % 2 == 0)
+				FOTO.src = "img/ariel2.jpg"
+			else 
+				FOTO.src = "img/ariel4.jpg"
+			veces++;
+		} 
+
+	</script>
+</head>
+<body bgcolor="black">
+	<center>
+		<img id="FOTO" src="img/ariel4.jpg" height="500">
+	</center>
+	<div>
+		<center>
+		<br>
+			<input type="button" name="Para" value="Para" onclick="clearInterval(objeto)">
+			<input type="button" name="Vuelve" value="Empieza" onclick="objeto = setInterval('cambiar()', 750)">
+		</center>
+	</div>
+</body>
+</html>

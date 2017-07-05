@@ -1,0 +1,41 @@
+<?php
+// Conexion
+$conexion=mysqli_connect("localhost","root","","fctdual") or die("Error en la conexion con la Base de datos");
+// Links
+header("location:index.php");
+<a href="pagina.php">link</a>
+// Cabeceras
+session_start();
+include("conexion.php");
+// Recuperar datos de un formulario
+$datoARecuperar = $_POST['inputNAME'];
+// Variables de sesión
+isset($_SESSION['clave']) -> false
+$_SESSION['clave'] = valor;
+isset($_SESSION['clave']) -> true
+$variable = $_SESSION['clave']; -> $variable == valor;
+session_destroy() -> Destruir todo;
+// Consultas
+$sql="SELECT  * FROM usuarios";
+$registros=mysqli_query($conexion,$sql);
+while ($linea=mysqli_fetch_array($registros))
+{
+  $recuperado = $linea['id'];
+}
+mysqli_close($conexion);
+
+$sql="DELETE FROM estudios WHERE idestudio='$cla'";
+mysqli_query($conexion,$sql) or die("Error en el borrado");
+?>
+
+<html>
+  <head>
+    <title>REPASO</title>
+  </head>
+  <body>
+    <!-- FORMULARIOS -->
+    <form name="usuarios" id="usuarios" method="post" action="login.php">
+      <input type="submit" value="Entrar">
+    </form>
+  </body>
+</html>

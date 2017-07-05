@@ -1,0 +1,7 @@
+﻿1.- Tenemos un Textbox y un desplegable (Choice) con 3 opciones: "Botón", "TextArea" y "Canvas".
+Ambos aparecerán a la izquierda del Frame.  Cuando se elija una de las opciones, a la derecha deberá aparecer el objeto seleccionado, que contendrá lo que hayas escrito en el Textbox.  En el caso del botón, aparecerá lo escrito en su parte frontal, en el caso del TextArea en su interior y en el caso del Canvas, aparecerá dibujado gracias al método "drawString".
+5 puntos.
+
+2.- Juego: De la parte superior del Applet, irán cayendo bolas con trayectorias y velocidades diversas.  En la parte inferior tendremos un rectángulo que se podrá desplazar a izquierda o derecha, según los movimientos del ratón y que deberá esquivar las bolas que caen.  Si alguna de las bolas intersecta con el rectángulo, la partida termina, en pantalla deberá salir "Game Over".  Las bolas irán en una lista de 20, cuando una supere la posición del rectángulo, deberá volver a empezar su caida.
+5 puntos.
+

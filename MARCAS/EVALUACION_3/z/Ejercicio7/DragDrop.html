@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<link rel="stylesheet" href="Ejemplo1.css" type="text/css">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Drag And Drop</title>
+<script language="javascript">
+function empezar(ev){
+	ev.dataTransfer.effectAllowed = 'move';
+	ev.dataTransfer.setData("Data", ev.target.getAttribute('id'));
+	ev.dataTransfer.setDragImage(ev.target, 0, 0);
+	return true;	
+}
+function terminar(ev){
+	ev.dataTransfer.clearData("Data");
+	return true;
+}
+
+function encima(ev){
+	var arrastraId = ev.dataTransfer.getData("Data");
+	var contenedorId = ev.target.getAttribute('id');
+	//alert(arrastraId +  " - " + contenedorId);
+	if(contenedorId == 'des1') return false;
+	if((contenedorId == 'des2') && (arrastraId == 'ar2')) return false;
+	if((contenedorId == 'des3') && (arrastraId == 'ar3')) return false;	
+}
+
+function soltar(ev){
+	var arrastraId = ev.dataTransfer.getData("Data");
+	ev.target.appendChild(document.getElementById(arrastraId));
+	ev.stopPropagation();
+	return false;
+}
+</script>
+</head>
+
+<body>
+<h1>Arrastrar y soltar con HTML5</h1>
+<div id="des1" ondragover="return encima(event)" ondrop="return soltar(event)">
+Contenedor 1
+</div>
+<div id="des2" ondragover="return encima(event)" ondrop="return soltar(event)">
+Contenedor 2
+</div>
+<div id="des3" ondragover="return encima(event)" ondrop="return soltar(event)">
+Contenedor 3
+</div>
+
+<div id="ar1" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)" >
+A1
+</div>
+<div id="ar2" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)">
+A2
+</div>
+<div id="ar3" draggable="true" ondragstart="return empezar(event)" ondragend="return terminar(event)">
+A3
+</div>
+
+
+</body>
+
+</html>

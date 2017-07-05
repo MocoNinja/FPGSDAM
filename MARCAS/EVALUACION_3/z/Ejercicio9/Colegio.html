@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Base de datos del colegio</title>
+	<!-- Tabla de cursos. Código -> Descripción (1H -> Programaçao; 2H -> picateclas...) -->
+	<script type="text/javascript">
+		function cargarBaseDatos() {
+			var baseDatos = openDataBase("Colegio", "1.0", " ", 2 * 1024 * 1024);
+			db.transaction(function(tx){	
+				tx.executeSql("CREATE TABLE IF NOT EXISTS CURSOS (codigo unique, descripcion)");
+				tx.executeSql("INSERT INTO CURSOS (codigo, nombre) VALUES (1H, 'Programaçao wannabes')");
+				tx.executeSql("INSERT INTO CURSOS (codigo, nombre) VALUES (2H, 'Programaçao l33t m4st3r5')");
+				tx.executeSql("INSERT INTO CURSOS (codigo, nombre) VALUES (1J, 'Aprieta Tuercas')");
+				tx.executeSql("INSERT INTO CURSOS (codigo, nombre) VALUES (2M, 'A saber')");
+			});	
+		}
+
+		function leer(){
+
+		}
+	</script>
+</head>
+<body>
+
+</body>
+</html>
